@@ -39,4 +39,20 @@ public class CourseLevelList
         for (CourseLevel level : levels) if (level.getName().equalsIgnoreCase(name)) return level;
         return null;
     }
+
+    /**
+     * Search for a course level by name or alias.
+     *
+     * @param nameOrAlias Name or alias of the level, e.g. "Honors." or "H"
+     * @return The course level. Returns null if not found.
+     */
+    public CourseLevel searchByNameOrAlias(String nameOrAlias)
+    {
+        for (CourseLevel level : levels)
+        {
+            if (level.getName().equalsIgnoreCase(nameOrAlias)) return level;
+            for (String alias : level.getAlias()) if (alias.equalsIgnoreCase(nameOrAlias)) return level;
+        }
+        return null;
+    }
 }
