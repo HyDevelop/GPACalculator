@@ -1,4 +1,4 @@
-package cc.moecraft.school.profile.grading;
+package cc.moecraft.school;
 
 import lombok.Getter;
 import lombok.ToString;
