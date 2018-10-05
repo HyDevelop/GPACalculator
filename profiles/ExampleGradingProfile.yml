@@ -1,10 +1,23 @@
 # The level of courses.
 # The number represents how many points you get for an A+.
 Levels:
-  AP: 5
-  Honors: 4.75
-  Accelerated: 4.5
-  CollegePrep: 4.25
+  AdvancedPlacement:
+    Alias:
+    - "AP"
+    Credits: 5
+  Honors:
+    Alias:
+    - "H"
+    Credits: 4.75
+  Accelerated:
+    Alias:
+    - "Acc"
+    - "A"
+    Credits: 4.5
+  CollegePrep:
+    Alias:
+    - "CP"
+    Credits: 4.25
 
 # The grades (A+, A, A-, B+ etc.)
 Grades:
