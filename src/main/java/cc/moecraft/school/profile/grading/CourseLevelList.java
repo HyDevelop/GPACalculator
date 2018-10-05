@@ -17,4 +17,14 @@ import java.util.ArrayList;
 public class CourseLevelList
 {
     private final ArrayList<CourseLevel> levels = new ArrayList<>();
+
+    /**
+     * Put a course level in the list.
+     *
+     * @param level Level.
+     */
+    public void put(CourseLevel level)
+    {
+        levels.add(level);
+    }
 }
