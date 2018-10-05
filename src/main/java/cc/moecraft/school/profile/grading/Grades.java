@@ -34,4 +34,10 @@ public enum Grades
     {
         this.name = name;
     }
+
+    @Override
+    public String toString()
+    {
+        return getName();
+    }
 }
