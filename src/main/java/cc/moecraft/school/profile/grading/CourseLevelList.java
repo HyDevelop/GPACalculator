@@ -1,5 +1,6 @@
 package cc.moecraft.school.profile.grading;
 
+import cc.moecraft.yaml.HyConfig;
 import lombok.Getter;
 import lombok.ToString;
 
@@ -54,5 +55,28 @@ public class CourseLevelList
             for (String alias : level.getAlias()) if (alias.equalsIgnoreCase(nameOrAlias)) return level;
         }
         return null;
+    }
+
+    /**
+     * Parse a course level list object from a grading profile config.
+     *
+     * @param config Grading profile.
+     * @param parentPath Parent path to the levels section.
+     * @return Parsed object.
+     */
+    public static CourseLevelList parseFromConfig(HyConfig config, String parentPath)
+    {
+        CourseLevelList result = new CourseLevelList();
+
+        for (String key : config.getKeys(parentPath))
+        {
+            String entry = parentPath + "." + key;
+            double value = config.getDouble(entry + ".Credits");
+            ArrayList<String> alias = new ArrayList<>(config.getStringList(entry + ".Alias"));
+
+            result.put(new CourseLevel(key, value, alias));
+        }
+
+        return result;
     }
 }
