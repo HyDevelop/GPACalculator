@@ -1,0 +1,14 @@
+# The level of courses.
+# The number represents how many points you get for an A+.
+Levels:
+  AP: 5
+  Honors: 4.75
+  Accelerated: 4.5
+  CollegePrep: 4.25
+
+# The grades (A+, A, A-, B+ etc.)
+Grades:
+  # How much each grade is decreased by.
+  # For example, if you put 0.25 here, and you would get 5.0 for an A+ on a course,
+  #   you would get a 4.75 for an A, a 4.5 for an A-, a 4.25 for a B+, and etc.
+  DecreaseBy: 0.25
