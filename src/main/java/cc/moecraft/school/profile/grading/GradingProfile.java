@@ -16,4 +16,21 @@ public class GradingProfile
 {
     private CourseLevelList courseLevelList;
     private double gradeDecreaseBy;
+
+    /**
+     * Parse a grading profile object from a grading profile config.
+     *
+     * @param config Grading profile.
+     * @param parentPath Parent path to the grading profile. This should be "".
+     * @return Parsed object.
+     */
+    public static GradingProfile parseFromConfig(HyConfig config, String parentPath)
+    {
+        GradingProfile result = new GradingProfile();
+
+        result.setCourseLevelList(CourseLevelList.parseFromConfig(config, parentPath + ".Levels"));
+        result.setGradeDecreaseBy(config.getDouble("Grades.DecreaseBy"));
+
+        return result;
+    }
 }
