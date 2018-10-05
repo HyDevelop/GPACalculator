@@ -32,7 +32,7 @@ public class CourseLevel
      * For example, Honors = 4.75 (at least in my school...);
      */
     @NonNull
-    private int maxPoints;
+    private double maxPoints;
 
     /**
      * Other names for it.
