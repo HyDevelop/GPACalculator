@@ -1,5 +1,8 @@
 package cc.moecraft.school.profile.grading;
 
+import lombok.Getter;
+import lombok.ToString;
+
 import java.util.ArrayList;
 
 /**
@@ -10,6 +13,7 @@ import java.util.ArrayList;
  *
  * @author Hykilpikonna
  */
+@Getter @ToString
 public class CourseLevelList
 {
     private final ArrayList<CourseLevel> levels = new ArrayList<>();
