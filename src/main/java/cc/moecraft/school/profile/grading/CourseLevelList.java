@@ -27,4 +27,16 @@ public class CourseLevelList
     {
         levels.add(level);
     }
+
+    /**
+     * Search for a course level by name.
+     *
+     * @param name Name of the level, e.g. "Honors."
+     * @return The course level. Returns null if not found.
+     */
+    public CourseLevel searchByName(String name)
+    {
+        for (CourseLevel level : levels) if (level.getName().equalsIgnoreCase(name)) return level;
+        return null;
+    }
 }
