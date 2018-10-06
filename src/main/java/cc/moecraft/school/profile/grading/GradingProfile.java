@@ -29,7 +29,7 @@ public class GradingProfile
         GradingProfile result = new GradingProfile();
 
         result.setCourseLevelList(CourseLevelList.parseFromConfig(config, parentPath + ".Levels"));
-        result.setGradeRangeList(GradeRangeList.parseFromConfig(config, parentPath + ".GradesRanges"));
+        result.setGradeRangeList(GradeRangeList.parseFromConfig(config, parentPath + ".GradeRanges"));
 
         return result;
     }
