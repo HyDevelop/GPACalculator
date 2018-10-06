@@ -8,8 +8,10 @@
     <artifactId>GPACalculator</artifactId>
     <packaging>pom</packaging>
     <version>1.0.0.0</version>
+
     <modules>
         <module>GPACalc.Core</module>
+        <module>GPACalc.UI</module>
     </modules>
 
     <properties>
