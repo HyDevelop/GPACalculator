@@ -16,7 +16,7 @@ public class GradingProfileTest
 {
     public static void main(String[] args)
     {
-        HyConfig config = new HyConfig(new File("./profiles/ExampleGradingProfile.yml"));
+        HyConfig config = new HyConfig(new File("./profiles/ExampleHighSchoolGradingProfile.yml"));
         GradingProfile exampleProfile = GradingProfile.parseFromConfig(config, "");
 
         System.out.println(exampleProfile);
