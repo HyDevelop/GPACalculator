@@ -5,7 +5,7 @@ Basics:
   Semester: 1
 
 # Courses a student is taking.
-Courses:
+Subjects:
   English:
     Name: "English 2 A"
     Level: "A"
