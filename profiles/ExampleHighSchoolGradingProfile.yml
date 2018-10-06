@@ -1,12 +1,12 @@
 # This is for high school.
 # The level of courses.
 # Key word can be anything.
-# Grades are how much credit do you get for each grade.
+# Grade weights are how much credit do you get for each grade.
 Levels:
   AdvancedPlacement:
     Alias:
     - "AP"
-    Grades:
+    GradeWeight:
       A+: 5
       A:  4.75
       A-: 4.5
@@ -22,7 +22,7 @@ Levels:
   Honors:
     Alias:
     - "H"
-    Grades:
+    GradeWeight:
       A+: 4.75
       A:  4.5
       A-: 4.25
@@ -39,7 +39,7 @@ Levels:
     Alias:
     - "Acc"
     - "A"
-    Grades:
+    GradeWeight:
       A+: 4.5
       A:  4.25
       A-: 4
@@ -55,7 +55,7 @@ Levels:
   CollegePrep:
     Alias:
     - "CP"
-    Grades:
+    GradeWeight:
       A+: 4.25
       A:  4
       A-: 3.75
