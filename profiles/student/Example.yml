@@ -1,0 +1,32 @@
+# Basic information.
+Basics:
+  Name: "Hykilpikonna"
+  Grade: 10
+  Semester: 1
+
+# Courses a student is taking.
+Courses:
+  English:
+    Name: "English 2 A"
+    Level: "A"
+    Credits: 1
+  Algebra:
+    Name: "Algebra 2 H"
+    Level: "H"
+    Credits: 1
+  Chemistry:
+    Name: "Chemistry 1 H"
+    Level: "H"
+    Credits: 1
+  History:
+    Name: "Modern World History CP"
+    Level: "CP"
+    Credits: 1
+  Religion:
+    Name: "Early Church CP"
+    Level: "CP"
+    Credits: 0.5
+  ComputerScience:
+    Name: "AP Computer Science A"
+    Level: "AP"
+    Credits: 1
