@@ -15,7 +15,7 @@ import lombok.Data;
 public class GradingProfile
 {
     private CourseLevelList courseLevelList;
-    private double gradeDecreaseBy;
+    private GradeRangeList gradeRangeList;
 
     /**
      * Parse a grading profile object from a grading profile config.
@@ -29,7 +29,7 @@ public class GradingProfile
         GradingProfile result = new GradingProfile();
 
         result.setCourseLevelList(CourseLevelList.parseFromConfig(config, parentPath + ".Levels"));
-        result.setGradeDecreaseBy(config.getDouble("Grades.DecreaseBy"));
+        result.setGradeRangeList(GradeRangeList.parseFromConfig(config, parentPath + ".GradesRanges"));
 
         return result;
     }
