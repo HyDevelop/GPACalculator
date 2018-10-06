@@ -17,4 +17,14 @@ import java.util.ArrayList;
 public class GradeRangeList
 {
     private final ArrayList<GradeRange> gradeRanges = new ArrayList<>();
+
+    /**
+     * Put a grade range in the list.
+     *
+     * @param gradeRange Grade range.
+     */
+    public void put(GradeRange gradeRange)
+    {
+        gradeRanges.add(gradeRange);
+    }
 }
