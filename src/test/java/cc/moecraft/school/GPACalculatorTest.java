@@ -29,7 +29,7 @@ public class GPACalculatorTest
         // Create example grades (use my current grade.)
         Grades grades = new Grades()
                 .putGrade("English 2 A", "A-")
-                .putGrade("Algebra 2", "A+")
+                .putGrade("Algebra 2 H", "A+")
                 .putGrade("Chemistry 1 H", "B+")
                 .putGrade("Modern World History CP", "A+")
                 .putGrade("Early Church CP", "B+")
