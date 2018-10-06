@@ -1,7 +1,9 @@
 package cc.moecraft.school.profile.grading;
 
 import cc.moecraft.yaml.HyConfig;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 /**
  * 此类由 Hykilpikonna 在 2018/10/04 创建!
@@ -11,11 +13,14 @@ import lombok.Data;
  *
  * @author Hykilpikonna
  */
-@Data
+@Getter @Setter
+@ToString
 public class GradingProfile
 {
     private CourseLevelList courseLevelList;
     private GradeRangeList gradeRangeList;
+
+    private GradingProfile() {}
 
     /**
      * Parse a grading profile object from a grading profile config.
