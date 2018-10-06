@@ -1,5 +1,6 @@
 package cc.moecraft.school.profile.student;
 
+import cc.moecraft.yaml.HyConfig;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -22,10 +23,19 @@ public class StudentInformation
     /**
      * Grade level. (eg. Junior = 11)
      */
-    private short grade;
+    private int grade;
 
     /**
      * Semester (1 or 2)
      */
-    private short semester;
+    private int semester;
+
+    public static StudentInformation parseFromConfig(HyConfig config, String parentPath)
+    {
+        return new StudentInformation(
+                config.getString(parentPath + ".Name"),
+                config.getInt(parentPath + ".Grade"),
+                config.getInt(parentPath + ".Semester")
+        );
+    }
 }
