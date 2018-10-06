@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.ToString;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * 此类由 Hykilpikonna 在 2018/10/06 创建!
@@ -27,6 +28,7 @@ public class GradeRangeList
     public void put(GradeRange gradeRange)
     {
         gradeRanges.add(gradeRange);
+        Collections.sort(gradeRanges);
     }
 
     /**
