@@ -71,10 +71,10 @@ public class CourseLevelList
         for (String key : config.getKeys(parentPath))
         {
             String entry = parentPath + "." + key;
-            double value = config.getDouble(entry + ".Credits");
+            CLGradeWeightList weightList = CLGradeWeightList.parseFromConfig(config, entry + ".GradeWeight");
             ArrayList<String> alias = new ArrayList<>(config.getStringList(entry + ".Alias"));
 
-            result.put(new CourseLevel(key, value, alias));
+            result.put(new CourseLevel(key, weightList, alias));
         }
 
         return result;
