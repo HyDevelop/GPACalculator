@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
+import javax.annotation.Nonnull;
+
 /**
  * 此类由 Hykilpikonna 在 2018/10/06 创建!
  * Created by Hykilpikonna on 2018/10/06!
@@ -15,7 +17,7 @@ import lombok.RequiredArgsConstructor;
 @AllArgsConstructor
 @RequiredArgsConstructor
 @Data
-public class GradeRange
+public class GradeRange implements Comparable<GradeRange>
 {
     /**
      * Letter name of the grade.
@@ -28,4 +30,10 @@ public class GradeRange
      * For example, A+ would be 97 - 100, so put 97 as the value.
      */
     private double range;
+
+    @Override
+    public int compareTo(@Nonnull GradeRange other)
+    {
+        return (int) (this.range - other.range);
+    }
 }
