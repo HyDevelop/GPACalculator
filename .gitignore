@@ -1,4 +1,4 @@
 .idea/*
-GPACalculator.iml
-.target/*
 target/*
+GPACalc.Core/target/*
+GPACalculator.iml
