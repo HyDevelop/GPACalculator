@@ -1,5 +1,6 @@
 package cc.moecraft.school.profile.grading;
 
+import cc.moecraft.yaml.HyConfig;
 import lombok.Getter;
 import lombok.ToString;
 
@@ -38,5 +39,27 @@ public class GradeRangeList
     {
         for (GradeRange gradeRange : gradeRanges) if (gradeRange.getName().equalsIgnoreCase(letter)) return gradeRange;
         return null;
+    }
+
+    /**
+     * Parse a grade range list object from a grading profile config.
+     *
+     * @param config Grading profile.
+     * @param parentPath Parent path to the grade ranges section.
+     * @return Parsed object.
+     */
+    public static GradeRangeList parseFromConfig(HyConfig config, String parentPath)
+    {
+        GradeRangeList result = new GradeRangeList();
+
+        for (String key : config.getKeys(parentPath))
+        {
+            String entry = parentPath + "." + key;
+            double value = config.getDouble(entry);
+
+            result.put(new GradeRange(key, value));
+        }
+
+        return result;
     }
 }
