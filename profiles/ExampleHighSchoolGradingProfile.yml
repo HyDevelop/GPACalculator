@@ -68,9 +68,18 @@ Levels:
       D:  1.25
       F:  0
 
-# The grades (A+, A, A-, B+ etc.)
-Grades:
-  # How much each grade is decreased by.
-  # For example, if you put 0.25 here, and you would get 5.0 for an A+ on a course,
-  #   you would get a 4.75 for an A, a 4.5 for an A-, a 4.25 for a B+, and etc.
-  DecreaseBy: 0.25
+# The ranges of the grade.
+# The value represents the minimum amount in the range.
+# For example, A+ would be 97 - 100, so put 97 as the value.
+GradeRanges:
+  A+: 97
+  A:  93
+  A-: 90
+  B+: 87
+  B:  83
+  B-: 80
+  C+: 77
+  C:  73
+  C-: 71
+  D:  70
+  F:  0
