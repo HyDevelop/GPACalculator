@@ -40,4 +40,26 @@ public class CLGradeWeightList
         for (CLGradeWeight gradeWeight : gradeWeights) if (gradeWeight.getName().equalsIgnoreCase(letter)) return gradeWeight;
         return null;
     }
+
+    /**
+     * Parse a grade weight list object from a grading profile config.
+     *
+     * @param config Grading profile.
+     * @param parentPath Parent path to the grade weights section.
+     * @return Parsed object.
+     */
+    public static CLGradeWeightList parseFromConfig(HyConfig config, String parentPath)
+    {
+        CLGradeWeightList result = new CLGradeWeightList();
+
+        for (String key : config.getKeys(parentPath))
+        {
+            String entry = parentPath + "." + key;
+            double value = config.getDouble(entry);
+
+            result.put(new CLGradeWeight(key, value));
+        }
+
+        return result;
+    }
 }
