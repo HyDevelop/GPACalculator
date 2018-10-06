@@ -27,4 +27,16 @@ public class GradeRangeList
     {
         gradeRanges.add(gradeRange);
     }
+
+    /**
+     * Search for a grade range by name.
+     *
+     * @param letter Name of the grade letter, e.g. "A+"
+     * @return The grade range. Returns null if not found.
+     */
+    public GradeRange searchByName(String letter)
+    {
+        for (GradeRange gradeRange : gradeRanges) if (gradeRange.getName().equalsIgnoreCase(letter)) return gradeRange;
+        return null;
+    }
 }
