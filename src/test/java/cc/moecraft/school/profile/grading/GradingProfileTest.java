@@ -19,7 +19,7 @@ public class GradingProfileTest
         HyConfig config = new HyConfig(new File("./profiles/grading/ExampleHighSchoolWeighted.yml"));
         GradingProfile exampleProfile = GradingProfile.parseFromConfig(config, "");
 
-        System.out.println("Course Level by name: " + exampleProfile.getCourseLevelList().searchByNameOrAlias("Accelerated"));
+        System.out.println(exampleProfile.getGradeRangeList().getGradeRanges());
         System.out.println("\n\n\n" + exampleProfile);
     }
 }
