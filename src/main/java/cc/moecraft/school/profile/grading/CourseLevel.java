@@ -28,11 +28,10 @@ public class CourseLevel
     private String name;
 
     /**
-     * How many points you get for A+.
-     * For example, Honors = 4.75 (at least in my school...);
+     * Grade and weight list.
      */
     @NonNull
-    private double maxPoints;
+    private CLGradeWeightList gradeWeights;
 
     /**
      * Other names for it.
