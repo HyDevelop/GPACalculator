@@ -36,7 +36,7 @@ public class SubjectList
      */
     public Subject searchByName(String name)
     {
-        for (Subject level : subjects) if (level.getName().equalsIgnoreCase(name)) return level;
+        for (Subject subject : subjects) if (subject.getName().equalsIgnoreCase(name)) return subject;
         return null;
     }
 }
