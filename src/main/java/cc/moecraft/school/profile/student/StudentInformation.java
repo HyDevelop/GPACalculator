@@ -30,6 +30,13 @@ public class StudentInformation
      */
     private int semester;
 
+    /**
+     * Parse a student information object from a student profile config.
+     *
+     * @param config Student profile.
+     * @param parentPath Parent path to the student information section.
+     * @return Parsed object.
+     */
     public static StudentInformation parseFromConfig(HyConfig config, String parentPath)
     {
         return new StudentInformation(
