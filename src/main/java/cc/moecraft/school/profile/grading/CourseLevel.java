@@ -39,5 +39,5 @@ public class CourseLevel
      * This exists because sometimes teachers just abbreviate "Honors" with "H"...
      * So inconsistent...
      */
-    private ArrayList<String> alias;
+    private ArrayList<String> alias = new ArrayList<>();
 }
