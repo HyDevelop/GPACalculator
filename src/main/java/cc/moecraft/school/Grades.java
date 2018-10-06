@@ -21,7 +21,7 @@ public class Grades
     /**
      * Previous GPA
      */
-    private double previousGPA;
+    private Double previousGPA;
 
     /**
      * Subject to grade.
