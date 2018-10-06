@@ -34,9 +34,11 @@ public class Grades
      *
      * @param subject Subject name
      * @param grade Grade letter
+     * @return This object
      */
-    public void putGrade(String subject, String grade)
+    public Grades putGrade(String subject, String grade)
     {
         subjectGradeMap.put(subject, grade);
+        return this;
     }
 }
