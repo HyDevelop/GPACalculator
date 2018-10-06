@@ -15,7 +15,6 @@ import javax.annotation.Nonnull;
  * @author Hykilpikonna
  */
 @AllArgsConstructor
-@RequiredArgsConstructor
 @Data
 public class GradeRange implements Comparable<GradeRange>
 {
