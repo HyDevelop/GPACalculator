@@ -64,4 +64,19 @@ public class GradeRangeList
 
         return result;
     }
+
+    /**
+     * Search for letter grade by numeric grade.
+     *
+     * @param grade Numeric grade
+     * @return Grade range object
+     */
+    public GradeRange searchByNumericGrade(double grade)
+    {
+        for (GradeRange gradeRange : gradeRanges)
+        {
+            if (grade > gradeRange.getRange()) return gradeRange;
+        }
+        throw new RuntimeException("Failed to get grade range.");
+    }
 }
