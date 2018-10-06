@@ -1,5 +1,6 @@
 package cc.moecraft.school.profile.student;
 
+import cc.moecraft.yaml.HyConfig;
 import lombok.Getter;
 import lombok.ToString;
 
@@ -38,5 +39,30 @@ public class SubjectList
     {
         for (Subject subject : subjects) if (subject.getName().equalsIgnoreCase(name)) return subject;
         return null;
+    }
+
+    /**
+     * Parse a subject list object from a student profile config.
+     *
+     * @param config Student profile.
+     * @param parentPath Parent path to the subject list section.
+     * @return Parsed object.
+     */
+    public static SubjectList parseFromConfig(HyConfig config, String parentPath)
+    {
+        SubjectList result = new SubjectList();
+
+        for (String key : config.getKeys(parentPath))
+        {
+            String entry = parentPath + "." + key;
+
+            result.put(new Subject(key,
+                    config.getString(entry + ".Name"),
+                    config.getString(entry + ".Level"),
+                    config.getDouble(entry + ".Credits")
+            ));
+        }
+
+        return result;
     }
 }
