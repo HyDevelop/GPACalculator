@@ -33,6 +33,6 @@ public class GradeRange implements Comparable<GradeRange>
     @Override
     public int compareTo(@Nonnull GradeRange other)
     {
-        return (int) (this.range - other.range);
+        return (int) (other.range - this.range);
     }
 }
