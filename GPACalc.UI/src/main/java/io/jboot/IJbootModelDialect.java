@@ -1,0 +1,1 @@
+package io.jboot;import java.util.List;public interface IJbootModelDialect{    public String forFindByColumns(String table, String loadColumns, List<Column> columns, String orderBy, Object limit);    public String forPaginateSelect(String loadColumns);    public String forPaginateFrom(String table, List<Column> columns, String orderBy);}
