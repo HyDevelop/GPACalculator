@@ -3,3 +3,4 @@ target/*
 GPACalc.Core/target/*
 GPACalc.UI/target/*
 GPACalculator.iml
+runtime-config.yml
