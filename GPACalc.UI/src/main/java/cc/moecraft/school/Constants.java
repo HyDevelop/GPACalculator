@@ -10,5 +10,5 @@ package cc.moecraft.school;
  */
 public class Constants
 {
-    public static final String GOOGLE_CLIENT_ID = "1003130608774-b3lpkuuk73f07o9kgsve3mp1b30ban7v";
+    public static final String GOOGLE_CLIENT_ID = "1003130608774-b3lpkuuk73f07o9kgsve3mp1b30ban7v.apps.googleusercontent.com";
 }
