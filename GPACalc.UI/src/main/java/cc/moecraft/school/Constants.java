@@ -1,11 +1,12 @@
 package cc.moecraft.school;
 
-import cc.moecraft.yaml.HyConfig;
+import cc.moecraft.yaml.HyVirtualConfig;
+import com.google.common.io.Resources;
 
-import java.io.File;
 import java.io.IOException;
 
-import static org.apache.commons.io.FileUtils.readFileToString;
+import static com.google.common.base.Charsets.UTF_8;
+import static com.google.common.io.Resources.getResource;
 
 /**
  * 此类由 Hykilpikonna 在 2018/10/06 创建!
@@ -17,8 +18,7 @@ import static org.apache.commons.io.FileUtils.readFileToString;
  */
 public class Constants
 {
-    public static final File RUNTIME_CONFIG_FILE = new File("./runtime-config.yml");
-    public static final HyConfig RUNTIME_CONFIG;
+    public static final HyVirtualConfig CONFIG;
 
     public static final String GOOGLE_CLIENT_ID;
     public static final String JDBC_CONNECTION;
@@ -31,17 +31,17 @@ public class Constants
 
     static
     {
-        RUNTIME_CONFIG = new HyConfig(RUNTIME_CONFIG_FILE);
-
-        GOOGLE_CLIENT_ID = RUNTIME_CONFIG.getString("ClientID");
-        JDBC_CONNECTION = RUNTIME_CONFIG.getString("Database.JDBConnection");
-        USERNAME = RUNTIME_CONFIG.getString("Database.Username");
-        PASSWORD = RUNTIME_CONFIG.getString("Database.Password");
-
         try
         {
-            DEFAULT_GRADING_PROFILE = readFileToString(new File(RUNTIME_CONFIG.getString("DefaultProfile.Grading")), "utf-8");
-            DEFAULT_STUDENT_PROFILE = readFileToString(new File(RUNTIME_CONFIG.getString("DefaultProfile.Student")), "utf-8");
+            CONFIG = new HyVirtualConfig(Resources.toString(getResource("runtime-config.yml"), UTF_8));
+
+            GOOGLE_CLIENT_ID = CONFIG.getString("ClientID");
+            JDBC_CONNECTION = CONFIG.getString("Database.JDBConnection");
+            USERNAME = CONFIG.getString("Database.Username");
+            PASSWORD = CONFIG.getString("Database.Password");
+
+            DEFAULT_GRADING_PROFILE = Resources.toString(getResource(CONFIG.getString("DefaultProfile.Grading")), UTF_8);
+            DEFAULT_STUDENT_PROFILE = Resources.toString(getResource(CONFIG.getString("DefaultProfile.Student")), UTF_8);
         }
         catch (IOException e)
         {
