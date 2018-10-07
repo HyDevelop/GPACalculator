@@ -1,5 +1,7 @@
 package cc.moecraft.school.api;
 
+import cc.moecraft.school.api.nodes.auth.NodeLogin;
+import cc.moecraft.school.api.nodes.misc.NodeTest;
 import cc.moecraft.school.exceptions.TokenException;
 import cc.moecraft.school.utils.ExceptionUtils;
 import cc.moecraft.school.utils.ResponseUtils;
@@ -7,7 +9,6 @@ import com.google.api.client.googleapis.auth.oauth2.GoogleIdToken;
 import com.google.api.client.googleapis.auth.oauth2.GoogleIdTokenVerifier;
 import com.google.api.client.http.apache.ApacheHttpTransport;
 import com.google.api.client.json.jackson2.JacksonFactory;
-import jdk.nashorn.internal.parser.Token;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
@@ -35,7 +36,8 @@ public class ApiFilter implements Filter
         manager = new ApiNodeManager();
 
         manager.register(
-
+                new NodeLogin(),
+                new NodeTest()
         );
 
         System.out.println("API filter enabled!");
