@@ -63,7 +63,7 @@ function onSignIn(user)
     // Print banner.
     console.log(banner);
     console.log("Welcome, " + profile.getName());
-    
+
     // Send login to backend.
     send("auth.login", "", function (text)
     {
@@ -92,14 +92,14 @@ function onLoad()
     setTimeout(function()
     {
         // Deferred onLoad
-        console.log("Detecting Login...");
-
         // Detects if user is logged in
         if (googleUser == null)
         {
             // Show login modal
             showLoginModal();
+            console.log("[OnLoad] Login not found, displaying modal.");
         }
+        else console.log("[OnLoad] Login verified.");
     }, 2000);
 }
 
