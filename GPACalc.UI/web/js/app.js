@@ -80,12 +80,18 @@ function signOut()
  */
 function onLoad()
 {
-    // Detects if user is logged in
-    if (googleUser == null)
+    setTimeout(function()
     {
-        // Show login modal
-        showLoginModal();
-    }
+        // Deferred onLoad
+        console.log("Detecting Login...");
+
+        // Detects if user is logged in
+        if (googleUser == null)
+        {
+            // Show login modal
+            showLoginModal();
+        }
+    }, 2000);
 }
 
 window.onload = onLoad();
