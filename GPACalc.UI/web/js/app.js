@@ -13,7 +13,7 @@ var banner =
  * @param content Content in String.
  * @param callback Function to callback after.
  */
-function send(apiNode, content, callback)
+async function send(apiNode, content, callback)
 {
     if (googleUser == null) return "Error: Not logged in.";
 
