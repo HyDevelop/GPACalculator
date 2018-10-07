@@ -20,7 +20,9 @@
                             <%@include file="/includes/editor/grade-editor.jsp"%>
                         </li>
                         <li>
-                            <%@include file="/includes/editor/student-profile-editor.jsp"%>
+                            <%@include file="/includes/editor/student-profile-editor-head.jsp"%>
+                            <%@include file="/includes/editor/student-profile-editor-template.jsp"%>
+                            <%@include file="/includes/editor/student-profile-editor-end.jsp"%>
                         </li>
                         <li>
                             Text3
