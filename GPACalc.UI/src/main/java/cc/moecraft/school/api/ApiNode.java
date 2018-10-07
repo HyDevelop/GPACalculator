@@ -14,6 +14,12 @@ import javax.servlet.http.HttpServletRequest;
  */
 public interface ApiNode
 {
+    /**
+     * Name of the api node.
+     * MUST be all lowercase.
+     *
+     * @return Name of the api node.
+     */
     public String nodeName();
 
     /**
