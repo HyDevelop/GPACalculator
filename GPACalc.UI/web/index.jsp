@@ -6,6 +6,29 @@
     <body class="wallpaper">
         <%@include file="/includes/navbar/navbar.jsp"%>
         <%@include file="/includes/auth/login-modal.jsp"%>
+        <div class="uk-container hy-container">
+            <div class="uk-position-relative">
+                <div class="uk-position-relative uk-margin-medium">
+                    <ul class="uk-tab hy-tab" uk-tab>
+                        <li aria-expanded="true" class="uk-active"><a href="#">Grades</a></li>
+                        <li aria-expanded="false" class=""><a href="#">Course Settings</a></li>
+                        <li aria-expanded="false" class=""><a href="#">School Settings</a></li>
+                    </ul>
+
+                    <ul class="uk-switcher uk-margin">
+                        <li class="uk-active">
+
+                        </li>
+                        <li>
+                            Text2
+                        </li>
+                        <li>
+                            Text3
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
 <%@include file="/includes/end/end.jsp"%>
