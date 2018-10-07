@@ -37,6 +37,16 @@
     padding-top: 5px;
 }
 
+.hy-operating-buttons
+{
+    float: right !important;
+}
+
+.hy-operating-buttons>button
+{
+    margin: 10px 0px 10px 20px !important
+}
+
 .rainbow-blue-gradient
 {
     background: #00F260;  /* fallback for old browsers */
