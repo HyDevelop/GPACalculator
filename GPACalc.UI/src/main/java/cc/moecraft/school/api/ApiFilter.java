@@ -1,8 +1,21 @@
 package cc.moecraft.school.api;
 
+import cc.moecraft.school.exceptions.TokenException;
+import cc.moecraft.school.utils.ExceptionUtils;
+import cc.moecraft.school.utils.ResponseUtils;
+import com.google.api.client.googleapis.auth.oauth2.GoogleIdToken;
+import com.google.api.client.googleapis.auth.oauth2.GoogleIdTokenVerifier;
+import com.google.api.client.http.apache.ApacheHttpTransport;
+import com.google.api.client.json.jackson2.JacksonFactory;
+import jdk.nashorn.internal.parser.Token;
+
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
+import java.security.GeneralSecurityException;
+import java.util.Collections;
+
+import static cc.moecraft.school.Constants.GOOGLE_CLIENT_ID;
 
 /**
  * 此类由 Hykilpikonna 在 2018/10/06 创建!
@@ -28,6 +41,14 @@ public class ApiFilter implements Filter
         if (request.getMethod().equalsIgnoreCase("post") && request.getRequestURI().equalsIgnoreCase("/api"))
         {
             System.out.println("Requested Node: " + request.getHeader("node"));
+            try
+            {
+                GoogleIdToken token = getToken(request);
+            }
+            catch (TokenException e)
+            {
+                ResponseUtils.writeResponse(response, e.getMessage());
+            }
             return;
         }
 
@@ -38,5 +59,34 @@ public class ApiFilter implements Filter
     public void destroy()
     {
         System.out.println("API filter disabled!");
+    }
+
+    /**
+     * Get and verify google token.
+     *
+     * @param request Http request.
+     * @return Token
+     * @throws TokenException Token not specified, invalid, or something wrong happened.
+     */
+    public static GoogleIdToken getToken(HttpServletRequest request) throws TokenException
+    {
+        try
+        {
+            String googleToken = request.getHeader("token");
+            if (googleToken == null) throw new TokenException("Token not found.");
+
+            GoogleIdTokenVerifier verifier = new GoogleIdTokenVerifier
+                    .Builder(new ApacheHttpTransport(), new JacksonFactory())
+                    .setAudience(Collections.singletonList(GOOGLE_CLIENT_ID)).build();
+
+            GoogleIdToken idToken = verifier.verify(googleToken);
+            if (idToken == null) throw new TokenException("Token invalid.");
+
+            return idToken;
+        }
+        catch (GeneralSecurityException | IOException e)
+        {
+            throw new TokenException(ExceptionUtils.printStackTraceToString(e));
+        }
     }
 }
