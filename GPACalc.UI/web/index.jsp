@@ -20,7 +20,7 @@
                             <%@include file="/includes/editor/grade-editor.jsp"%>
                         </li>
                         <li>
-                            Text2
+                            <%@include file="/includes/editor/student-profile-editor.jsp"%>
                         </li>
                         <li>
                             Text3
