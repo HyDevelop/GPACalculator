@@ -7,6 +7,32 @@ var banner =
     "               v1.0.0.0 By Hykilpikonna";
 
 /**
+ * Send a request to api.
+ *
+ * @param apiNode Node of the api.
+ * @param content Content in String.
+ * @param callback Function to callback after.
+ */
+function send(apiNode, content, callback)
+{
+    if (googleUser == null) return "Error: Not logged in.";
+
+    var request = new XMLHttpRequest();
+    request.open("POST", apiUrl, true);
+    request.setRequestHeader("node", apiNode);
+    request.setRequestHeader("token", googleUser.getAuthResponse().id_token);
+    request.writeln(content);
+    request.onreadystatechange = function ()
+    {
+        if (request.readyState === 4 && request.status === 200)
+        {
+            // Async callback
+            callback(request.responseText);
+        }
+    }
+}
+
+/**
  * Called when signing in.
  *
  * @param user Google user.
