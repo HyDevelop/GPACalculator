@@ -1,3 +1,4 @@
+var googleUser = null;
 /**
  * Called when signing in.
  *
@@ -5,6 +6,8 @@
  */
 function onSignIn(user)
 {
+    googleUser = user;
+
     // Useful data for your client-side scripts:
     var profile = googleUser.getBasicProfile();
     console.log("ID: " + profile.getId());
