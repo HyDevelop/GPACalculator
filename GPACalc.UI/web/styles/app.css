@@ -1,3 +1,8 @@
+.hy-navbar-light
+{
+    background-color: rgba(185, 185, 185, 0.36);
+}
+
 .rainbow-blue-gradient
 {
     background: #00F260;  /* fallback for old browsers */
