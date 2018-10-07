@@ -36,6 +36,7 @@ public class NodeLogin implements ApiNode
             profiles.setGoogleSub(id.getSubject());
             profiles.setStudentProfile(Constants.DEFAULT_STUDENT_PROFILE);
             profiles.setGradingProfile(Constants.DEFAULT_GRADING_PROFILE);
+            profiles.save();
             return "Registered";
         }
 
