@@ -16,7 +16,7 @@ import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 public class _MappingKit {
 	
 	public static void mapping(ActiveRecordPlugin arp) {
-		arp.addMapping("profiles", "google_sub", Profiles.class);
+		arp.addMapping("user_profiles", "google_sub", UserProfiles.class);
 	}
 }
 
