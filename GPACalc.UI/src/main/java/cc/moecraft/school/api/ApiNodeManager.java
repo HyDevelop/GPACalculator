@@ -2,7 +2,7 @@ package cc.moecraft.school.api;
 
 import lombok.Getter;
 import lombok.ToString;
-    
+
 import java.util.ArrayList;
 import java.util.Arrays;
 

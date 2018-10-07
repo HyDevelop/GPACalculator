@@ -27,9 +27,17 @@ import static cc.moecraft.school.Constants.GOOGLE_CLIENT_ID;
  */
 public class ApiFilter implements Filter
 {
+    private ApiNodeManager manager;
+
     @Override
     public void init(FilterConfig filterConfig) throws ServletException
     {
+        manager = new ApiNodeManager();
+
+        manager.register(
+
+        );
+
         System.out.println("API filter enabled!");
     }
 
