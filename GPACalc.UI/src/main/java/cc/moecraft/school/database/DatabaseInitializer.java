@@ -1,6 +1,5 @@
 package cc.moecraft.school.database;
 
-import cc.moecraft.school.Constants;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.c3p0.C3p0Plugin;
 
@@ -8,6 +7,7 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
 import static cc.moecraft.school.Constants.*;
+import static cc.moecraft.school.database.model._MappingKit.*;
 
 /**
  * 此类由 Hykilpikonna 在 2018/10/07 创建!
@@ -34,6 +34,7 @@ public class DatabaseInitializer implements ServletContextListener
         c3p0Plugin = new C3p0Plugin(JDBC_CONNECTION, USERNAME, PASSWORD);
         c3p0Plugin.start();
         activeRecordPlugin = new ActiveRecordPlugin(c3p0Plugin);
+        mapping(activeRecordPlugin);
         activeRecordPlugin.start();
     }
 }
