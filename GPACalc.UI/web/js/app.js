@@ -99,8 +99,6 @@ function showLoginModal()
     if (!loginModal.isToggled()) loginModal.toggle();
 }
 
-
-
 /**
  * Reload page.
  */
@@ -108,3 +106,10 @@ function reload()
 {
     window.location.reload(true);
 }
+
+// Reload page when hide
+$('#modal-login').on({'hide.uk.modal': function()
+    {
+        reload();
+    }
+});
