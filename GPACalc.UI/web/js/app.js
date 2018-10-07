@@ -1,4 +1,10 @@
 var googleUser = null;
+var banner =
+    " __ _  _     __                           \n" +
+    "/__|_)|_|   /   _  |  _     |  _ _|_ _  __\n" +
+    "\\_||  | |   \\__(_| | (_ |_| | (_| |_(_) | \n" +
+    "               v1.0.0.0 By Hykilpikonna";
+
 /**
  * Called when signing in.
  *
@@ -23,4 +29,8 @@ function onSignIn(user)
 
     // Show sign off
     $(".auth-signOut").show();
+
+    // Print banner.
+    console.log(banner);
+    console.log("Welcome, " + profile.getName());
 }
