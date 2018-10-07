@@ -1,9 +1,8 @@
 package cc.moecraft.school.api;
 
-import com.sun.org.apache.bcel.internal.generic.ANEWARRAY;
 import lombok.Getter;
 import lombok.ToString;
-
+    
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -31,19 +30,18 @@ public class ApiNodeManager
     }
 
     /**
-     * Get nodes by name
+     * Get node by name
      *
      * @param nodeName Node name.
-     * @return Registered nodes.
+     * @return Registered node. Return null if not found.
      */
-    public ArrayList<ApiNode> getNodes(String nodeName)
+    public ApiNode getNode(String nodeName)
     {
         nodeName = nodeName.toLowerCase();
-        ArrayList<ApiNode> result = new ArrayList<>();
 
         for (ApiNode node : registeredNodes)
-            if (node.nodeName().equals(nodeName)) result.add(node);
+            if (node.nodeName().equals(nodeName)) return node;
 
-        return result;
+        return null;
     }
 }
