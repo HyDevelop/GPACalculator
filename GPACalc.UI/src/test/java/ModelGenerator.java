@@ -22,11 +22,11 @@ public class ModelGenerator
     {
         // The package that base model will be generated in
         String baseModelPkg = "cc.moecraft.school.database.model.base";
-        String baseModelDir = PathKit.getWebRootPath() + "/generated/model/base";
+        String baseModelDir = PathKit.getWebRootPath() + "/src/main/java/cc/moecraft/school/database/model/base/";
 
         // The package that model will be generated in.
         String modelPkg = "cc.moecraft.school.database.model";
-        String modelDir = baseModelDir + "/generated/model";
+        String modelDir = baseModelDir + "../";
 
         MysqlDataSource dataSource = new MysqlDataSource();
         dataSource.setURL(JDBC_CONNECTION);
