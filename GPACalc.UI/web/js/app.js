@@ -34,3 +34,11 @@ function onSignIn(user)
     console.log(banner);
     console.log("Welcome, " + profile.getName());
 }
+
+/**
+ * Reload page.
+ */
+function reload()
+{
+    window.location.reload(true);
+}
