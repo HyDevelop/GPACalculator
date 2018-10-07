@@ -63,6 +63,12 @@ function onSignIn(user)
     // Print banner.
     console.log(banner);
     console.log("Welcome, " + profile.getName());
+    
+    // Send login to backend.
+    send("auth.login", "", function (text)
+    {
+        console.log("Login to backend: " + text);
+    })
 }
 
 /**
