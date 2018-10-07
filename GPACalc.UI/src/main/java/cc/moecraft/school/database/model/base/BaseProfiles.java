@@ -9,28 +9,28 @@ import com.jfinal.plugin.activerecord.IBean;
 @SuppressWarnings("serial")
 public abstract class BaseProfiles<M extends BaseProfiles<M>> extends Model<M> implements IBean {
 
-	public void setGoogle-sub(java.lang.String google-sub) {
-		set("google-sub", google-sub);
+	public void setGoogleSub(java.lang.String googleSub) {
+		set("google_sub", googleSub);
 	}
 	
-	public java.lang.String getGoogle-sub() {
-		return getStr("google-sub");
+	public java.lang.String getGoogleSub() {
+		return getStr("google_sub");
 	}
 
-	public void setGrading-profile(java.lang.String grading-profile) {
-		set("grading-profile", grading-profile);
+	public void setGradingProfile(java.lang.String gradingProfile) {
+		set("grading_profile", gradingProfile);
 	}
 	
-	public java.lang.String getGrading-profile() {
-		return getStr("grading-profile");
+	public java.lang.String getGradingProfile() {
+		return getStr("grading_profile");
 	}
 
-	public void setStudent-profile(java.lang.String student-profile) {
-		set("student-profile", student-profile);
+	public void setStudentProfile(java.lang.String studentProfile) {
+		set("student_profile", studentProfile);
 	}
 	
-	public java.lang.String getStudent-profile() {
-		return getStr("student-profile");
+	public java.lang.String getStudentProfile() {
+		return getStr("student_profile");
 	}
 
 }
