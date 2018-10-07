@@ -1,6 +1,6 @@
 package cc.moecraft.school.profile.student;
 
-import cc.moecraft.yaml.HyConfig;
+import cc.moecraft.yaml.HyConfigBase;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -37,7 +37,7 @@ public class StudentInformation
      * @param parentPath Parent path to the student information section.
      * @return Parsed object.
      */
-    public static StudentInformation parseFromConfig(HyConfig config, String parentPath)
+    public static StudentInformation parseFromConfig(HyConfigBase config, String parentPath)
     {
         return new StudentInformation(
                 config.getString(parentPath + ".Name"),

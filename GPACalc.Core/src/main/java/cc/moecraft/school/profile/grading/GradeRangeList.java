@@ -1,6 +1,6 @@
 package cc.moecraft.school.profile.grading;
 
-import cc.moecraft.yaml.HyConfig;
+import cc.moecraft.yaml.HyConfigBase;
 import lombok.Getter;
 import lombok.ToString;
 
@@ -50,7 +50,7 @@ public class GradeRangeList
      * @param parentPath Parent path to the grade ranges section.
      * @return Parsed object.
      */
-    public static GradeRangeList parseFromConfig(HyConfig config, String parentPath)
+    public static GradeRangeList parseFromConfig(HyConfigBase config, String parentPath)
     {
         GradeRangeList result = new GradeRangeList();
 
