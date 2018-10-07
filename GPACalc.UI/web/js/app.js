@@ -48,6 +48,18 @@ function signOut()
     });
 }
 
+
+/**
+ * Show user the login modal.
+ */
+function showLoginModal()
+{
+    var loginModal = UIkit.modal("#modal-login");
+    if (!loginModal.isToggled()) loginModal.toggle();
+}
+
+
+
 /**
  * Reload page.
  */
