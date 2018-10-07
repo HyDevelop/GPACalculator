@@ -13,5 +13,15 @@ import io.jboot.JbootServiceBase;
  */
 public class UserProfileService extends JbootServiceBase<UserProfiles>
 {
+    private static UserProfileService me = new UserProfileService();
 
+    /**
+     * Get a instance.
+     *
+     * @return Instance
+     */
+    public static UserProfileService me()
+    {
+        return me;
+    }
 }
