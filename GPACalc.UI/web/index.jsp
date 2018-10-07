@@ -3,7 +3,7 @@
     <head>
         <%@include file="/includes/head/head.jsp"%>
     </head>
-    <body>
+    <body class="wallpaper">
         <%@include file="/includes/navbar/navbar.jsp"%>
         <%@include file="/includes/auth/login-modal.jsp"%>
     </body>
