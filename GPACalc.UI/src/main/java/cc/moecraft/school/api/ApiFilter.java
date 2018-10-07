@@ -48,15 +48,28 @@ public class ApiFilter implements Filter
 
         if (request.getMethod().equalsIgnoreCase("post") && request.getRequestURI().equalsIgnoreCase("/api"))
         {
-            System.out.println("Requested Node: " + request.getHeader("node"));
             try
             {
+                // Verify node. Even though it's not a token exception, but it does the same thing.
+                String nodeName = request.getHeader("node");
+                if (nodeName == null) throw new TokenException("Node not specified.");
+
+                // Find node.
+                ApiNode node = manager.getNode(nodeName);
+                if (node == null) throw new TokenException("Node " + nodeName + " is not a valid api node.");
+
+                // Verify token.
                 GoogleIdToken token = getToken(request);
+
+                // Write response.
+                ResponseUtils.writeResponse(response, node.process(request, token));
             }
             catch (TokenException e)
             {
+                // Write error.
                 ResponseUtils.writeResponse(response, e.getMessage());
             }
+
             return;
         }
 
