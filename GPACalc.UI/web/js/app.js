@@ -1,4 +1,4 @@
-const apiUrl = document.domain + "/api";
+const apiUrl = "http://" + document.domain + "/api";
 var googleUser = null;
 var banner =
     " __ _  _     __                           \n" +
