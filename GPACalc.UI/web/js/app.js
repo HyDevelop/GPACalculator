@@ -75,6 +75,20 @@ function signOut()
     });
 }
 
+/**
+ * Run on load
+ */
+function onLoad()
+{
+    // Detects if user is logged in
+    if (googleUser == null)
+    {
+        // Show login modal
+        showLoginModal();
+    }
+}
+
+window.onload = onLoad();
 
 /**
  * Show user the login modal.
