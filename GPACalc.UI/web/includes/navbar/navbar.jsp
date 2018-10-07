@@ -23,4 +23,5 @@
             <li class="nav-item"><a class="nav-link" href="https://github.com/HyDevelop/GPACalculator/">Github</a></li>
         </ul>
     </div>
+    <button class="btn btn-outline-success my-2 my-sm-0 auth-signOut" onclick="signOut()" style="display: none;">Sign Out</button>
 </nav>
