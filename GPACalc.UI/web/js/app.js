@@ -21,7 +21,6 @@ function send(apiNode, content, callback)
     request.open("POST", apiUrl, true);
     request.setRequestHeader("node", apiNode);
     request.setRequestHeader("token", googleUser.getAuthResponse().id_token);
-    request.writeln(content);
     request.onreadystatechange = function ()
     {
         if (request.readyState === 4 && request.status === 200)
@@ -29,7 +28,8 @@ function send(apiNode, content, callback)
             // Async callback
             callback(request.responseText);
         }
-    }
+    };
+    request.send(content);
 }
 
 /**
