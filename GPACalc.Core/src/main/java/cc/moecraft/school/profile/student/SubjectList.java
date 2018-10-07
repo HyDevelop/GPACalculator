@@ -1,6 +1,6 @@
 package cc.moecraft.school.profile.student;
 
-import cc.moecraft.yaml.HyConfig;
+import cc.moecraft.yaml.HyConfigBase;
 import lombok.Getter;
 import lombok.ToString;
 
@@ -48,7 +48,7 @@ public class SubjectList
      * @param parentPath Parent path to the subject list section.
      * @return Parsed object.
      */
-    public static SubjectList parseFromConfig(HyConfig config, String parentPath)
+    public static SubjectList parseFromConfig(HyConfigBase config, String parentPath)
     {
         SubjectList result = new SubjectList();
 

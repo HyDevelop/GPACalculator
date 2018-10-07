@@ -1,6 +1,6 @@
 package cc.moecraft.school.profile.student;
 
-import cc.moecraft.yaml.HyConfig;
+import cc.moecraft.yaml.HyConfigBase;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -29,7 +29,7 @@ public class StudentProfile
      * @param parentPath Parent path to the student profile. This should be "".
      * @return Parsed object.
      */
-    public static StudentProfile parseFromConfig(HyConfig config, String parentPath)
+    public static StudentProfile parseFromConfig(HyConfigBase config, String parentPath)
     {
         StudentProfile result = new StudentProfile();
 

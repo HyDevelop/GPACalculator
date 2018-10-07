@@ -1,6 +1,6 @@
 package cc.moecraft.school.profile.grading;
 
-import cc.moecraft.yaml.HyConfig;
+import cc.moecraft.yaml.HyConfigBase;
 import lombok.Getter;
 import lombok.ToString;
 
@@ -48,7 +48,7 @@ public class CLGradeWeightList
      * @param parentPath Parent path to the grade weights section.
      * @return Parsed object.
      */
-    public static CLGradeWeightList parseFromConfig(HyConfig config, String parentPath)
+    public static CLGradeWeightList parseFromConfig(HyConfigBase config, String parentPath)
     {
         CLGradeWeightList result = new CLGradeWeightList();
 

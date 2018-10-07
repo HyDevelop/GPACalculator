@@ -1,6 +1,6 @@
 package cc.moecraft.school.profile.grading;
 
-import cc.moecraft.yaml.HyConfig;
+import cc.moecraft.yaml.HyConfigBase;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -29,7 +29,7 @@ public class GradingProfile
      * @param parentPath Parent path to the grading profile. This should be "".
      * @return Parsed object.
      */
-    public static GradingProfile parseFromConfig(HyConfig config, String parentPath)
+    public static GradingProfile parseFromConfig(HyConfigBase config, String parentPath)
     {
         GradingProfile result = new GradingProfile();
 

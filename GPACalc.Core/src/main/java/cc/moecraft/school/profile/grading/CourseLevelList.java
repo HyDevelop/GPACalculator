@@ -1,6 +1,6 @@
 package cc.moecraft.school.profile.grading;
 
-import cc.moecraft.yaml.HyConfig;
+import cc.moecraft.yaml.HyConfigBase;
 import lombok.Getter;
 import lombok.ToString;
 
@@ -64,7 +64,7 @@ public class CourseLevelList
      * @param parentPath Parent path to the levels section.
      * @return Parsed object.
      */
-    public static CourseLevelList parseFromConfig(HyConfig config, String parentPath)
+    public static CourseLevelList parseFromConfig(HyConfigBase config, String parentPath)
     {
         CourseLevelList result = new CourseLevelList();
 
