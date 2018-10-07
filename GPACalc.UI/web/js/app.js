@@ -41,6 +41,9 @@ function onSignIn(user)
 {
     googleUser = user;
 
+    // Reload if signed in for the first time.
+    if (UIkit.modal("#modal-login").isToggled()) reload();
+
     // Useful data for your client-side scripts:
     var profile = googleUser.getBasicProfile();
     console.log("ID: " + profile.getId());
