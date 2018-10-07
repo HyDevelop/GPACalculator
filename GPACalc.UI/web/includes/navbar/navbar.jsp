@@ -7,7 +7,7 @@
  * @author Hykilpikonna 
 --%>
 <%@ page contentType="text/html;charset=UTF-8" %>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark hy-navbar-light">
     <a class="navbar-brand" href="#" style="margin-right: 8px;">GPA Calculator</a>
     <span style="margin-right: 1rem;">by Hykilpikonna</span>
     <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -23,5 +23,5 @@
             <li class="nav-item"><a class="nav-link" href="https://github.com/HyDevelop/GPACalculator/">Github</a></li>
         </ul>
     </div>
-    <button class="btn btn-outline-success my-2 my-sm-0 auth-signOut" onclick="signOut()" style="display: none;">Sign Out</button>
+    <button class="btn btn-outline-light auth-signOut" onclick="signOut()" style="display: none;">Sign Out</button>
 </nav>
