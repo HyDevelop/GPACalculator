@@ -17,7 +17,7 @@
 
                     <ul class="uk-switcher uk-margin">
                         <li class="uk-active">
-
+                            <%@include file="/includes/editor/grade-editor.jsp"%>
                         </li>
                         <li>
                             Text2
