@@ -1,0 +1,85 @@
+# This is for high school.
+# The level of courses.
+# Key word can be anything.
+# Grade weights are how much credit do you get for each grade.
+Levels:
+  AdvancedPlacement:
+    Alias:
+    - "AP"
+    GradeWeight:
+      A+: 5
+      A:  4.75
+      A-: 4.5
+      B+: 4.25
+      B:  4
+      B-: 3.75
+      C+: 3.5
+      C:  3.25
+      C-: 3
+      D:  2
+      F:  0
+
+  Honors:
+    Alias:
+    - "H"
+    GradeWeight:
+      A+: 4.75
+      A:  4.5
+      A-: 4.25
+      B+: 4
+      B:  3.75
+      B-: 3.5
+      C+: 3.25
+      C:  3
+      C-: 2.75
+      D:  1.75
+      F:  0
+
+  Accelerated:
+    Alias:
+    - "Acc"
+    - "A"
+    GradeWeight:
+      A+: 4.5
+      A:  4.25
+      A-: 4
+      B+: 3.75
+      B:  3.5
+      B-: 3.25
+      C+: 3
+      C:  2.75
+      C-: 2.5
+      D:  1.5
+      F:  0
+
+  CollegePrep:
+    Alias:
+    - "CP"
+    GradeWeight:
+      A+: 4.25
+      A:  4
+      A-: 3.75
+      B+: 3.5
+      B:  3.25
+      B-: 3
+      C+: 2.75
+      C:  2.5
+      C-: 2.25
+      D:  1.25
+      F:  0
+
+# The ranges of the grade.
+# The value represents the minimum amount in the range.
+# For example, A+ would be 97 - 100, so put 97 as the value.
+GradeRanges:
+  A+: 97
+  A:  93
+  A-: 90
+  B+: 87
+  B:  83
+  B-: 80
+  C+: 77
+  C:  73
+  C-: 71
+  D:  70
+  F:  0
