@@ -24,7 +24,7 @@ public class NodeLogin implements ApiNode
     }
 
     @Override
-    public String process(HttpServletRequest request, GoogleIdToken token)
+    public String process(HttpServletRequest request, GoogleIdToken token, String content)
     {
         GoogleIdToken.Payload id = token.getPayload();
 

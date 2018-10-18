@@ -22,8 +22,8 @@ public class NodeTest implements ApiNode
     }
 
     @Override
-    public String process(HttpServletRequest request, GoogleIdToken token)
+    public String process(HttpServletRequest request, GoogleIdToken token, String content)
     {
-        return "Success! " + token;
+        return "Success! " + token + "\n - Content: " + content;
     }
 }
