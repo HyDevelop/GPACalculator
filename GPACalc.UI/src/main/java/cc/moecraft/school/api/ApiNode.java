@@ -29,5 +29,5 @@ public interface ApiNode
      * @param token Google id token
      * @return Result.
      */
-    public String process(HttpServletRequest request, GoogleIdToken token);
+    public String process(HttpServletRequest request, GoogleIdToken token, String content);
 }
