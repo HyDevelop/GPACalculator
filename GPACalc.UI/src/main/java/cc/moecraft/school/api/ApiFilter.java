@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
 import java.util.Collections;
+import java.util.stream.Collectors;
 
 import static cc.moecraft.school.Constants.GOOGLE_CLIENT_ID;
 
@@ -65,8 +66,14 @@ public class ApiFilter implements Filter
                 // Verify token.
                 GoogleIdToken token = getToken(request);
 
+                // Obtain Content.
+                String content = request.getReader().lines().collect(Collectors.joining(System.lineSeparator()));
+
+                // TODO: Remove debug output
+                System.out.println("Request received: " + node + " : " + content);
+
                 // Write response.
-                ResponseUtils.writeResponse(response, node.process(request, token));
+                ResponseUtils.writeResponse(response, node.process(request, token, content));
             }
             catch (TokenException e)
             {
