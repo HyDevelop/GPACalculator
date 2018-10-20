@@ -6,6 +6,7 @@
     <body class="wallpaper">
         <%@include file="/includes/navbar/navbar.jsp"%>
         <%@include file="/includes/auth/login-modal.jsp"%>
+        <%@include file="/includes/misc/js-detector-modal.jsp"%>
         <div class="uk-container hy-container">
             <div class="uk-position-relative">
                 <div class="uk-position-relative uk-margin-medium">
@@ -21,7 +22,7 @@
                         </li>
                         <li>
                             <%@include file="/includes/editor/student-profile-editor-head.jsp"%>
-                            <%@include file="/includes/editor/student-profile-editor-template.jsp"%>
+                            <div id="student-profile-editor-div"></div>
                             <%@include file="/includes/editor/student-profile-editor-end.jsp"%>
                         </li>
                         <li>

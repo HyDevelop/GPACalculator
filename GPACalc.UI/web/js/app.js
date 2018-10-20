@@ -110,7 +110,7 @@ function onLoad()
     }, 2000);
 }
 
-window.onload = onLoad();
+$(document).ready(onLoad());
 
 /**
  * Show user the login modal.
