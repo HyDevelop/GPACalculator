@@ -17,7 +17,7 @@ function checkAZ(id)
 {
     var element = $("#" + id);
     var value = element.val();
-    if (/[a-zA-Z]*/.test(value))
+    if (!/^[a-zA-Z]*$/.test(value))
     {
         element.parent().addClass("error");
     }
