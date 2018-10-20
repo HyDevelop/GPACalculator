@@ -12,6 +12,7 @@
     <modules>
         <module>GPACalc.Core</module>
         <module>GPACalc.UI</module>
+        <module>GPACalc.Discord</module>
     </modules>
 
     <properties>
