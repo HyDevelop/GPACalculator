@@ -112,17 +112,10 @@ function showLoginModal()
 /**
  * Reload old settings from server.
  */
-function loadOldSettingsFromServer()
+async function loadOldSettingsFromServer()
 {
     send("data.student-profile", "", function (s)
     {
         renderCourseSettingsPage(JSON.parse(s));
     });
 }
-
-// Reload page when hide
-$('#modal-login').on({'hide.uk.modal': function()
-    {
-        reload();
-    }
-});
