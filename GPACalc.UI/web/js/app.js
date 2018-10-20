@@ -112,10 +112,17 @@ function showLoginModal()
 /**
  * Reload old settings from server.
  */
-async function loadOldSettingsFromServer()
+function loadOldSettingsFromServer()
 {
-    send("data.student-profile", "", function (s)
+    send("data.student-profile", "", function (studentProfile)
     {
-        renderCourseSettingsPage(JSON.parse(s));
+        studentProfile = JSON.parse(studentProfile);
+        send("data.grading-profile", "", function (gradingProfile)
+        {
+            gradingProfile = JSON.parse(gradingProfile);
+
+            renderGradesPage(studentProfile, gradingProfile);
+        });
+        renderCourseSettingsPage(studentProfile);
     });
 }
