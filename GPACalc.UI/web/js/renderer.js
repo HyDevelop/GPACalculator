@@ -42,7 +42,7 @@ function renderCourseSettingsPage(json)
 
         div.append(studentProfileEditorTemplate.replace(/%id%/g, i));
 
-        $("#key-" + i).val(keyName);
+        // $("#key-" + i).val(keyName);
         $("#name-" + i).val(name);
         $("#level-" + i).val(level);
         $("#credits-" + i).val(credits);
