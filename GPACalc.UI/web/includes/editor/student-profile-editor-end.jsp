@@ -9,11 +9,11 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 
 <div class="hy-operating-buttons">
-    <button class="ui red labeled icon button">
+    <button class="ui red labeled icon button" onclick="loadOldSettingsFromServer()">
         <i class="download icon"></i>
         Reload Old Settings
     </button>
-    <button class="ui green right labeled icon button">
+    <button class="ui green right labeled icon button" onclick="uploadNewSettings()">
         <i class="upload icon"></i>
         Upload New Settings
     </button>
