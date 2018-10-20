@@ -1,4 +1,12 @@
 /**
+ * Reload page.
+ */
+function reload()
+{
+    window.location.reload(true);
+}
+
+/**
  * Sign out.
  */
 function signOut()
