@@ -10,3 +10,4 @@
 <title>GPA Calculator</title>
 <meta charset="utf-8">
 <meta content="initial-scale=1, shrink-to-fit=no, width=device-width" name="viewport">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
