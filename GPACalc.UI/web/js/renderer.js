@@ -1,6 +1,29 @@
 // This JS is for displaying data, not direct rendering.
 
 /**
+ * Render the grades page.
+ *
+ * @param studentProfile Student profile json
+ * @param gradingProfile Grading profile json
+ */
+function renderGradesPage(studentProfile, gradingProfile)
+{
+    // Get div and delete all child.
+    var div = $("#grade-editor-div");
+    div.empty();
+
+    // Get subjects.
+    var subjects = studentProfile.subjectList.subjects;
+    for (var i in subjects)
+    {
+        var subject = subjects[i];
+        var name = subject.name;
+
+        div.append(gradeEditorTemplate.replace(/%id%/g, i).replace(/%course-name%/g, name));
+    }
+}
+
+/**
  * Render the course settings page.
  *
  * @param json Student profile json
@@ -16,7 +39,6 @@ function renderCourseSettingsPage(json)
     for (var i in subjects)
     {
         var subject = subjects[i];
-        var keyName = subject.keyName;
         var name = subject.name;
         var level = subject.level;
         var credits = subject.credits;
