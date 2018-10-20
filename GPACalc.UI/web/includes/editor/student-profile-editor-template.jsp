@@ -8,11 +8,6 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <div class="row hy-row">
-    <div class="col-sm-2">
-        <div class="ui fluid input hy-input">
-            <input id="key-%id%" type="text" placeholder="Key Name" oninput="checkAZ(this.id)">
-        </div>
-    </div>
     <div class="col-sm">
         <div class="ui fluid input hy-input">
             <input id="name-%id%" type="text" placeholder="Full Name">
