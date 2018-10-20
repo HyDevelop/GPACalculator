@@ -18,3 +18,12 @@
         </p>
     </div>
 </div>
+<script>
+    // Reload page when hide
+    $('#modal-login').on({
+        'hide.uk.modal': function ()
+        {
+            reload();
+        }
+    });
+</script>
