@@ -7,15 +7,17 @@
  * @author Hykilpikonna 
 --%>
 <%@ page contentType="text/html;charset=UTF-8" %>
-<div class="row">
-    <div class="col-sm">
-        <h4 class="ui header">%course-name%</h4>
+<div class="hy-row">
+    <div class="row">
+        <div class="col-sm">
+            <h4 class="ui header">%course-name%</h4>
+        </div>
     </div>
-</div>
-<div class="row">
-    <div class="col-sm">
-        <div class="ui fluid input hy-input">
-            <input type="text" placeholder="Grade">
+    <div class="row">
+        <div class="col-sm">
+            <div class="ui fluid input hy-input">
+                <input type="text" placeholder="Grade">
+            </div>
         </div>
     </div>
 </div>
