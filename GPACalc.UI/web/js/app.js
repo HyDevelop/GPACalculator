@@ -100,6 +100,13 @@ function onLoad()
             console.log("[OnLoad] Login not found, displaying modal.");
         }
         else console.log("[OnLoad] Login verified.");
+
+        // Load templates
+        loadStudentProfileEditorTemplate(function ()
+        {
+            // Render editors
+            loadOldSettingsFromServer();
+        });
     }, 2000);
 }
 
