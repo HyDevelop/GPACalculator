@@ -74,30 +74,31 @@ function onSignIn(user)
 /**
  * Run on load
  */
-function onLoad()
+$(document).ready(function onLoad()
 {
-    setTimeout(function()
+    gapi.load('auth2', function ()
     {
-        // Deferred onLoad
-        // Detects if user is logged in
-        if (googleUser == null)
+        gapi.auth2.init(
         {
-            // Show login modal
-            showLoginModal();
-            console.log("[OnLoad] Login not found, displaying modal.");
-        }
-        else console.log("[OnLoad] Login verified.");
+            client_id: constants.client_id,
+            scope: "profile email"
+        })
+        .then(function (auth2)
+        {
+            // Detects if user is logged in
+            if (auth2.isSignedIn.get()) console.log("[OnLoad] Login verified.");
+            else
+            {
+                // Show login modal
+                showLoginModal();
+                console.log("[OnLoad] Login not found, displaying modal.");
+            }
 
-        // Load templates
-        loadStudentProfileEditorTemplate(function ()
-        {
             // Render editors
             loadOldSettingsFromServer();
         });
-    }, 2000);
-}
-
-$(document).ready(onLoad());
+    });
+});
 
 /**
  * Show user the login modal.
