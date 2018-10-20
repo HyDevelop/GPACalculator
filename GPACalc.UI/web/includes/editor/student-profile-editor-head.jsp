@@ -8,9 +8,6 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <div class="row hy-row">
-    <div class="col-sm-2">
-        <h4 class="ui header">Key Name</h4>
-    </div>
     <div class="col-sm">
         <h4 class="ui header">Full Name</h4>
     </div>
