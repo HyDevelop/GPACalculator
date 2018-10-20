@@ -18,7 +18,7 @@
 
                     <ul class="uk-switcher uk-margin">
                         <li class="uk-active">
-                            <%@include file="/includes/editor/grade-editor-template.jsp"%>
+                            <div id="grade-editor-div"></div>
                         </li>
                         <li>
                             <%@include file="/includes/editor/student-profile-editor-head.jsp"%>
