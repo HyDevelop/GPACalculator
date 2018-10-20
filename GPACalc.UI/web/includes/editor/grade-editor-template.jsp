@@ -9,11 +9,11 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <div class="row">
     <div class="col-sm">
-        <div class="ui fluid input hy-input">
-            <input type="text" placeholder="Course">
-        </div>
+        <h4 class="ui header">%course-name%</h4>
     </div>
-    <div class="col-sm-2">
+</div>
+<div class="row">
+    <div class="col-sm">
         <div class="ui fluid input hy-input">
             <input type="text" placeholder="Grade">
         </div>
