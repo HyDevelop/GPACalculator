@@ -20,7 +20,6 @@
 <script>
     $(document).ready(function ()
     {
-        console.log("hi");
         UIkit.modal("#js-detector-modal").toggle();
     })
 </script>
