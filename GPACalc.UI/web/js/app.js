@@ -109,14 +109,6 @@ function showLoginModal()
 }
 
 /**
- * Reload page.
- */
-function reload()
-{
-    window.location.reload(true);
-}
-
-/**
  * Reload old settings from server.
  */
 function loadOldSettingsFromServer()
