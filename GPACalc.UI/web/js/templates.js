@@ -1,19 +1,26 @@
 const editorBaseUrl = "http://" + document.domain + "/includes/editor/";
 var studentProfileEditorTemplate;
+var gradeEditorTemplate;
+
+$(document).ready(function ()
+{
+    loadTemplate("studentProfileEditorTemplate", "student-profile-editor-template");
+    loadTemplate("gradeEditorTemplate", "grade-editor-template");
+});
 
 /**
- * Load student profile editor template.
+ * Load template to a variable.
  *
- * @param callback Callback when done
+ * @param variable Template variable name.
+ * @param fileName Template file name.
  */
-function loadStudentProfileEditorTemplate(callback)
+function loadTemplate(variable, fileName)
 {
     $.ajax({
-        url: editorBaseUrl + "student-profile-editor-template.jsp",
+        url: editorBaseUrl + fileName + ".jsp",
         success: function (result)
         {
-            studentProfileEditorTemplate = result;
-            callback();
+            window[variable] = result;
         }
     });
 }
