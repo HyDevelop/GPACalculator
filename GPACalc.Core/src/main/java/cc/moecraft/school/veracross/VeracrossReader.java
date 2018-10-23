@@ -1,9 +1,11 @@
 package cc.moecraft.school.veracross;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 /**
@@ -14,9 +16,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
  *
  * @author Hykilpikonna
  */
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class VeracrossReader
 {
+    private final String url;
     private final String username;
     private final String password;
 
