@@ -1,10 +1,6 @@
-import cc.moecraft.school.Constants;
-import com.jfinal.core.Const;
 import com.jfinal.kit.PathKit;
 import com.jfinal.plugin.activerecord.generator.Generator;
 import com.mysql.cj.jdbc.MysqlDataSource;
-
-import javax.sql.DataSource;
 
 import static cc.moecraft.school.Constants.*;
 
@@ -33,7 +29,7 @@ public class ModelGenerator
         dataSource.setUser(USERNAME);
         dataSource.setPassword(PASSWORD);
 
-        Generator gernerator = new Generator(dataSource, baseModelPkg, baseModelDir, modelPkg, modelDir);
-        gernerator.generate();
+        Generator generator = new Generator(dataSource, baseModelPkg, baseModelDir, modelPkg, modelDir);
+        generator.generate();
     }
 }
