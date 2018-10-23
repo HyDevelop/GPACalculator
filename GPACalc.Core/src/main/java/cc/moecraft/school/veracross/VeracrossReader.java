@@ -35,6 +35,17 @@ public class VeracrossReader
     }
 
     /**
+     * Initialize with a path to the chrome driver.
+     *
+     * @param chromeDriverPath Path to the chrome driver.
+     */
+    public void initialize(String chromeDriverPath)
+    {
+        System.setProperty("webdriver.chrome.driver", chromeDriverPath);
+        initialize();
+    }
+
+    /**
      * Initialize with a specific web driver object.
      *
      * @param webDriver Selenium web driver object.
