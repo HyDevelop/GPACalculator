@@ -1,10 +1,9 @@
 import com.jfinal.kit.PathKit;
 import com.jfinal.plugin.activerecord.generator.Generator;
 import com.mysql.cj.jdbc.MysqlDataSource;
+import org.apache.commons.io.FileUtils;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
 
 import static cc.moecraft.school.Constants.*;
 
@@ -37,29 +36,37 @@ public class ModelGenerator
         generator.generate();
 
         // Replace Model with JbootModel
-
+        replaceText(new File(modelDir),
+                "import com.jfinal.plugin.activerecord.Model;", "import io.jboot.JbootModel;",
+                " extends Model<M>", " extends JbootModel<M>");
     }
 
     private static void replaceText(File path, String... text)
     {
-        if (path.isDirectory())
+        if (path.isDirectory()) // Directory
         {
-            // Directory
             File[] files = path.listFiles();
-            if (files != null)
-                for (File file : files)
-                    replaceText(file);
+            if (files != null) for (File file : files) replaceText(file, text);
         }
         else
         {
-            // File
-
-            try
+            try // File
             {
-                String content = new Scanner(path).useDelimiter("\\Z").next();
+                String content = FileUtils.readFileToString(path, "utf-8");
 
+                for (int i = 0; i < text.length; i += 2)
+                {
+                    if (i + 1 > text.length) break;
+
+                    String from = text[i];
+                    String to = text[i + 1];
+
+                    content = content.replace(from, to);
+                }
+
+                FileUtils.writeStringToFile(path, content, "utf-8");
             }
-            catch (FileNotFoundException e) { throw new RuntimeException(e); }
+            catch (java.io.IOException e) { throw new RuntimeException(e); }
         }
     }
 }
