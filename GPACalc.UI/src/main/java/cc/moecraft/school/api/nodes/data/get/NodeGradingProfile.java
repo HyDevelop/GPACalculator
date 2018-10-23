@@ -1,4 +1,4 @@
-package cc.moecraft.school.api.nodes.data;
+package cc.moecraft.school.api.nodes.data.get;
 
 import cc.moecraft.school.api.ApiNode;
 import cc.moecraft.school.database.model.UserProfiles;
@@ -22,7 +22,7 @@ public class NodeGradingProfile implements ApiNode
     @Override
     public String nodeName()
     {
-        return "data.grading-profile";
+        return "data.get.grading-profile";
     }
 
     @Override
