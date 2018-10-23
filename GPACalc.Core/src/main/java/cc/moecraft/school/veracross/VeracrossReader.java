@@ -46,6 +46,21 @@ public class VeracrossReader
 
     public void login()
     {
+        // Send GET request to url.
+        webDriver.get(url);
 
+        // Put in username.
+        WebElement usernameElement = webDriver.findElement(By.id("username"));
+        usernameElement.sendKeys(username);
+
+        // Put in password.
+        WebElement passwordElement = webDriver.findElement(By.id("password"));
+        passwordElement.sendKeys(password);
+
+        // Submit form (Any element works)
+        usernameElement.submit();
+
+        // TODO: Remove debug code
+        System.out.println("Page Title: " + webDriver.getTitle());
     }
 }
