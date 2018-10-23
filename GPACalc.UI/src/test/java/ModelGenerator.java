@@ -2,6 +2,10 @@ import com.jfinal.kit.PathKit;
 import com.jfinal.plugin.activerecord.generator.Generator;
 import com.mysql.cj.jdbc.MysqlDataSource;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 import static cc.moecraft.school.Constants.*;
 
 /**
@@ -31,5 +35,31 @@ public class ModelGenerator
 
         Generator generator = new Generator(dataSource, baseModelPkg, baseModelDir, modelPkg, modelDir);
         generator.generate();
+
+        // Replace Model with JbootModel
+
+    }
+
+    private static void replaceText(File path, String... text)
+    {
+        if (path.isDirectory())
+        {
+            // Directory
+            File[] files = path.listFiles();
+            if (files != null)
+                for (File file : files)
+                    replaceText(file);
+        }
+        else
+        {
+            // File
+
+            try
+            {
+                String content = new Scanner(path).useDelimiter("\\Z").next();
+
+            }
+            catch (FileNotFoundException e) { throw new RuntimeException(e); }
+        }
     }
 }
