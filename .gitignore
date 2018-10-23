@@ -4,3 +4,4 @@ GPACalc.Core/target/*
 GPACalc.UI/target/*
 GPACalculator.iml
 runtime-config.yml
+GPACalc.Core/src/test/java/VeracrossTest.java
