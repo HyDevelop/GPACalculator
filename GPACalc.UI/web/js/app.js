@@ -114,10 +114,10 @@ function showLoginModal()
  */
 function loadOldSettingsFromServer()
 {
-    send("data.student-profile", "", function (studentProfile)
+    send("data.get.student-profile", "", function (studentProfile)
     {
         studentProfile = JSON.parse(studentProfile);
-        send("data.grading-profile", "", function (gradingProfile)
+        send("data.get.grading-profile", "", function (gradingProfile)
         {
             gradingProfile = JSON.parse(gradingProfile);
 

@@ -1,8 +1,8 @@
 package cc.moecraft.school.api;
 
 import cc.moecraft.school.api.nodes.auth.NodeLogin;
-import cc.moecraft.school.api.nodes.data.NodeGradingProfile;
-import cc.moecraft.school.api.nodes.data.NodeStudentProfile;
+import cc.moecraft.school.api.nodes.data.get.NodeGradingProfile;
+import cc.moecraft.school.api.nodes.data.get.NodeStudentProfile;
 import cc.moecraft.school.api.nodes.misc.NodeTest;
 import cc.moecraft.school.exceptions.TokenException;
 import cc.moecraft.school.utils.ExceptionUtils;
