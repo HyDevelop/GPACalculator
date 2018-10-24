@@ -48,7 +48,7 @@ public class VeracrossReader
     {
         System.setProperty("webdriver.chrome.driver", chromeDriverPath);
 
-        ChromeOptions chromeOptions = new ChromeOptions().addArguments("--log-level=INFO");
+        ChromeOptions chromeOptions = new ChromeOptions();
 
         if (headless) chromeOptions.addArguments("--headless");
 
