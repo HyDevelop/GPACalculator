@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 /**
  * 此类由 Hykilpikonna 在 2018/10/05 创建!
@@ -27,22 +28,31 @@ public class VeracrossReader
     private WebDriver webDriver;
 
     /**
-     * Initialize with default driver (Chrome driver)
+     * Initialize with a path to the chrome driver.
+     * Headless default true.
+     *
+     * @param chromeDriverPath Path to the chrome driver.
      */
-    public void initialize()
+    public void initialize(String chromeDriverPath)
     {
-        initialize(new ChromeDriver());
+        initialize(chromeDriverPath, true);
     }
 
     /**
      * Initialize with a path to the chrome driver.
      *
      * @param chromeDriverPath Path to the chrome driver.
+     * @param headless Headless = run on background.
      */
-    public void initialize(String chromeDriverPath)
+    public void initialize(String chromeDriverPath, boolean headless)
     {
         System.setProperty("webdriver.chrome.driver", chromeDriverPath);
-        initialize();
+
+        ChromeOptions chromeOptions = new ChromeOptions().addArguments("--log-level=INFO");
+
+        if (headless) chromeOptions.addArguments("--headless");
+
+        initialize(new ChromeDriver(chromeOptions));
     }
 
     /**
