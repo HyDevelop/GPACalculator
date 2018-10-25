@@ -21,6 +21,23 @@ import java.util.List;
 public class ElementUtils
 {
     /**
+     * Find an element, and throw a catchable exception when not found.
+     * This exists because the official .findElement() method throws an exception
+     *   that I can't catch.
+     *
+     * @param with Something that supports .findElements().
+     * @param by What to search for.
+     * @return Element found.
+     * @throws ElementNotFoundException Element not found.
+     */
+    public static WebElement findElement(SearchContext with, By by) throws ElementNotFoundException
+    {
+        WebElement element = findElementSafe(with, by);
+        if (element == null) throw new ElementNotFoundException(by, with);
+        return element;
+    }
+
+    /**
      * Find an element, and returns null if not found.
      *
      * @param with Something that supports .findElements().
