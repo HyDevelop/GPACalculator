@@ -32,4 +32,15 @@ public class ElementUtils
         List<WebElement> elements = with.findElements(by);
         return elements.size() == 0 ? null : elements.get(0);
     }
+
+    /**
+     * Element not found.
+     */
+    @EqualsAndHashCode(callSuper = true)
+    @AllArgsConstructor @Data
+    public static class ElementNotFoundException extends Exception
+    {
+        private final By requestedBy;
+        private final SearchContext requestedWith;
+    }
 }
