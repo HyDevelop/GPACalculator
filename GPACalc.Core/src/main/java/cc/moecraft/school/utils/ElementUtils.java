@@ -20,4 +20,16 @@ import java.util.List;
  */
 public class ElementUtils
 {
+    /**
+     * Find an element, and returns null if not found.
+     *
+     * @param with Something that supports .findElements().
+     * @param by What to search for.
+     * @return Element found, null if not found.
+     */
+    public static WebElement findElementSafe(SearchContext with, By by)
+    {
+        List<WebElement> elements = with.findElements(by);
+        return elements.size() == 0 ? null : elements.get(0);
+    }
 }
