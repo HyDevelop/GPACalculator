@@ -51,6 +51,18 @@ public class ElementUtils
     }
 
     /**
+     * Find elements.
+     *
+     * @param with Something that supports .findElements().
+     * @param by What to search for.
+     * @return Elements found, empty list if not found.
+     */
+    public static List<WebElement> findElements(SearchContext with, By by)
+    {
+        return with.findElements(by);
+    }
+
+    /**
      * Element not found.
      */
     @EqualsAndHashCode(callSuper = true)
