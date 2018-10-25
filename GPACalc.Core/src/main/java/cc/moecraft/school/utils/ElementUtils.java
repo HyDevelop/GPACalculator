@@ -6,7 +6,6 @@ import lombok.EqualsAndHashCode;
 import org.openqa.selenium.By;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.RemoteWebElement;
 
 import java.util.List;
 

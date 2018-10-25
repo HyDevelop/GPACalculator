@@ -1,5 +1,6 @@
 package cc.moecraft.school.veracross;
 
+import cc.moecraft.school.utils.ElementUtils;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
@@ -8,6 +9,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+
+import java.util.List;
+
+import static cc.moecraft.school.utils.ElementUtils.findElement;
+import static cc.moecraft.school.utils.ElementUtils.findElements;
 
 /**
  * 此类由 Hykilpikonna 在 2018/10/05 创建!
@@ -83,5 +89,38 @@ public class VeracrossReader
 
         // TODO: Remove debug code
         System.out.println("Page Title: " + webDriver.getTitle());
+    }
+
+    public void getCourseGrades()
+    {
+        // If I search for .course, it would only include the course name and teacher name
+        // Because the grades are stored in .course-notifications, which are parallel elements.
+        // So I have to search for the list entry elements that stores both of them.
+        List<WebElement> courses = findElements(getWebDriver(), By.cssSelector(".class-list.clear > li"));
+
+        // Loops through each course to find detailed information.
+        for (WebElement course : courses)
+        {
+            try
+            {
+                // Find course name and teacher name.
+                // Inner HTML is more accurate than .text() because .text() doesn't work for invisible entries.
+                String courseName = findElement(course, By.className("class-name")).getAttribute("innerHTML");
+                String teacher = findElement(course, By.className("teacher-name")).getAttribute("innerHTML");
+
+                try
+                {
+                    // Try to find the grades. Some courses might not have grades.
+                    String numericGrade = findElement(course, By.className("numeric-grade")).getAttribute("innerHTML");
+                    String letterGrade = findElement(course, By.className("letter-grade")).getAttribute("innerHTML");
+                    System.out.printf("Course found: %s|%s|%s|%s\n", courseName, teacher, numericGrade, letterGrade);
+                }
+                catch (ElementUtils.ElementNotFoundException e)
+                {
+                    System.out.printf("Course grade not found: %s|%s\n", courseName, teacher);
+                }
+            }
+            catch (ElementUtils.ElementNotFoundException ignored) {}
+        }
     }
 }
