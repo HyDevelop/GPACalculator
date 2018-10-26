@@ -10,6 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static cc.moecraft.school.utils.ElementUtils.findElement;
@@ -91,8 +92,15 @@ public class VeracrossReader
         System.out.println("Page Title: " + webDriver.getTitle());
     }
 
-    public void getCourseGrades()
+    /**
+     * Get courses and grades.
+     *
+     * @return List of course grades.
+     */
+    public List<VeracrossCourseGrade> getCourseGrades()
     {
+        List<VeracrossCourseGrade> result = new ArrayList<>();
+
         // If I search for .course, it would only include the course name and teacher name
         // Because the grades are stored in .course-notifications, which are parallel elements.
         // So I have to search for the list entry elements that stores both of them.
@@ -113,7 +121,9 @@ public class VeracrossReader
                     // Try to find the grades. Some courses might not have grades.
                     String numericGrade = findElement(course, By.className("numeric-grade")).getAttribute("innerHTML");
                     String letterGrade = findElement(course, By.className("letter-grade")).getAttribute("innerHTML");
-                    System.out.printf("Course found: %s|%s|%s|%s\n", courseName, teacher, numericGrade, letterGrade);
+                    double doubleGrade = Double.parseDouble(numericGrade.replace("%", ""));
+
+                    result.add(new VeracrossCourseGrade(courseName, teacher, letterGrade, doubleGrade));
                 }
                 catch (ElementUtils.ElementNotFoundException e)
                 {
@@ -122,5 +132,7 @@ public class VeracrossReader
             }
             catch (ElementUtils.ElementNotFoundException ignored) {}
         }
+
+        return result;
     }
 }
