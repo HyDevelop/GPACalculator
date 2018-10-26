@@ -1,5 +1,6 @@
 package cc.moecraft.school.veracross;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 /**
@@ -11,6 +12,7 @@ import lombok.Data;
  * @author Hykilpikonna
  */
 @Data
+@AllArgsConstructor
 public class VeracrossCourseGrade
 {
     private String name;
