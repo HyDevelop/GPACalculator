@@ -1,13 +1,13 @@
 package cc.moecraft.school.api.nodes.data.get;
 
 import cc.moecraft.school.api.ApiNode;
-import cc.moecraft.school.database.model.UserProfiles;
-import cc.moecraft.school.profile.student.StudentProfile;
-import cc.moecraft.yaml.HyVirtualConfig;
+import cc.moecraft.school.database.model.UserInfo;
+import cc.moecraft.school.database.service.Services;
 import com.google.api.client.googleapis.auth.oauth2.GoogleIdToken;
-import com.google.gson.Gson;
 
 import javax.servlet.http.HttpServletRequest;
+
+import static cc.moecraft.school.Constants.GSON;
 
 /**
  * 此类由 Hykilpikonna 在 2018/10/07 创建!
@@ -29,11 +29,9 @@ public class NodeGetStudentProfile implements ApiNode
     public String process(HttpServletRequest request, GoogleIdToken token, String content)
     {
         GoogleIdToken.Payload id = token.getPayload();
+        UserInfo profiles = Services.userInfo.findByGoogleSub(id.getSubject());
 
-        UserProfiles profiles = UserProfiles.service().findById(id.getSubject());
         if (profiles == null) return "Error: User not registered.";
-
-        StudentProfile studentProfile = StudentProfile.parseFromConfig(new HyVirtualConfig(profiles.getStudentProfile()), "");
-        return new Gson().toJson(studentProfile);
+        return GSON.toJson(profiles.getStudentProfileObject());
     }
 }
