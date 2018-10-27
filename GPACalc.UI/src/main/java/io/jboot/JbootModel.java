@@ -142,9 +142,24 @@ public class JbootModel<M extends JbootModel<M>> extends Model<M>
         return super.update();
     }
 
-    private IJbootModelDialect getDialect()
+    private Dialect getDialect()
     {
-        return (IJbootModelDialect) _getConfig().getDialect();
+        return _getConfig().getDialect();
+    }
+
+    private IJbootModelDialect getJbootDialect()
+    {
+        if (jbootDialect != null) return jbootDialect;
+
+        Dialect dialect = getDialect();
+        if (dialect instanceof AnsiSqlDialect) return jbootDialect = new JbootAnsiSqlDialect();
+        if (dialect instanceof MysqlDialect) return jbootDialect = new JbootMysqlDialect();
+        if (dialect instanceof OracleDialect) return jbootDialect = new JbootOracleDialect();
+        if (dialect instanceof PostgreSqlDialect) return jbootDialect = new JbootPostgreSqlDialect();
+        if (dialect instanceof Sqlite3Dialect) return jbootDialect = new JbootSqlite3Dialect();
+        if (dialect instanceof SqlServerDialect) return jbootDialect = new JbootSqlServerDialect();
+
+        throw new RuntimeException("Dialect type not found : " + dialect.getClass());
     }
 
     /**
