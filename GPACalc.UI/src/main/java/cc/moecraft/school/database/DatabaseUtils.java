@@ -20,5 +20,14 @@ import static cc.moecraft.school.utils.JsonUtils.toJson;
  */
 public class DatabaseUtils
 {
+    /**
+     * Get user ID by google ID.
+     *
+     * @param idToken Google ID.
+     * @return User ID.
+     */
+    public long getId(GoogleIdToken idToken)
+    {
+        UserInfo info = Services.userInfo.findByGoogleSub(idToken.getPayload().getSubject());
 
 }
