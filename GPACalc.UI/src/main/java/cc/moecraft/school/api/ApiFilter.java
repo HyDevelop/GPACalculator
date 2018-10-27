@@ -1,8 +1,8 @@
 package cc.moecraft.school.api;
 
 import cc.moecraft.school.api.nodes.auth.NodeLogin;
-import cc.moecraft.school.api.nodes.data.get.NodeGradingProfile;
-import cc.moecraft.school.api.nodes.data.get.NodeStudentProfile;
+import cc.moecraft.school.api.nodes.data.get.NodeGetGradingProfile;
+import cc.moecraft.school.api.nodes.data.get.NodeGetStudentProfile;
 import cc.moecraft.school.api.nodes.misc.NodeTest;
 import cc.moecraft.school.exceptions.TokenException;
 import cc.moecraft.school.utils.ExceptionUtils;
@@ -41,8 +41,8 @@ public class ApiFilter implements Filter
         manager.register(
                 new NodeLogin(),
                 new NodeTest(),
-                new NodeStudentProfile(),
-                new NodeGradingProfile()
+                new NodeGetStudentProfile(),
+                new NodeGetGradingProfile()
         );
 
         System.out.println("API filter enabled!");

@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletRequest;
  *
  * @author Hykilpikonna
  */
-public class NodeGradingProfile implements ApiNode
+public class NodeGetGradingProfile implements ApiNode
 {
     @Override
     public String nodeName()

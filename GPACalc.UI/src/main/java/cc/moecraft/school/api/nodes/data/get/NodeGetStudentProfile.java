@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletRequest;
  *
  * @author Hykilpikonna
  */
-public class NodeStudentProfile implements ApiNode
+public class NodeGetStudentProfile implements ApiNode
 {
     @Override
     public String nodeName()
