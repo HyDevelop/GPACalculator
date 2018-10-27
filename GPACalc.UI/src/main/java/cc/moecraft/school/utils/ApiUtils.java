@@ -16,4 +16,13 @@ import lombok.EqualsAndHashCode;
  */
 public class ApiUtils
 {
+    /**
+     * Exception that it throws.
+     */
+    @EqualsAndHashCode(callSuper = true)
+    @AllArgsConstructor @Data
+    public static class JsonParsingException extends Exception
+    {
+        public final String message;
+    }
 }
