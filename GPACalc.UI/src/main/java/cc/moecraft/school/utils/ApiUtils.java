@@ -17,6 +17,31 @@ import lombok.EqualsAndHashCode;
 public class ApiUtils
 {
     /**
+     * Parse an object from a json.
+     *
+     * @param json Json in string.
+     * @param type Type.
+     * @param <T> Object class.
+     * @return Parsed object.
+     */
+    public static <T> T parseJson(String json, Class<T> type) throws JsonParsingException
+    {
+        if (json == null || json.isEmpty()) throw new JsonParsingException("Error: JSON Content is Empty.");
+
+        try
+        {
+            T result = new Gson().fromJson(json, type);
+
+            if (result == null) throw new JsonParsingException("Error: Object is null.");
+            return result;
+        }
+        catch (JsonSyntaxException e)
+        {
+            throw new JsonParsingException("Error: JSON Syntax Invalid.");
+        }
+    }
+
+    /**
      * Exception that it throws.
      */
     @EqualsAndHashCode(callSuper = true)
