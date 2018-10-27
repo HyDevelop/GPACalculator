@@ -1,5 +1,7 @@
 package cc.moecraft.school;
 
+import cc.moecraft.school.profile.grading.GradingProfile;
+import cc.moecraft.school.profile.student.StudentProfile;
 import cc.moecraft.yaml.HyVirtualConfig;
 import com.google.common.io.Resources;
 
@@ -26,8 +28,11 @@ public class Constants
     public static final String USERNAME;
     public static final String PASSWORD;
 
-    public static final String DEFAULT_STUDENT_PROFILE;
-    public static final String DEFAULT_GRADING_PROFILE;
+    public static final String DEFAULT_STUDENT_PROFILE_YML;
+    public static final String DEFAULT_GRADING_PROFILE_YML;
+
+    public static final StudentProfile DEFAULT_STUDENT_PROFILE;
+    public static final GradingProfile DEFAULT_GRADING_PROFILE;
 
     static
     {
@@ -40,8 +45,11 @@ public class Constants
             USERNAME = CONFIG.getString("Database.Username");
             PASSWORD = CONFIG.getString("Database.Password");
 
-            DEFAULT_GRADING_PROFILE = Resources.toString(getResource(CONFIG.getString("DefaultProfile.Grading")), UTF_8);
-            DEFAULT_STUDENT_PROFILE = Resources.toString(getResource(CONFIG.getString("DefaultProfile.Student")), UTF_8);
+            DEFAULT_GRADING_PROFILE_YML = Resources.toString(getResource(CONFIG.getString("DefaultProfile.Grading")), UTF_8);
+            DEFAULT_STUDENT_PROFILE_YML = Resources.toString(getResource(CONFIG.getString("DefaultProfile.Student")), UTF_8);
+
+            DEFAULT_STUDENT_PROFILE = StudentProfile.parseFromConfig(new HyVirtualConfig(DEFAULT_STUDENT_PROFILE_YML), "");
+            DEFAULT_GRADING_PROFILE = GradingProfile.parseFromConfig(new HyVirtualConfig(DEFAULT_GRADING_PROFILE_YML), "");
         }
         catch (IOException e)
         {
