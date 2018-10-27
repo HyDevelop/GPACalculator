@@ -56,6 +56,9 @@ public class DatabaseUtils
      */
     public static void register(String googleSub)
     {
+        UserInfo existingInfo = Services.userInfo.findByGoogleSub(googleSub);
+        if (existingInfo != null) return;
+
         UserInfo info = new UserInfo();
         info.setGoogleSub(googleSub);
         info.setStudentProfile(toJson(DEFAULT_STUDENT_PROFILE));
