@@ -1,10 +1,11 @@
 package cc.moecraft.school.utils;
 
-import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+
+import static cc.moecraft.school.Constants.GSON;
 
 /**
  * 此类由 Hykilpikonna 在 2018/10/27 创建!
@@ -14,7 +15,7 @@ import lombok.EqualsAndHashCode;
  *
  * @author Hykilpikonna
  */
-public class ApiUtils
+public class JsonUtils
 {
     /**
      * Parse an object from a json.
@@ -30,7 +31,7 @@ public class ApiUtils
 
         try
         {
-            T result = new Gson().fromJson(json, type);
+            T result = GSON.fromJson(json, type);
 
             if (result == null) throw new JsonParsingException("Error: Object is null.");
             return result;
@@ -39,6 +40,16 @@ public class ApiUtils
         {
             throw new JsonParsingException("Error: JSON Syntax Invalid.");
         }
+    }
+
+    /**
+     * Object to Json String.
+     *
+     * @return JSON String.
+     */
+    public static String toJson(Object object)
+    {
+        return GSON.toJson(object);
     }
 
     /**
