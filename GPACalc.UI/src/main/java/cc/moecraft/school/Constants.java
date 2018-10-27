@@ -4,6 +4,7 @@ import cc.moecraft.school.profile.grading.GradingProfile;
 import cc.moecraft.school.profile.student.StudentProfile;
 import cc.moecraft.yaml.HyVirtualConfig;
 import com.google.common.io.Resources;
+import com.google.gson.Gson;
 
 import java.io.IOException;
 
@@ -20,6 +21,8 @@ import static com.google.common.io.Resources.getResource;
  */
 public class Constants
 {
+    public static final Gson GSON;
+
     public static final HyVirtualConfig CONFIG;
 
     public static final String GOOGLE_CLIENT_ID;
@@ -38,6 +41,8 @@ public class Constants
     {
         try
         {
+            GSON = new Gson();
+
             CONFIG = new HyVirtualConfig(Resources.toString(getResource("runtime-config.yml"), UTF_8));
 
             GOOGLE_CLIENT_ID = CONFIG.getString("ClientID");
