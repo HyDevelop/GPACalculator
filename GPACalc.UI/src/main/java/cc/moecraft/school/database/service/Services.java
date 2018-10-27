@@ -13,9 +13,13 @@ import io.jboot.JbootServiceBase;
  *
  * @author Hykilpikonna
  */
-public class Service
+public class Services
 {
-    public static final JbootServiceBase<UserInfo> USER_INFO = new JbootServiceBase<UserInfo>()
+    public static final ServiceUserInfo userInfo = new ServiceUserInfo();
+    public static final ServiceUserProfiles userProfiles = new ServiceUserProfiles();
+    public static final ServiceTimeMap timeMap = new ServiceTimeMap();
+
+    public static class ServiceUserInfo extends JbootServiceBase<UserInfo>
     {
         /**
          * Find UserInfo entry by google sub id.
@@ -38,15 +42,15 @@ public class Service
         {
             return getDao().findFirstByColumn("discord_id", discordId);
         }
-    };
+    }
 
-    public static final JbootServiceBase<UserProfiles> USER_PROFILES = new JbootServiceBase<UserProfiles>()
+    public static class ServiceUserProfiles extends JbootServiceBase<UserProfiles>
     {
 
-    };
+    }
 
-    public static final JbootServiceBase<TimeMap> TIME_MAP = new JbootServiceBase<TimeMap>()
+    public static class ServiceTimeMap extends JbootServiceBase<TimeMap>
     {
 
-    };
+    }
 }
