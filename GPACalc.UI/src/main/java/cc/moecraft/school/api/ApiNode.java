@@ -27,6 +27,7 @@ public interface ApiNode
      *
      * @param request API request
      * @param token Google id token
+     * @param content Content submitted
      * @return Result.
      */
     public String process(HttpServletRequest request, GoogleIdToken token, String content);
