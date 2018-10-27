@@ -25,6 +25,14 @@ public abstract class BaseUserInfo<M extends BaseUserInfo<M>> extends JbootModel
 		return getStr("google_sub");
 	}
 
+	public void setRegisterDate(java.util.Date registerDate) {
+		set("register_date", registerDate);
+	}
+	
+	public java.util.Date getRegisterDate() {
+		return get("register_date");
+	}
+
 	public void setDiscordId(java.lang.String discordId) {
 		set("discord_id", discordId);
 	}
