@@ -2,7 +2,6 @@ package cc.moecraft.school.database.service;
 
 import cc.moecraft.school.database.model.TimeMap;
 import cc.moecraft.school.database.model.UserInfo;
-import cc.moecraft.school.database.model.UserProfiles;
 import io.jboot.JbootServiceBase;
 
 /**
@@ -16,7 +15,6 @@ import io.jboot.JbootServiceBase;
 public class Services
 {
     public static final ServiceUserInfo userInfo = new ServiceUserInfo();
-    public static final ServiceUserProfiles userProfiles = new ServiceUserProfiles();
     public static final ServiceTimeMap timeMap = new ServiceTimeMap();
 
     public static class ServiceUserInfo extends JbootServiceBase<UserInfo>
@@ -42,11 +40,6 @@ public class Services
         {
             return getDao().findFirstByColumn("discord_id", discordId);
         }
-    }
-
-    public static class ServiceUserProfiles extends JbootServiceBase<UserProfiles>
-    {
-
     }
 
     public static class ServiceTimeMap extends JbootServiceBase<TimeMap>
