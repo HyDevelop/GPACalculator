@@ -2,8 +2,8 @@ package cc.moecraft.school.database;
 
 import cc.moecraft.school.database.model.UserInfo;
 import cc.moecraft.school.database.service.Services;
+import cc.moecraft.school.profile.grading.GradingProfile;
 import cc.moecraft.school.profile.student.StudentProfile;
-import com.google.api.client.googleapis.auth.oauth2.GoogleIdToken;
 
 import static cc.moecraft.school.Constants.DEFAULT_GRADING_PROFILE;
 import static cc.moecraft.school.Constants.DEFAULT_STUDENT_PROFILE;
@@ -41,11 +41,15 @@ public class DatabaseUtils
     /**
      * Update a student profile.
      *
-     * @param idToken Google ID
+     * @param googleSub Google sub ID
      * @param profile Student Profile.
      */
-    public static void updateProfile(GoogleIdToken idToken, StudentProfile profile)
+    public static void updateProfile(String googleSub, StudentProfile profile)
     {
+        UserInfo info = Services.userInfo.findByGoogleSub(googleSub);
+
+        info.setStudentProfile(toJson(profile));
+        info.update();
 
     }
 
