@@ -33,4 +33,20 @@ public abstract class BaseUserInfo<M extends BaseUserInfo<M>> extends JbootModel
 		return getStr("discord_id");
 	}
 
+	public void setGradingProfile(java.lang.String gradingProfile) {
+		set("grading_profile", gradingProfile);
+	}
+	
+	public java.lang.String getGradingProfile() {
+		return getStr("grading_profile");
+	}
+
+	public void setStudentProfile(java.lang.String studentProfile) {
+		set("student_profile", studentProfile);
+	}
+	
+	public java.lang.String getStudentProfile() {
+		return getStr("student_profile");
+	}
+
 }
