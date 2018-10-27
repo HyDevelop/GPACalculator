@@ -2,7 +2,7 @@ package cc.moecraft.school.api.nodes.data.get;
 
 import cc.moecraft.school.api.ApiNode;
 import cc.moecraft.school.database.model.UserProfiles;
-import cc.moecraft.school.profile.student.StudentProfile;
+import cc.moecraft.school.profile.grading.GradingProfile;
 import cc.moecraft.yaml.HyVirtualConfig;
 import com.google.api.client.googleapis.auth.oauth2.GoogleIdToken;
 import com.google.gson.Gson;
@@ -17,12 +17,12 @@ import javax.servlet.http.HttpServletRequest;
  *
  * @author Hykilpikonna
  */
-public class NodeStudentProfile implements ApiNode
+public class NodeGetGradingProfile implements ApiNode
 {
     @Override
     public String nodeName()
     {
-        return "data.get.student-profile";
+        return "data.get.grading-profile";
     }
 
     @Override
@@ -33,7 +33,7 @@ public class NodeStudentProfile implements ApiNode
         UserProfiles profiles = UserProfiles.service().findById(id.getSubject());
         if (profiles == null) return "Error: User not registered.";
 
-        StudentProfile studentProfile = StudentProfile.parseFromConfig(new HyVirtualConfig(profiles.getStudentProfile()), "");
-        return new Gson().toJson(studentProfile);
+        GradingProfile gradingProfile = GradingProfile.parseFromConfig(new HyVirtualConfig(profiles.getGradingProfile()), "");
+        return new Gson().toJson(gradingProfile);
     }
 }
