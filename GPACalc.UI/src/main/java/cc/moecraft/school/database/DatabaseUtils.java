@@ -50,7 +50,20 @@ public class DatabaseUtils
 
         info.setStudentProfile(toJson(profile));
         info.update();
+    }
 
+    /**
+     * Update a grading profile.
+     *
+     * @param googleSub Google sub ID
+     * @param profile Grading Profile.
+     */
+    public static void updateProfile(String googleSub, GradingProfile profile)
+    {
+        UserInfo info = Services.userInfo.findByGoogleSub(googleSub);
+
+        info.setGradingProfile(toJson(profile));
+        info.update();
     }
 
     /**
