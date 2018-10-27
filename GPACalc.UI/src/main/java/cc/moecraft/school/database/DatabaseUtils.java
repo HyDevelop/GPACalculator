@@ -30,4 +30,21 @@ public class DatabaseUtils
     {
         UserInfo info = Services.userInfo.findByGoogleSub(idToken.getPayload().getSubject());
 
+    /**
+     * Register an user.
+     *
+     * @param googleSub Google sub ID.
+     */
+    public void register(String googleSub)
+    {
+        // TODO: Optimize this
+        UserInfo info = new UserInfo();
+        info.setGoogleSub(googleSub);
+        info.save();
+
+        UserProfiles profiles = new UserProfiles();
+        profiles.setStudentProfile(toJson(DEFAULT_STUDENT_PROFILE));
+        profiles.setGradingProfile(toJson(DEFAULT_GRADING_PROFILE));
+        profiles.save();
+    }
 }
