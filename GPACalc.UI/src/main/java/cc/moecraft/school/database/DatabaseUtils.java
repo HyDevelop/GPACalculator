@@ -1,13 +1,13 @@
 package cc.moecraft.school.database;
 
-import cc.moecraft.school.Constants;
 import cc.moecraft.school.database.model.UserInfo;
 import cc.moecraft.school.database.model.UserProfiles;
 import cc.moecraft.school.database.service.Services;
 import cc.moecraft.school.profile.student.StudentProfile;
 import com.google.api.client.googleapis.auth.oauth2.GoogleIdToken;
 
-import static cc.moecraft.school.Constants.*;
+import static cc.moecraft.school.Constants.DEFAULT_GRADING_PROFILE;
+import static cc.moecraft.school.Constants.DEFAULT_STUDENT_PROFILE;
 import static cc.moecraft.school.utils.JsonUtils.toJson;
 
 /**
@@ -23,12 +23,27 @@ public class DatabaseUtils
     /**
      * Get user ID by google ID.
      *
-     * @param idToken Google ID.
+     * @param googleSub Google sub ID.
      * @return User ID.
      */
-    public long getId(GoogleIdToken idToken)
+    public long getId(String googleSub)
     {
-        UserInfo info = Services.userInfo.findByGoogleSub(idToken.getPayload().getSubject());
+        UserInfo info = Services.userInfo.findByGoogleSub(googleSub);
+
+        if (info == null) register(googleSub);
+        return getId(googleSub);
+    }
+
+    /**
+     * Update a student profile.
+     *
+     * @param idToken Google ID
+     * @param profile Student Profile.
+     */
+    public void updateProfile(GoogleIdToken idToken, StudentProfile profile)
+    {
+
+    }
 
     /**
      * Register an user.
