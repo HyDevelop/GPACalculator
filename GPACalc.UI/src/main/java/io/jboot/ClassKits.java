@@ -52,7 +52,8 @@ public class ClassKits
         {
             Class<T> clazz = (Class<T>) Class.forName(className, false, Thread.currentThread().getContextClassLoader());
             return newInstance(clazz);
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             throw new RuntimeException("Failed to create instance: " + className + "\n" + e.toString(), e);
         }
@@ -65,7 +66,8 @@ public class ClassKits
             Constructor constructor = clazz.getDeclaredConstructor();
             constructor.setAccessible(true);
             return (T) constructor.newInstance();
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             throw new RuntimeException("Failed to create instance: " + clazz + "\n" + e.toString(), e);
         }

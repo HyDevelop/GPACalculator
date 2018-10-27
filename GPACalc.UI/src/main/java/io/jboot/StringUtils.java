@@ -21,7 +21,8 @@ public class StringUtils
         try
         {
             return URLDecoder.decode(string, JFinal.me().getConstants().getEncoding());
-        } catch (UnsupportedEncodingException e)
+        }
+        catch (UnsupportedEncodingException e)
         {
             log.error("urlDecode is error", e);
         }
@@ -33,7 +34,8 @@ public class StringUtils
         try
         {
             return URLEncoder.encode(string, JFinal.me().getConstants().getEncoding());
-        } catch (UnsupportedEncodingException e)
+        }
+        catch (UnsupportedEncodingException e)
         {
             log.error("urlEncode is error", e);
         }
@@ -45,7 +47,8 @@ public class StringUtils
         try
         {
             redirect = new String(redirect.getBytes(JFinal.me().getConstants().getEncoding()), "ISO8859_1");
-        } catch (UnsupportedEncodingException e)
+        }
+        catch (UnsupportedEncodingException e)
         {
             log.error("urlRedirect is error", e);
         }
@@ -112,7 +115,10 @@ public class StringUtils
             if (value.startsWith("N") || value.startsWith("n"))
                 return -Long.parseLong(value.substring(1));
             return Long.parseLong(value);
-        } catch (Exception e) {}
+        }
+        catch (Exception e)
+        {
+        }
         return defaultValue;
     }
 
@@ -126,7 +132,10 @@ public class StringUtils
             if (value.startsWith("N") || value.startsWith("n"))
                 return -Integer.parseInt(value.substring(1));
             return Integer.parseInt(value);
-        } catch (Exception ignored) {}
+        }
+        catch (Exception ignored)
+        {
+        }
         return defaultValue;
     }
 
@@ -140,7 +149,10 @@ public class StringUtils
             if (value.startsWith("N") || value.startsWith("n"))
                 return new BigInteger(value).negate();
             return new BigInteger(value);
-        } catch (Exception ignored) {}
+        }
+        catch (Exception ignored)
+        {
+        }
         return defaultValue;
     }
 
