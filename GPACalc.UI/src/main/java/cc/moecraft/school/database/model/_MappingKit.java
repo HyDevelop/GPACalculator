@@ -18,7 +18,6 @@ public class _MappingKit {
 	public static void mapping(ActiveRecordPlugin arp) {
 		arp.addMapping("time_map", "index", TimeMap.class);
 		arp.addMapping("user_info", "user_id", UserInfo.class);
-		arp.addMapping("user_profiles", "user_id", UserProfiles.class);
 	}
 }
 
