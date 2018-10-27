@@ -27,6 +27,17 @@ public class Service
         {
             return getDao().findFirstByColumn("google_sub", sub);
         }
+
+        /**
+         * Find UserInfo entry by discord id.
+         *
+         * @param discordId Discord id.
+         * @return User info object.
+         */
+        public UserInfo findByDiscordId(String discordId)
+        {
+            return getDao().findFirstByColumn("discord_id", discordId);
+        }
     };
 
     public static final JbootServiceBase<UserProfiles> USER_PROFILES = new JbootServiceBase<UserProfiles>()
