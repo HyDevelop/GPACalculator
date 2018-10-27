@@ -9,6 +9,14 @@ import com.jfinal.plugin.activerecord.IBean;
 @SuppressWarnings("serial")
 public abstract class BaseTimeMap<M extends BaseTimeMap<M>> extends JbootModel<M> implements IBean {
 
+	public void setIndex(java.lang.Integer index) {
+		set("index", index);
+	}
+	
+	public java.lang.Integer getIndex() {
+		return getInt("index");
+	}
+
 	public void setUserId(java.lang.Integer userId) {
 		set("user_id", userId);
 	}
@@ -23,6 +31,14 @@ public abstract class BaseTimeMap<M extends BaseTimeMap<M>> extends JbootModel<M
 	
 	public java.lang.String getGrades() {
 		return getStr("grades");
+	}
+
+	public void setGradeAverage(java.lang.Double gradeAverage) {
+		set("grade_average", gradeAverage);
+	}
+	
+	public java.lang.Double getGradeAverage() {
+		return getDouble("grade_average");
 	}
 
 	public void setTime(java.util.Date time) {
