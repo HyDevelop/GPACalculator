@@ -9,12 +9,12 @@ import com.jfinal.plugin.activerecord.IBean;
 @SuppressWarnings("serial")
 public abstract class BaseUserProfiles<M extends BaseUserProfiles<M>> extends JbootModel<M> implements IBean {
 
-	public void setGoogleSub(java.lang.String googleSub) {
-		set("google_sub", googleSub);
+	public void setUserId(java.lang.Integer userId) {
+		set("user_id", userId);
 	}
 	
-	public java.lang.String getGoogleSub() {
-		return getStr("google_sub");
+	public java.lang.Integer getUserId() {
+		return getInt("user_id");
 	}
 
 	public void setGradingProfile(java.lang.String gradingProfile) {
