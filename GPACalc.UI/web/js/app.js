@@ -67,7 +67,7 @@ function onSignIn(user)
     // Send login to backend.
     send("auth.login", "", function (text)
     {
-        console.log("Login to backend: " + text);
+        if (text === "Registered") reload();
     })
 }
 
