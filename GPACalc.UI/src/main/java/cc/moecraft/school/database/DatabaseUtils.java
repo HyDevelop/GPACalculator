@@ -20,17 +20,22 @@ import static cc.moecraft.school.utils.JsonUtils.toJson;
 public class DatabaseUtils
 {
     /**
-     * Get user ID by google ID.
+     * Get user info by google ID.
      *
      * @param googleSub Google sub ID.
-     * @return User ID.
+     * @return User Info.
      */
-    public long getId(String googleSub)
+    public UserInfo getInfoOrRegister(String googleSub)
     {
         UserInfo info = Services.userInfo.findByGoogleSub(googleSub);
 
-        if (info == null) register(googleSub);
-        return getId(googleSub);
+        if (info == null)
+        {
+            register(googleSub);
+            return getInfoOrRegister(googleSub);
+        }
+
+        return info;
     }
 
     /**
