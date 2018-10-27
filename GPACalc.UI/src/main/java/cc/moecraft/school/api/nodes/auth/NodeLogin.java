@@ -1,8 +1,9 @@
 package cc.moecraft.school.api.nodes.auth;
 
-import cc.moecraft.school.Constants;
 import cc.moecraft.school.api.ApiNode;
-import cc.moecraft.school.database.model.UserProfiles;
+import cc.moecraft.school.database.DatabaseUtils;
+import cc.moecraft.school.database.model.UserInfo;
+import cc.moecraft.school.database.service.Services;
 import com.google.api.client.googleapis.auth.oauth2.GoogleIdToken;
 
 import javax.servlet.http.HttpServletRequest;
@@ -26,20 +27,12 @@ public class NodeLogin implements ApiNode
     @Override
     public String process(HttpServletRequest request, GoogleIdToken token, String content)
     {
-        GoogleIdToken.Payload id = token.getPayload();
+        String subId = token.getPayload().getSubject();
+        UserInfo info = Services.userInfo.findByGoogleSub(subId);
 
-        UserProfiles profiles = UserProfiles.service().findById(id.getSubject());
-        if (profiles == null)
-        {
-            // Register
-            profiles = new UserProfiles();
-            profiles.setGoogleSub(id.getSubject());
-            profiles.setStudentProfile(Constants.DEFAULT_STUDENT_PROFILE);
-            profiles.setGradingProfile(Constants.DEFAULT_GRADING_PROFILE);
-            profiles.save();
-            return "Registered";
-        }
+        if (info != null) return "Logged in";
 
-        return "Logged in";
+        DatabaseUtils.register(subId);
+        return "Registered";
     }
 }
