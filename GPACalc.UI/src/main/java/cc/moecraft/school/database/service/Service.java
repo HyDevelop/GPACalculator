@@ -15,7 +15,27 @@ import io.jboot.JbootServiceBase;
  */
 public class Service
 {
-    public static final JbootServiceBase<TimeMap> TIME_MAP = new JbootServiceBase<>();
-    public static final JbootServiceBase<UserInfo> USER_INFO = new JbootServiceBase<>();
-    public static final JbootServiceBase<UserProfiles> USER_PROFILES = new JbootServiceBase<>();
+    public static final JbootServiceBase<UserInfo> USER_INFO = new JbootServiceBase<UserInfo>()
+    {
+        /**
+         * Find UserInfo entry by google sub id.
+         *
+         * @param sub Sub id.
+         * @return User info object.
+         */
+        public UserInfo findByGoogleSub(String sub)
+        {
+            return getDao().findFirstByColumn("google_sub", sub);
+        }
+    };
+
+    public static final JbootServiceBase<UserProfiles> USER_PROFILES = new JbootServiceBase<UserProfiles>()
+    {
+
+    };
+
+    public static final JbootServiceBase<TimeMap> TIME_MAP = new JbootServiceBase<TimeMap>()
+    {
+
+    };
 }
