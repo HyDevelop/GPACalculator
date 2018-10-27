@@ -80,13 +80,15 @@ public class ApiFilter implements Filter
             catch (TokenException e)
             {
                 // Write error.
-                ResponseUtils.writeResponse(response, e.getMessage());
+                ResponseUtils.writeResponse(response, "Error: Token Invalid: " + e.getMessage());
             }
-
-            return;
+            catch (Throwable e)
+            {
+                // Write error.
+                ResponseUtils.writeResponse(response, "Error: Unpredicted Error: " + e.getMessage());
+            }
         }
-
-        chain.doFilter(servletRequest, response);
+        else chain.doFilter(servletRequest, response);
     }
 
     @Override
