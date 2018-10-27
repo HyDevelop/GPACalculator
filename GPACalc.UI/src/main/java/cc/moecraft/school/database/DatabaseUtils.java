@@ -1,7 +1,6 @@
 package cc.moecraft.school.database;
 
 import cc.moecraft.school.database.model.UserInfo;
-import cc.moecraft.school.database.model.UserProfiles;
 import cc.moecraft.school.database.service.Services;
 import cc.moecraft.school.profile.student.StudentProfile;
 import com.google.api.client.googleapis.auth.oauth2.GoogleIdToken;
@@ -52,14 +51,10 @@ public class DatabaseUtils
      */
     public void register(String googleSub)
     {
-        // TODO: Optimize this
         UserInfo info = new UserInfo();
         info.setGoogleSub(googleSub);
+        info.setStudentProfile(toJson(DEFAULT_STUDENT_PROFILE));
+        info.setGradingProfile(toJson(DEFAULT_GRADING_PROFILE));
         info.save();
-
-        UserProfiles profiles = new UserProfiles();
-        profiles.setStudentProfile(toJson(DEFAULT_STUDENT_PROFILE));
-        profiles.setGradingProfile(toJson(DEFAULT_GRADING_PROFILE));
-        profiles.save();
     }
 }
