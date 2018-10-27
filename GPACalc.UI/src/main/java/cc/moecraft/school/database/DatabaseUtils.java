@@ -25,7 +25,7 @@ public class DatabaseUtils
      * @param googleSub Google sub ID.
      * @return User Info.
      */
-    public UserInfo getInfoOrRegister(String googleSub)
+    public static UserInfo getInfoOrRegister(String googleSub)
     {
         UserInfo info = Services.userInfo.findByGoogleSub(googleSub);
 
@@ -44,7 +44,7 @@ public class DatabaseUtils
      * @param idToken Google ID
      * @param profile Student Profile.
      */
-    public void updateProfile(GoogleIdToken idToken, StudentProfile profile)
+    public static void updateProfile(GoogleIdToken idToken, StudentProfile profile)
     {
 
     }
@@ -54,7 +54,7 @@ public class DatabaseUtils
      *
      * @param googleSub Google sub ID.
      */
-    public void register(String googleSub)
+    public static void register(String googleSub)
     {
         UserInfo info = new UserInfo();
         info.setGoogleSub(googleSub);
