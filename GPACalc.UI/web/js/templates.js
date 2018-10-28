@@ -1,11 +1,15 @@
-const editorBaseUrl = "http://" + document.domain + "/includes/editor/";
+const includesBaseUrl = "http://" + document.domain + "/includes/";
 var studentProfileEditorTemplate;
 var gradeEditorTemplate;
+var messageSuccess;
+var messageError;
 
 $(document).ready(function ()
 {
-    loadTemplate("studentProfileEditorTemplate", "student-profile-editor-template");
-    loadTemplate("gradeEditorTemplate", "grade-editor-template");
+    loadTemplate("studentProfileEditorTemplate", "editor/student-profile-editor-template");
+    loadTemplate("gradeEditorTemplate", "editor/grade-editor-template");
+    loadTemplate("messageSuccess", "message/message-success");
+    loadTemplate("messageError", "message/message-error");
 });
 
 /**
@@ -17,7 +21,7 @@ $(document).ready(function ()
 function loadTemplate(variable, fileName)
 {
     $.ajax({
-        url: editorBaseUrl + fileName + ".jsp",
+        url: includesBaseUrl + fileName + ".jsp",
         success: function (result)
         {
             window[variable] = result;
