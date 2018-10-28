@@ -68,3 +68,8 @@ nav.hy-navbar
     background-color: rgba(0,0,0,.12);
     opacity: 1;
 }
+
+.hy-navbar-nav .active > .nav-link
+{
+    opacity: 1;
+}
