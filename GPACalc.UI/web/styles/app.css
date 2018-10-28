@@ -1,10 +1,8 @@
 .wallpaper
 {
-    background:
-            linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-            linear-gradient(to right, rgba(196, 224, 229, 0.3), rgba(76, 161, 175, 0.3)),
-            url("https://i.imgur.com/yCxIwzb.png")
-            center top;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    linear-gradient(to right, rgba(196, 224, 229, 0.3), rgba(76, 161, 175, 0.3)),
+    url("https://i.imgur.com/yCxIwzb.png") center top;
 }
 
 .hy-navbar-light
@@ -17,7 +15,7 @@
     background: #ffffffbf;
     padding-top: 20px;
     margin-top: 20px;
-    box-shadow: 0 1px 3px rgba(0,0,0,.25);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .25);
     border-radius: 10px;
 }
 
@@ -34,19 +32,19 @@
 
 .hy-message
 {
-    box-shadow: 0 1px 3px rgba(0,0,0,.25) !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .25) !important;
     border-radius: 10px !important;
     padding: 16px 40px !important;
 }
 
-.hy-tab>*>a
+.hy-tab > * > a
 {
     color: #000000d1;
 }
 
-.hy-input>input
+.hy-input > input
 {
-    background: #ffffff94!important;
+    background: #ffffff94 !important;
 }
 
 .hy-row
@@ -66,33 +64,33 @@
     margin-bottom: 20px;
 }
 
-.hy-operating-buttons>div
+.hy-operating-buttons > div
 {
     float: right;
     clear: none;
 }
 
-.hy-operating-buttons>div.inline.field
+.hy-operating-buttons > div.inline.field
 {
     margin-top: 3.3%;
     margin-right: 20px;
 }
 
-.hy-operating-buttons>button
+.hy-operating-buttons > button
 {
     margin: 10px 0px 10px 20px !important
 }
 
 .rainbow-blue-gradient
 {
-    background: #00F260;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #0575E6, #00F260);  /* Chrome 10-25, Safari 5.1-6 */
+    background: #00F260; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #0575E6, #00F260); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #0575E6, #00F260); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .light-blue-gradient
 {
-    background: #4CA1AF;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #C4E0E5, #4CA1AF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: #4CA1AF; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #C4E0E5, #4CA1AF); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #C4E0E5, #4CA1AF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
