@@ -26,3 +26,8 @@ function checkAZ(id)
         element.parent().removeClass("error");
     }
 }
+
+$('.message .close').on('click', function()
+{
+    $(this).closest('.message').transition('fade');
+});
