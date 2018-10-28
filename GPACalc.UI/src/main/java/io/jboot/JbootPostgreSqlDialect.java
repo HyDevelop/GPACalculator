@@ -16,6 +16,7 @@
 package io.jboot;
 
 import com.jfinal.plugin.activerecord.dialect.PostgreSqlDialect;
+
 import java.util.List;
 
 public class JbootPostgreSqlDialect extends PostgreSqlDialect implements IJbootModelDialect

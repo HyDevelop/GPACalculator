@@ -7,7 +7,7 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
 import static cc.moecraft.school.Constants.*;
-import static cc.moecraft.school.database.model._MappingKit.*;
+import static cc.moecraft.school.database.model._MappingKit.mapping;
 
 /**
  * 此类由 Hykilpikonna 在 2018/10/07 创建!
