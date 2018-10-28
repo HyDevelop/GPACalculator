@@ -16,7 +16,7 @@
     </div>
     <div class="inline field">
         <div class="ui checkbox">
-            <input type="checkbox" tabindex="0" class="hidden">
+            <input type="checkbox">
             <label style="line-height: 17px;">Record in graph.</label>
         </div>
     </div>
