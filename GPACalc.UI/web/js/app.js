@@ -25,6 +25,8 @@ async function send(apiNode, content, callback)
     {
         if (request.readyState === 4 && request.status === 200)
         {
+            // TODO: process error
+
             // Async callback
             callback(request.responseText);
         }
@@ -125,6 +127,23 @@ function loadOldSettingsFromServer()
         });
         renderCourseSettingsPage(studentProfile);
     });
+}
+
+/**
+ * Calculate GPA
+ *
+ * @param button Button
+ */
+function calculateAverage(button)
+{
+    $(button).addClass("loading").addClass("disabled");
+    send("data.calculate", getGradesAsJson(), function (grade)
+    {
+        alert(grade);
+        $(button).removeClass("loading").removeClass("disabled");
+    })
+}
+
 function getGradesAsJson()
 {
     var json = {};
@@ -132,6 +151,7 @@ function getGradesAsJson()
 
     $("#grade-editor-div").children().find("[name=gradeInput]").each(function (i)
     {
+        // TODO: Check validity.
         json["subjectGradeMap"][$(this).attr("coursename")] = $(this).val();
     });
 
