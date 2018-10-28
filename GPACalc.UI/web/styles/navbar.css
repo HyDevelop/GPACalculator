@@ -34,3 +34,17 @@ nav.hy-navbar
 {
     color: #ffb6ca;
 }
+
+.hy-navbar-nav
+{
+    list-style: none;
+    margin-bottom: 0;
+    padding-left: 0;
+    margin-right: auto !important;
+    margin-top: 0 !important;
+
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
