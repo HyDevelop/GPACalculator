@@ -27,6 +27,7 @@ public class GPACalculator
      * @param studentProfile Student profile
      * @param grades Current grades.
      * @return Current GPA.
+     * @throws NotFoundException Something is not found (Subject / Level / Letter grade)
      */
     public static double calculate(GradingProfile gradingProfile, StudentProfile studentProfile, Grades grades)
             throws NotFoundException
