@@ -1,8 +1,9 @@
 .wallpaper
 {
     background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    linear-gradient(to right, rgba(196, 224, 229, 0.3), rgba(76, 161, 175, 0.3)),
-    url("https://i.imgur.com/yCxIwzb.png") center top;
+            linear-gradient(to right, rgba(196, 224, 229, 0.3), rgba(76, 161, 175, 0.3)),
+            url("https://i.imgur.com/yCxIwzb.png") no-repeat fixed center top;
+    height: auto;
 }
 
 .hy-navbar-light
