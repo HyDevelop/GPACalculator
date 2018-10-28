@@ -13,3 +13,4 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.17/css/uikit.min.css"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css"/>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/styles/app.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/styles/navbar.css">
