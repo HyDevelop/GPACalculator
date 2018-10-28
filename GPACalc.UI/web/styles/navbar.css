@@ -48,3 +48,17 @@ nav.hy-navbar
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
 }
+
+.hy-navbar-nav .nav-link
+{
+    border-radius: 2px;
+    color: inherit;
+    font-size: 1rem;
+    height: 2.25rem;
+    line-height: 1;
+    opacity: .7;
+    padding: .625rem 1rem;
+    transition-duration: .3s;
+    transition-property: background-color,opacity;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+}
