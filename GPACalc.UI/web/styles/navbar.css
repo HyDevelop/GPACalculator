@@ -49,7 +49,7 @@ nav.hy-navbar
     flex-wrap: wrap;
 }
 
-.hy-navbar-nav .nav-link
+.hy-navbar-nav .hy-navbar-link
 {
     border-radius: 2px;
     color: inherit;
@@ -63,13 +63,13 @@ nav.hy-navbar
     transition-timing-function: cubic-bezier(.4,0,.2,1);
 }
 
-.hy-navbar-nav .nav-link:hover
+.hy-navbar-nav .hy-navbar-link:hover
 {
     background-color: rgba(0,0,0,.12);
     opacity: 1;
 }
 
-.hy-navbar-nav .active > .nav-link
+.hy-navbar-nav .active > .hy-navbar-link
 {
     opacity: 1;
 }
