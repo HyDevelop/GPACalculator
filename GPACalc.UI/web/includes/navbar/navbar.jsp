@@ -11,10 +11,10 @@
     <a class="hy-navbar-brand" href="#" style="margin-right: 8px;">GPA Calculator</a>
     <span style="margin-right: 1rem;">by Hykilpikonna</span>
 
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-        <li class="nav-item active"><a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a></li>
+    <ul class="hy-navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="">Tutorial</a></li>
         <li class="nav-item"><a class="nav-link" href="https://github.com/HyDevelop/GPACalculator/">Github</a></li>
     </ul>
-    <button class="btn btn-outline-light auth-signOut" onclick="signOut()" style="display: none;">Sign Out</button>
+    <button class="hy-navbar-btn auth-signOut" onclick="signOut()" style="display: none;">Sign Out</button>
 </nav>
