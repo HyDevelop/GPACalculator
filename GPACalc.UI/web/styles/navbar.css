@@ -29,3 +29,8 @@ nav.hy-navbar
     line-height: 1.4em;
     margin-right: 8px;
 }
+
+.hy-navbar-brand:hover
+{
+    color: #ffb6ca;
+}
