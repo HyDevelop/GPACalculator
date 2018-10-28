@@ -1,6 +1,7 @@
 package cc.moecraft.school.api;
 
 import cc.moecraft.school.api.nodes.auth.NodeLogin;
+import cc.moecraft.school.api.nodes.data.NodeCalculate;
 import cc.moecraft.school.api.nodes.data.get.NodeGetGradingProfile;
 import cc.moecraft.school.api.nodes.data.get.NodeGetStudentProfile;
 import cc.moecraft.school.api.nodes.data.set.NodeSetGradingProfile;
@@ -47,7 +48,8 @@ public class ApiFilter implements Filter
                 new NodeGetStudentProfile(),
                 new NodeGetGradingProfile(),
                 new NodeSetStudentProfile(),
-                new NodeSetGradingProfile()
+                new NodeSetGradingProfile(),
+                new NodeCalculate()
         );
 
         System.out.println("API filter enabled!");
