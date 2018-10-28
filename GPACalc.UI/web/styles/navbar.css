@@ -73,3 +73,34 @@ nav.hy-navbar
 {
     opacity: 1;
 }
+
+.hy-navbar-btn
+{
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+
+    cursor: pointer;
+    box-shadow: none;
+    color: #f5f5f5;
+    background: transparent none;
+    border: 0;
+    border-radius: 2px;
+    display: inline-block;
+    font-size: .875rem;
+    font-weight: 500;
+    line-height: 1;
+    margin: 0;
+    max-width: 100%;
+    min-width: 5.5rem;
+    padding: .6875rem 1rem;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    transition-duration: .3s;
+    transition-property: background-color,opacity;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    vertical-align: middle;
+    white-space: nowrap;
+}
