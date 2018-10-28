@@ -8,13 +8,15 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <nav class="navbar hy-navbar hy-navbar-light">
-    <a class="hy-navbar-brand" href="#" style="margin-right: 8px;">GPA Calculator</a>
+    <a class="hy-navbar-brand" href="#">GPA Calculator</a>
     <span style="margin-right: 1rem;">by Hykilpikonna</span>
 
-    <ul class="hy-navbar-nav mr-auto mt-2 mt-lg-0">
-        <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="">Tutorial</a></li>
-        <li class="nav-item"><a class="nav-link" href="https://github.com/HyDevelop/GPACalculator/">Github</a></li>
+    <ul class="hy-navbar-nav">
+        <li class="active">
+            <a class="hy-navbar-link" href="#">Home</a>
+        </li>
+        <li><a class="hy-navbar-link" href="">Tutorial</a></li>
+        <li><a class="hy-navbar-link" href="https://github.com/HyDevelop/GPACalculator/">Github</a></li>
     </ul>
     <button class="hy-navbar-btn auth-signOut" onclick="signOut()" style="display: none;">Sign Out</button>
 </nav>
