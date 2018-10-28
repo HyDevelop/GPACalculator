@@ -62,3 +62,9 @@ nav.hy-navbar
     transition-property: background-color,opacity;
     transition-timing-function: cubic-bezier(.4,0,.2,1);
 }
+
+.hy-navbar-nav .nav-link:hover
+{
+    background-color: rgba(0,0,0,.12);
+    opacity: 1;
+}
