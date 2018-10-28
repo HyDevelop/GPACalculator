@@ -21,6 +21,24 @@
     border-radius: 10px;
 }
 
+.hy-container.no-padding
+{
+    padding: 0;
+}
+
+.hy-container.hy-message-container
+{
+    padding: 0;
+    max-width: 1280px;
+}
+
+.hy-message
+{
+    box-shadow: 0 1px 3px rgba(0,0,0,.25) !important;
+    border-radius: 10px !important;
+    padding: 16px 40px !important;
+}
+
 .hy-tab>*>a
 {
     color: #000000d1;
