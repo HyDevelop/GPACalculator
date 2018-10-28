@@ -104,3 +104,9 @@ nav.hy-navbar
     vertical-align: middle;
     white-space: nowrap;
 }
+
+.hy-navbar-btn:hover
+{
+    background-color: rgba(0,0,0,.12);
+    opacity: 1;
+}
