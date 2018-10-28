@@ -42,6 +42,24 @@
     float: right !important;
 }
 
+.hy-operating-buttons.mar
+{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.hy-operating-buttons>div
+{
+    float: right;
+    clear: none;
+}
+
+.hy-operating-buttons>div.inline.field
+{
+    margin-top: 3.3%;
+    margin-right: 20px;
+}
+
 .hy-operating-buttons>button
 {
     margin: 10px 0px 10px 20px !important
