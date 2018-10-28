@@ -44,9 +44,7 @@ public class NodeCalculate implements ApiNode
             GradingProfile gradingProfile = info.getGradingProfileObject();
             StudentProfile studentProfile = info.getStudentProfileObject();
 
-            GPACalculator.calculate(gradingProfile, studentProfile, grades);
-
-            return "Success";
+            return String.valueOf(GPACalculator.calculate(gradingProfile, studentProfile, grades));
         }
         catch (JsonUtils.JsonParsingException e)
         {
