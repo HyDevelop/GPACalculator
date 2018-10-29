@@ -25,10 +25,19 @@ async function send(apiNode, content, callback)
     {
         if (request.readyState === 4 && request.status === 200)
         {
-            // TODO: process error
+            var text = request.responseText;
+
+            // Error
+            if (text.toLowerCase().startsWith("error"))
+            {
+                msg.error("Error: Data Request Failed.",
+                    "Requested API Node: " + apiNode,
+                    "Error Response: " + text);
+                return;
+            }
 
             // Async callback
-            callback(request.responseText);
+            callback(text);
         }
     };
     request.send(content);
