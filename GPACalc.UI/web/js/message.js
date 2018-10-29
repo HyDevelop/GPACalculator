@@ -14,11 +14,9 @@ msg.error = function (title, ... lines)
 msg.addMsg = function (format, title, ... lines)
 {
     var linesText = "";
-    var div = $("#messages-div");
+    for (let i in lines) linesText += "<li>" + lines[i] + "</li>";
 
-    lines.forEach(text => linesText += "<li>" + text + "</li>");
-    div.append(format.replace(/%title%/g, title).replace(/%lines%/g, linesText));
-
+    $("#messages-div").append(format.replace(/%title%/g, title).replace(/%lines%/g, linesText));
     msg.updateRegistration();
 };
 
