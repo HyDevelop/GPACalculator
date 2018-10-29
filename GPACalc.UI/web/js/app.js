@@ -34,6 +34,8 @@ async function send(apiNode, content, callback)
             // Error
             if (text.toLowerCase().startsWith("error"))
             {
+
+                // TODO: Add error callback, returns boolean that decides whether to send error message or not.
                 msg.error("Error: Data Request Failed.",
                     "Requested API Node: " + apiNode,
                     "Error Response: " + text);
