@@ -15,7 +15,7 @@ msg.addMsg = function (format, title, lines)
 {
     var linesText = "";
     for (let i in lines) linesText += "<li>" + lines[i] + "</li>";
-    
+
     $("#messages-div").append(format.replace(/%title%/g, title).replace(/%lines%/g, linesText));
     msg.updateRegistration();
 };
