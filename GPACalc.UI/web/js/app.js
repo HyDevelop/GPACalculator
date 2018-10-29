@@ -152,7 +152,7 @@ function calculateAverage(button)
     $(button).addClass("loading").addClass("disabled");
     send("data.calculate", getGradesAsJson(), function (grade)
     {
-        msg.success("Grades Calculated: ", grade);
+        msg.success("Grades Calculated: ", Math.round(grade * 1000.0) / 1000.0);
         $(button).removeClass("loading").removeClass("disabled");
     })
 }
