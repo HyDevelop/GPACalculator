@@ -15,7 +15,11 @@ var banner =
  */
 async function send(apiNode, content, callback)
 {
-    if (googleUser == null) return "Error: Not logged in.";
+    if (googleUser == null)
+    {
+        msg.error("Error: You must be logged in to do that.", "No google login is detected.");
+        return;
+    }
 
     var request = new XMLHttpRequest();
     request.open("POST", apiUrl, true);
