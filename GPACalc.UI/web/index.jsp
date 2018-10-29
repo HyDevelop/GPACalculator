@@ -7,6 +7,7 @@
         <%@include file="/includes/navbar/navbar.jsp"%>
         <%@include file="/includes/auth/login-modal.jsp"%>
         <%@include file="/includes/misc/js-detector-modal.jsp"%>
+        <div id="messages-div"></div>
         <div class="uk-container hy-container">
             <div class="uk-position-relative">
                 <div class="uk-position-relative uk-margin-medium">
