@@ -6,6 +6,11 @@ msg.success = function (title, ... lines)
     msg.addMsg(messageSuccess, title, lines);
 };
 
+msg.error = function (title, ... lines)
+{
+    msg.addMsg(messageError, title, lines);
+};
+
 msg.addMsg = function (format, title, ... lines)
 {
     var linesText = "";
