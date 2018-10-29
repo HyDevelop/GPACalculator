@@ -10,3 +10,10 @@ msg.addMsg = function (format, title, ... lines)
     div.append(format.replace(/%title%/g, title).replace(/%lines%/g, linesText));
 };
 
+msg.updateRegistration = function ()
+{
+    $('.message .close').on('click', function()
+    {
+        $(this).closest('.message').transition('fade');
+    });
+};
