@@ -19,3 +19,4 @@
 <script src="${pageContext.request.contextPath}/js/renderer.js"></script>
 <script src="${pageContext.request.contextPath}/js/templates.js"></script>
 <script src="${pageContext.request.contextPath}/js/message.js"></script>
+<script src="${pageContext.request.contextPath}/js/parser.js"></script>
