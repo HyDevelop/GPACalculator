@@ -8,6 +8,8 @@ msg.addMsg = function (format, title, ... lines)
 
     lines.forEach(text => linesText += "<li>" + text + "</li>");
     div.append(format.replace(/%title%/g, title).replace(/%lines%/g, linesText));
+
+    msg.updateRegistration();
 };
 
 msg.updateRegistration = function ()
