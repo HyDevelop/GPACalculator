@@ -159,14 +159,16 @@ function calculateAverage(button)
     send("data.calculate", getGradesAsJson(),
         function (grade)
         {
-            // TODO: Reset on fail
             msg.success("Grades Calculated: ", Math.round(grade * 1000.0) / 1000.0);
             $(button).removeClass("loading").removeClass("disabled");
         },
 
-        function ()
+        function (error)
         {
+            // Reset on fail
             $(button).removeClass("loading").removeClass("disabled");
             return true;
         })
 }
+
+// TODO: Add entry to student profile.
