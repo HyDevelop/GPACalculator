@@ -12,8 +12,11 @@ var banner =
  * @param apiNode Node of the api.
  * @param content Content in String.
  * @param callback Function to callback after.
+ *          function(return result)
+ * @param errorCallback Callback when there is an error.
+ *          function(error message) that returns a boolean that decides whether to send error or not.
  */
-async function send(apiNode, content, callback)
+async function send(apiNode, content, callback, errorCallback)
 {
     if (googleUser == null)
     {
