@@ -51,3 +51,19 @@ function renderCourseSettingsPage(json)
         $("#credits-" + i).val(credits);
     }
 }
+
+/**
+ * Add an entry to student profile editor.
+ *
+ * @param id Integer ID of the entry.
+ * @param name Course name.
+ * @param level Course level.
+ * @param credits Course credit.
+ */
+function studentProfileAddEntry(id, name, level, credits)
+{
+    studentProfileEditorDiv.append(studentProfileEditorTemplate.replace(/%id%/g, id));
+    $("#name-" + id).val(name);
+    $("#level-" + id).val(level);
+    $("#credits-" + id).val(credits);
+}
