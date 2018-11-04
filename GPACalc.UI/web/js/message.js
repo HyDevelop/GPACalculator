@@ -28,6 +28,9 @@ msg.updateRegistration = function ()
         if (this.closed != null) return;
         this.closed = true;
 
+        // Known bug: Transition doesn't remove object.
+        //    Remove wouldn't look as good.
+        //    Besides from using a delay there's no way to solve this.
         var message = $(this).closest('.hy-message-container');
         message.transition('vertical flip');
         // message.remove();
