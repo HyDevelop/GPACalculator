@@ -116,7 +116,7 @@ $(document).ready(function onLoad()
             }
 
             // Render editors
-            loadOldSettingsFromServer();
+            loadOldProfileFromServer();
         });
     });
 });
@@ -133,7 +133,7 @@ function showLoginModal()
 /**
  * Reload old settings from server.
  */
-function loadOldSettingsFromServer()
+function loadOldProfileFromServer()
 {
     send("data.get.student-profile", "", function (studentProfile)
     {
