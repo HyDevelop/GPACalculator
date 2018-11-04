@@ -22,9 +22,12 @@ msg.addMsg = function (format, title, lines)
 
 msg.updateRegistration = function ()
 {
-    // TODO: Fix problem: If this is called twice, a message can not be closed.
     $('.message .close').on('click', function()
     {
+        // Fixed problem: If this is called twice, a message can not be closed.
+        if (this.closed != null) return;
+        this.closed = true;
+
         $(this).closest('.message').transition('fade');
     });
 };
