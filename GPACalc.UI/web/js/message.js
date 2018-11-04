@@ -28,6 +28,8 @@ msg.updateRegistration = function ()
         if (this.closed != null) return;
         this.closed = true;
 
-        $(this).closest('.message').transition('fade');
+        var message = $(this).closest('.hy-message-container');
+        message.transition('vertical flip');
+        // message.remove();
     });
 };
