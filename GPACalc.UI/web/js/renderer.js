@@ -32,8 +32,7 @@ function renderGradesPage(studentProfile, gradingProfile)
 function renderCourseSettingsPage(json)
 {
     // Get div and delete all child.
-    var div = $("#student-profile-editor-div");
-    div.empty();
+    studentProfileEditorDiv.empty();
 
     // Get subjects.
     var subjects = json.subjectList.subjects;
@@ -44,12 +43,7 @@ function renderCourseSettingsPage(json)
         var level = subject.level;
         var credits = subject.credits;
 
-        div.append(studentProfileEditorTemplate.replace(/%id%/g, i));
-
-        // $("#key-" + i).val(keyName);
-        $("#name-" + i).val(name);
-        $("#level-" + i).val(level);
-        $("#credits-" + i).val(credits);
+        studentProfileAddEntry(i, name, level, credits);
     }
 }
 
