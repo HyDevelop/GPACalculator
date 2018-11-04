@@ -1,4 +1,6 @@
 // This JS is for displaying data, not direct rendering.
+const gradeEditorDiv = $("#grade-editor-div");
+const studentProfileEditorDiv = $("#student-profile-editor-div");
 
 /**
  * Render the grades page.
