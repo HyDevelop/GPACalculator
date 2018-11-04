@@ -11,8 +11,7 @@ const studentProfileEditorDiv = $("#student-profile-editor-div");
 function renderGradesPage(studentProfile, gradingProfile)
 {
     // Get div and delete all child.
-    var div = $("#grade-editor-div");
-    div.empty();
+    gradeEditorDiv.empty();
 
     // Get subjects.
     var subjects = studentProfile.subjectList.subjects;
@@ -21,7 +20,7 @@ function renderGradesPage(studentProfile, gradingProfile)
         var subject = subjects[i];
         var name = subject.name;
 
-        div.append(gradeEditorTemplate.replace(/%id%/g, i).replace(/%course-name%/g, name));
+        gradeEditorDiv.append(gradeEditorTemplate.replace(/%id%/g, i).replace(/%course-name%/g, name));
     }
 }
 
