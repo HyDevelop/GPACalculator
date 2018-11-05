@@ -10,7 +10,7 @@
 <div class="row hy-row">
     <div class="col-sm">
         <div class="ui fluid input hy-input">
-            <input id="name-%id%" type="text" placeholder="Full Name">
+            <input id="name-%id%" type="text" placeholder="Course Name">
         </div>
     </div>
     <div class="col-sm-2">
