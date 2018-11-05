@@ -10,7 +10,7 @@
         <div id="messages-div"></div>
         <div class="uk-container hy-container">
             <div class="uk-position-relative">
-                <div class="uk-position-relative uk-margin-medium">
+                <div class="uk-position-relative uk-margin">
                     <ul class="uk-tab hy-tab" uk-tab>
                         <li aria-expanded="true" class="uk-active"><a href="#">Grades</a></li>
                         <li aria-expanded="false" class=""><a href="#">Course Settings</a></li>
