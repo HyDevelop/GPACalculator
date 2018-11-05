@@ -171,4 +171,4 @@ function calculateAverage(button)
         })
 }
 
-// TODO: Add entry to student profile.
+// TODO: Remove an entry from course settings
