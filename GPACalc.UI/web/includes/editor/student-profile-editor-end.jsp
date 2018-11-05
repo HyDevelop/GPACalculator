@@ -8,8 +8,8 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" %>
 
-<div class="hy-operating-buttons">
     <button class="ui basic teal left floated labeled icon button" onclick="studentProfileAddEntry(countStudentProfileEditorEntries(), '', '', '')">
+<div class="hy-operating-buttons uk-container">
         <i class="plus icon"></i>
         Add Entry
     </button>
