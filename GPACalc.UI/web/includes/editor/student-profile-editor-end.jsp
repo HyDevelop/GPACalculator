@@ -9,15 +9,15 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 
 <div class="hy-operating-buttons">
-    <button class="ui basic teal labeled icon button" onclick="studentProfileAddEntry(countStudentProfileEditorEntries(), '', '', '')">
+    <button class="ui basic teal left floated labeled icon button" onclick="studentProfileAddEntry(countStudentProfileEditorEntries(), '', '', '')">
         <i class="plus icon"></i>
         Add Entry
     </button>
-    <button class="ui basic labeled icon button" onclick="loadOldProfileFromServer()">
+    <button class="ui basic right floated labeled icon button" onclick="loadOldProfileFromServer()">
         <i class="download icon"></i>
         Reload Old Settings
     </button>
-    <button class="ui green right labeled icon button" onclick="uploadNewSettings()">
+    <button class="ui green right floated right labeled icon button" onclick="uploadNewSettings()">
         <i class="upload icon"></i>
         Upload New Settings
     </button>
