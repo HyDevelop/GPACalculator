@@ -7,12 +7,10 @@
  * @author Hykilpikonna 
 --%>
 <%@ page contentType="text/html;charset=UTF-8" %>
-<div class="hy-operating-buttons mar">
+<div class="hy-operating-buttons grades-page">
     <div class="ui animated primary button" tabindex="0" onclick="calculateAverage(this)">
         <div class="visible content">Calculate</div>
-        <div class="hidden content">
-            <i class="calculator icon"></i>
-        </div>
+        <div class="hidden content"><i class="calculator icon"></i></div>
     </div>
     <div class="inline field">
         <div class="ui checkbox">
