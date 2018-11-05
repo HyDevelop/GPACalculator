@@ -9,6 +9,10 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 
 <div class="hy-operating-buttons">
+    <button class="ui basic teal labeled icon button" onclick="studentProfileAddEntry(0, '', '', '')">
+        <i class="plus icon"></i>
+        Add Entry
+    </button>
     <button class="ui basic labeled icon button" onclick="loadOldProfileFromServer()">
         <i class="download icon"></i>
         Reload Old Settings
