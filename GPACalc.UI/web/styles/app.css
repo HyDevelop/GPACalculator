@@ -60,6 +60,13 @@
     margin-right: -10px;
 }
 
+.hy-operating-buttons.uk-container
+{
+    max-width: 200%;
+    margin-top: 10px;
+
+}
+
 .hy-operating-buttons.grades-page
 {
     float: right;
@@ -79,9 +86,10 @@
     margin-right: 20px;
 }
 
-.hy-operating-buttons > button
+.hy-operating-buttons > .ui.button
 {
-    margin: 10px !important
+    margin-left: 10px !important;
+    margin-right: 10px !important;
 }
 
 .ui.grid.hy-grid
