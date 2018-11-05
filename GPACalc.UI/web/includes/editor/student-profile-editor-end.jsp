@@ -9,7 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 
 <div class="hy-operating-buttons">
-    <button class="ui basic teal labeled icon button" onclick="studentProfileAddEntry(0, '', '', '')">
+    <button class="ui basic teal labeled icon button" onclick="studentProfileAddEntry(countStudentProfileEditorEntries() + 1, '', '', '')">
         <i class="plus icon"></i>
         Add Entry
     </button>
