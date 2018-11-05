@@ -56,7 +56,8 @@
 
 .hy-operating-buttons
 {
-    float: right !important;
+    margin-left: -10px;
+    margin-right: -10px;
 }
 
 .hy-operating-buttons.mar
@@ -79,7 +80,12 @@
 
 .hy-operating-buttons > button
 {
-    margin: 10px 0px 10px 20px !important
+    margin: 10px !important
+}
+
+.ui.grid.hy-grid
+{
+    margin: -5px -31px -5px 0px;
 }
 
 .rainbow-blue-gradient
