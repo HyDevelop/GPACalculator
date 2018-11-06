@@ -170,5 +170,3 @@ function calculateAverage(button)
             return true;
         })
 }
-
-// TODO: Remove an entry from course settings
