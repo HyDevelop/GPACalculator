@@ -17,4 +17,7 @@
     <div class="col-sm-1">
         <h4 class="ui header">Credits</h4>
     </div>
+    <div class="placeholder">
+        <i class="close icon"></i>
+    </div>
 </div>
