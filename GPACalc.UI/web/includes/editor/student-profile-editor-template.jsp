@@ -24,6 +24,6 @@
         </div>
     </div>
     <div class="hy-close-icon">
-        <i class="close icon"></i>
+        <i class="close icon" onclick="studentProfileRemoveEntry(this)"></i>
     </div>
 </div>
