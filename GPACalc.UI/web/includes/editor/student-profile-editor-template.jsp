@@ -23,4 +23,5 @@
             <input id="credits-%id%" type="text" placeholder="Credits" oninput="checkNumeric(this.id)">
         </div>
     </div>
+    <i class="close icon"></i>
 </div>
