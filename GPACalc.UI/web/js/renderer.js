@@ -62,3 +62,13 @@ function studentProfileAddEntry(id, name, level, credits)
     $("#level-" + id).val(level);
     $("#credits-" + id).val(credits);
 }
+
+/**
+ * Remove an entry.
+ *
+ * @param element The element of the close icon button.
+ */
+function studentProfileRemoveEntry(element)
+{
+    $(element).parent().parent().remove();
+}
