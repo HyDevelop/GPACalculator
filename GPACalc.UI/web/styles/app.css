@@ -97,6 +97,11 @@
     margin: -5px -31px -5px 0px;
 }
 
+.hy-close-icon
+{
+    margin-top: 12px;
+}
+
 .rainbow-blue-gradient
 {
     background: #00F260; /* fallback for old browsers */
