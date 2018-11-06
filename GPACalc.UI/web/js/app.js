@@ -170,3 +170,5 @@ function calculateAverage(button)
             return true;
         })
 }
+
+// TODO: Upload student profile settings to server.
