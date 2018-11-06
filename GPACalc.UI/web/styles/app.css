@@ -102,6 +102,11 @@
     margin-top: 12px;
 }
 
+.placeholder
+{
+    visibility: hidden;
+}
+
 .rainbow-blue-gradient
 {
     background: #00F260; /* fallback for old browsers */
