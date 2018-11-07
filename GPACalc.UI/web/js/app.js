@@ -135,8 +135,13 @@ $(document).ready(function onLoad()
                 console.log("[OnLoad] Login not found, displaying modal.");
             }
 
-            // Render editors
-            loadOldProfileFromServer();
+            // Load Cache
+            cache.loadFromServer(function ()
+            {
+                // Render editors
+                loadOldProfileFromServer();
+
+            });
         });
     });
 });
@@ -156,7 +161,7 @@ function showLoginModal()
 function loadOldProfileFromServer()
 {
     renderGradesPage(cache.studentProfile, cache.gradingProfile);
-    renderCourseSettingsPage(cahce.studentProfile);
+    renderCourseSettingsPage(cache.studentProfile);
 }
 
 /**
