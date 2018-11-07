@@ -6,3 +6,4 @@ GPACalculator.iml
 runtime-config.yml
 GPACalc.Core/src/test/java/VeracrossTest.java
 debug.log
+GPACalc.Discord/target/*
