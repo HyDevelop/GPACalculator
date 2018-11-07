@@ -54,6 +54,26 @@ async function send(apiNode, content, callback, errorCallback)
 }
 
 /**
+ * Send and debug the response to console.
+ *
+ * @param apiNode Node
+ * @param content Content
+ */
+function sendDebug(apiNode, content)
+{
+    send(apiNode, content,
+        function (response)
+        {
+            console.log(response);
+        },
+        function (error)
+        {
+            console.log("Error: " + error);
+            return false;
+        })
+}
+
+/**
  * Called when signing in.
  *
  * @param user Google user.
@@ -135,17 +155,8 @@ function showLoginModal()
  */
 function loadOldProfileFromServer()
 {
-    send("data.get.student-profile", "", function (studentProfile)
-    {
-        studentProfile = JSON.parse(studentProfile);
-        send("data.get.grading-profile", "", function (gradingProfile)
-        {
-            gradingProfile = JSON.parse(gradingProfile);
-
-            renderGradesPage(studentProfile, gradingProfile);
-        });
-        renderCourseSettingsPage(studentProfile);
-    });
+    renderGradesPage(cache.studentProfile, cache.gradingProfile);
+    renderCourseSettingsPage(cahce.studentProfile);
 }
 
 /**
