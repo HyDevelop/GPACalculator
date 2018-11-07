@@ -20,3 +20,11 @@ cache.loadFromServer = function(callback)
         if (cache.studentProfile != null) callback();
     });
 };
+
+/**
+ * Update profiles from local html input elements.
+ */
+cache.update = function()
+{
+    // TODO: Update from local settings
+};
