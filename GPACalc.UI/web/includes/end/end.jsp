@@ -15,6 +15,7 @@
 <script src="${pageContext.request.contextPath}/js/utils.js"></script>
 <%@include file="/js/constants-js.jsp"%>
 <script src="${pageContext.request.contextPath}/js/app.js"></script>
+<script src="${pageContext.request.contextPath}/js/cache.js"></script>
 <script src="${pageContext.request.contextPath}/js/events.js"></script>
 <script src="${pageContext.request.contextPath}/js/renderer.js"></script>
 <script src="${pageContext.request.contextPath}/js/templates.js"></script>
