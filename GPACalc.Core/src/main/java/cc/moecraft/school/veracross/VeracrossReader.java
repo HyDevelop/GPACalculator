@@ -1,8 +1,12 @@
 package cc.moecraft.school.veracross;
 
 import cc.moecraft.school.utils.ElementUtils;
+import cc.moecraft.school.veracross.pojo.VeracrossCourse;
+import cc.moecraft.school.veracross.pojo.VeracrossPojo;
+import cc.moecraft.utils.MapBuilder;
+import cn.hutool.http.HttpUtil;
+import com.google.gson.Gson;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -12,11 +16,11 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Pattern;
 
 import static cc.moecraft.school.utils.ElementUtils.findElement;
 import static cc.moecraft.school.utils.ElementUtils.findElements;
-import static cc.moecraft.school.veracross.VeracrossUtils.*;
+import static cc.moecraft.school.veracross.VeracrossUtils.findCourseId;
+import static cc.moecraft.utils.MapBuilder.*;
 
 /**
  * 此类由 Hykilpikonna 在 2018/10/05 创建!
@@ -26,7 +30,6 @@ import static cc.moecraft.school.veracross.VeracrossUtils.*;
  *
  * @author Hykilpikonna
  */
-@RequiredArgsConstructor
 public class VeracrossReader
 {
     public static final String API_MESSAGES = "mailbox/messages";
@@ -40,6 +43,20 @@ public class VeracrossReader
 
     @Setter @Getter
     private WebDriver webDriver;
+
+    /**
+     * Construct a Veracross Reader object.
+     *
+     * @param url Student page URL (eg. "https://portals-app.veracross.com/schoolname/student")
+     * @param username Veracross Username
+     * @param password Veracross Password
+     */
+    public VeracrossReader(String url, String username, String password)
+    {
+        this.url = url.endsWith("/") ? url : url + "/";
+        this.username = username;
+        this.password = password;
+    }
 
     /**
      * Initialize with a path to the chrome driver.
