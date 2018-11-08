@@ -96,13 +96,13 @@ public class VeracrossReader
     }
 
     /**
-     * Get courses and grades.
+     * Get courses.
      *
-     * @return List of course grades.
+     * @return List of courses.
      */
-    public List<VeracrossCourseGrade> getCourseGrades()
+    public List<VeracrossCourse> getCourses()
     {
-        List<VeracrossCourseGrade> result = new ArrayList<>();
+        List<VeracrossCourse> result = new ArrayList<>();
 
         // If I search for .course, it would only include the course name and teacher name
         // Because the grades are stored in .course-notifications, which are parallel elements.
@@ -122,26 +122,12 @@ public class VeracrossReader
                 String teacher = findElement(course, By.className("teacher-name")).getAttribute("innerHTML");
                 long courseId = Long.parseLong(regexToFindCourseId.matcher(courseUrl).group());
 
-                try
-                {
-                    // Try to find the grades. Some courses might not have grades.
-                    String numericGrade = findElement(course, By.className("numeric-grade")).getAttribute("innerHTML");
-                    String letterGrade = findElement(course, By.className("letter-grade")).getAttribute("innerHTML");
-                    double doubleGrade = Double.parseDouble(numericGrade.replace("%", ""));
-
-                    result.add(VeracrossCourseGrade.builder()
-                            .courseId(courseId)
-                            .url(courseUrl)
-                            .name(courseName)
-                            .teacherName(teacher)
-                            .numericGrade(doubleGrade)
-                            .letterGrade(letterGrade)
-                            .build());
-                }
-                catch (ElementUtils.ElementNotFoundException e)
-                {
-                    System.out.printf("Course grade not found: %s|%s\n", courseName, teacher);
-                }
+                result.add(VeracrossCourse.builder()
+                        .courseId(courseId)
+                        .url(courseUrl)
+                        .name(courseName)
+                        .teacherName(teacher)
+                        .build());
             }
             catch (ElementUtils.ElementNotFoundException ignored) {}
         }
