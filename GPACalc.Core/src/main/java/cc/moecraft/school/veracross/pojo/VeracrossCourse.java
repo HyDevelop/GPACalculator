@@ -15,7 +15,7 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 @Builder
-public class VeracrossCourse
+public class VeracrossCourse implements VeracrossPojo
 {
     private String name;
     private String teacherName;
