@@ -16,6 +16,7 @@ import java.util.regex.Pattern;
 
 import static cc.moecraft.school.utils.ElementUtils.findElement;
 import static cc.moecraft.school.utils.ElementUtils.findElements;
+import static cc.moecraft.school.veracross.VeracrossUtils.*;
 
 /**
  * 此类由 Hykilpikonna 在 2018/10/05 创建!
@@ -28,7 +29,6 @@ import static cc.moecraft.school.utils.ElementUtils.findElements;
 @RequiredArgsConstructor
 public class VeracrossReader
 {
-    public static final Pattern COURSE_ID_PATTERN = Pattern.compile("(?<=/)[0-9]*(?=/)");
     public static final String API_MESSAGES = "mailbox/messages";
     public static final String API_CALENDAR_EVENTS = "student/calendar/student/calendar_events";
     public static final String API_COURSE_ASSIGNMENTS = "student/enrollment/%CID%/assignments";
@@ -124,7 +124,7 @@ public class VeracrossReader
                 String courseName = courseNameElement.getAttribute("innerHTML");
                 String courseUrl = courseNameElement.getAttribute("href");
                 String teacher = findElement(course, By.className("teacher-name")).getAttribute("innerHTML");
-                long courseId = Long.parseLong(COURSE_ID_PATTERN.matcher(courseUrl).group());
+                long courseId = findCourseId(courseUrl);
 
                 result.add(VeracrossCourse.builder()
                         .courseId(courseId)
