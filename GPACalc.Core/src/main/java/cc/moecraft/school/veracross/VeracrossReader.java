@@ -154,4 +154,17 @@ public class VeracrossReader
 
         return result;
     }
+
+    /**
+     * Get data from an API Url
+     *
+     * @param apiUrl API Url
+     * @param type Type of the response object.
+     * @param params Parameter value pairs
+     * @return Response
+     */
+    public <T> T get(String apiUrl, Class<T> type, Object... params)
+    {
+        return new Gson().fromJson(HttpUtil.get(url + apiUrl, build(String.class, Object.class, params)), type);
+    }
 }
