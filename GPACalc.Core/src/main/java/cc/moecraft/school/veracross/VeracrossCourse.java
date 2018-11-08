@@ -15,13 +15,10 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 @Builder
-public class VeracrossCourseGrade
+public class VeracrossCourse
 {
-    private long courseId;
-    private String url;
-
     private String name;
     private String teacherName;
-    private String letterGrade;
-    private double numericGrade;
+    private String url;
+    private long courseId;
 }
