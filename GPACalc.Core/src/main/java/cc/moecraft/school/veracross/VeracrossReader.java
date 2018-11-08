@@ -28,7 +28,7 @@ import static cc.moecraft.school.utils.ElementUtils.findElements;
 @RequiredArgsConstructor
 public class VeracrossReader
 {
-    public static final Pattern regexToFindCourseId = Pattern.compile("(?<=/)[0-9]*(?=/)");
+    public static final Pattern COURSE_ID_PATTERN = Pattern.compile("(?<=/)[0-9]*(?=/)");
 
     private final String url;
     private final String username;
@@ -120,7 +120,7 @@ public class VeracrossReader
                 String courseName = courseNameElement.getAttribute("innerHTML");
                 String courseUrl = courseNameElement.getAttribute("href");
                 String teacher = findElement(course, By.className("teacher-name")).getAttribute("innerHTML");
-                long courseId = Long.parseLong(regexToFindCourseId.matcher(courseUrl).group());
+                long courseId = Long.parseLong(COURSE_ID_PATTERN.matcher(courseUrl).group());
 
                 result.add(VeracrossCourse.builder()
                         .courseId(courseId)
