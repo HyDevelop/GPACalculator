@@ -1,9 +1,11 @@
 package cc.moecraft.school.veracross;
 
 import cc.moecraft.school.utils.ElementUtils;
+import cc.moecraft.school.veracross.pojo.VeracrossAssignments;
 import cc.moecraft.school.veracross.pojo.VeracrossCourse;
 import cc.moecraft.school.veracross.pojo.VeracrossPojo;
 import cc.moecraft.utils.MapBuilder;
+import cc.moecraft.utils.StringUtils;
 import cn.hutool.http.HttpUtil;
 import com.google.gson.Gson;
 import lombok.Getter;
@@ -20,7 +22,9 @@ import java.util.List;
 import static cc.moecraft.school.utils.ElementUtils.findElement;
 import static cc.moecraft.school.utils.ElementUtils.findElements;
 import static cc.moecraft.school.veracross.VeracrossUtils.findCourseId;
+import static cc.moecraft.school.veracross.VeracrossUtils.replaceCourseId;
 import static cc.moecraft.utils.MapBuilder.*;
+import static cc.moecraft.utils.StringUtils.replaceVariables;
 
 /**
  * 此类由 Hykilpikonna 在 2018/10/05 创建!
@@ -166,5 +170,16 @@ public class VeracrossReader
     public <T> T get(String apiUrl, Class<T> type, Object... params)
     {
         return new Gson().fromJson(HttpUtil.get(url + apiUrl, build(String.class, Object.class, params)), type);
+    }
+
+    /**
+     * Get assignments of a course.
+     *
+     * @param courseId Course ID
+     * @return Assignments
+     */
+    public VeracrossAssignments getAssignments(long courseId)
+    {
+        return get(replaceCourseId(API_COURSE_ASSIGNMENTS, courseId), VeracrossAssignments.class);
     }
 }
