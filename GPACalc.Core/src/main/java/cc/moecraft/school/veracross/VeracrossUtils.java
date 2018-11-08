@@ -28,4 +28,16 @@ public class VeracrossUtils
         if (matcher.find()) return Long.parseLong(matcher.group());
         return 0;
     }
+
+    /**
+     * Replace course ID
+     *
+     * @param url API url
+     * @param id Course ID
+     * @return URL with course ID
+     */
+    public static String replaceCourseId(String url, long id)
+    {
+        return url.replace("%CID%", String.valueOf(id));
+    }
 }
