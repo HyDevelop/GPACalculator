@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
  */
 public class VeracrossUtils
 {
-    public static final Pattern COURSE_ID_PATTERN = Pattern.compile("(?<=/)[0-9]*(?=/)");
+    public static final Pattern COURSE_ID_PATTERN = Pattern.compile("(?<=/).[0-9]*(?=/)");
 
     /**
      * Find course id in url.
