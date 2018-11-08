@@ -75,6 +75,9 @@ public class VeracrossReader
         setWebDriver(webDriver);
     }
 
+    /**
+     * Login with set username and password.
+     */
     public void login()
     {
         // Send GET request to url.
@@ -90,9 +93,6 @@ public class VeracrossReader
 
         // Submit form (Any element works)
         usernameElement.submit();
-
-        // TODO: Remove debug code
-        System.out.println("Page Title: " + webDriver.getTitle());
     }
 
     /**
