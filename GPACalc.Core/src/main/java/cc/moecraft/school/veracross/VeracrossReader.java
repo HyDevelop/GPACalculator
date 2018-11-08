@@ -108,9 +108,7 @@ public class VeracrossReader
     {
         List<VeracrossCourse> result = new ArrayList<>();
 
-        // If I search for .course, it would only include the course name and teacher name
-        // Because the grades are stored in .course-notifications, which are parallel elements.
-        // So I have to search for the list entry elements that stores both of them.
+        // Search for class list elements.
         List<WebElement> courses = findElements(getWebDriver(), By.cssSelector(".class-list.clear > li"));
 
         // Loops through each course to find detailed information.
@@ -126,6 +124,7 @@ public class VeracrossReader
                 String teacher = findElement(course, By.className("teacher-name")).getAttribute("innerHTML");
                 long courseId = findCourseId(courseUrl);
 
+                // Add to result.
                 result.add(VeracrossCourse.builder()
                         .courseId(courseId)
                         .url(courseUrl)
