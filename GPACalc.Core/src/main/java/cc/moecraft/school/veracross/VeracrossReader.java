@@ -129,7 +129,14 @@ public class VeracrossReader
                     String letterGrade = findElement(course, By.className("letter-grade")).getAttribute("innerHTML");
                     double doubleGrade = Double.parseDouble(numericGrade.replace("%", ""));
 
-                    result.add(new VeracrossCourseGrade(courseName, teacher, letterGrade, doubleGrade));
+                    result.add(VeracrossCourseGrade.builder()
+                            .courseId(courseId)
+                            .url(courseUrl)
+                            .name(courseName)
+                            .teacherName(teacher)
+                            .numericGrade(doubleGrade)
+                            .letterGrade(letterGrade)
+                            .build());
                 }
                 catch (ElementUtils.ElementNotFoundException e)
                 {
