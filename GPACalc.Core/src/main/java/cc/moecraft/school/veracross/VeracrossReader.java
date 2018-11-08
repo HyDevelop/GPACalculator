@@ -12,6 +12,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 import static cc.moecraft.school.utils.ElementUtils.findElement;
 import static cc.moecraft.school.utils.ElementUtils.findElements;
@@ -27,6 +28,8 @@ import static cc.moecraft.school.utils.ElementUtils.findElements;
 @RequiredArgsConstructor
 public class VeracrossReader
 {
+    public static final Pattern regexToFindCourseId = Pattern.compile("(?<=/)[0-9]*(?=/)");
+
     private final String url;
     private final String username;
     private final String password;
@@ -113,8 +116,11 @@ public class VeracrossReader
             {
                 // Find course name and teacher name.
                 // Inner HTML is more accurate than .text() because .text() doesn't work for invisible entries.
-                String courseName = findElement(course, By.className("class-name")).getAttribute("innerHTML");
+                WebElement courseNameElement = findElement(course, By.className("class-name"));
+                String courseName = courseNameElement.getAttribute("innerHTML");
+                String courseUrl = courseNameElement.getAttribute("href");
                 String teacher = findElement(course, By.className("teacher-name")).getAttribute("innerHTML");
+                long courseId = Long.parseLong(regexToFindCourseId.matcher(courseUrl).group());
 
                 try
                 {
