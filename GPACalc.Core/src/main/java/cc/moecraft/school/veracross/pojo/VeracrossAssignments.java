@@ -19,7 +19,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class VeracrossAssignments
+public class VeracrossAssignments implements VeracrossPojo
 {
     @SerializedName("assignments")
     @Expose

@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class VeracrossMessage
+public class VeracrossMessage implements VeracrossPojo
 {
     @SerializedName("id")
     @Expose
