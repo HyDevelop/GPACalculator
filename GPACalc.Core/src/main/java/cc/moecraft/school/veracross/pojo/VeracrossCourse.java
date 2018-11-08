@@ -1,4 +1,4 @@
-package cc.moecraft.school.veracross;
+package cc.moecraft.school.veracross.pojo;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
