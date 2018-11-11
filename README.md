@@ -73,6 +73,10 @@ Development:
 ### Veracross:
 
 ```java
+// Import packages first:
+//   import cc.moecraft.school.veracross.*;
+//   import cc.moecraft.school.veracross.pojo.*;
+
 // Initialize object with base url, username and password.
 VeracrossReader reader = new VeracrossReader("https://portals-app.veracross.com/schoolname", "username", "password");
 
