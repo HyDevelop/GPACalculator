@@ -19,16 +19,18 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
-import static cc.moecraft.school.utils.ElementUtils.findElement;
-import static cc.moecraft.school.utils.ElementUtils.findElementSafe;
-import static cc.moecraft.school.utils.ElementUtils.findElements;
+import static cc.moecraft.school.utils.ElementUtils.*;
+import static cc.moecraft.school.utils.UrlUtils.makeUrl;
 import static cc.moecraft.school.veracross.Attributes.HREF;
 import static cc.moecraft.school.veracross.Attributes.INNER_HTML;
 import static cc.moecraft.school.veracross.VeracrossUtils.findCourseId;
 import static cc.moecraft.school.veracross.VeracrossUtils.replaceCourseId;
 import static cc.moecraft.utils.MapBuilder.*;
+import static cn.hutool.http.HttpUtil.urlWithForm;
+import static java.util.Objects.requireNonNull;
 
 /**
  * 此类由 Hykilpikonna 在 2018/10/05 创建!
@@ -173,10 +175,8 @@ public class VeracrossReader
      */
     public <T> T get(String apiUrl, Class<T> type, Object... params)
     {
-
-        String fullUrl = HttpUtil.urlWithForm(url + apiUrl, build(String.class, Object.class, params), null, false);
-        webDriver.get(fullUrl);
-        String json = Objects.requireNonNull(findElementSafe(webDriver, By.cssSelector("pre"))).getAttribute("innerHTML");
+        webDriver.get(makeUrl(url + apiUrl, params));
+        String json = findElementRE(webDriver, By.cssSelector("pre")).getAttribute(INNER_HTML);
         return new Gson().fromJson(json, type);
     }
 
