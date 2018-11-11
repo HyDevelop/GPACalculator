@@ -1,6 +1,7 @@
 package cc.moecraft.school.profile.student;
 
 import cc.moecraft.yaml.HyConfigBase;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -15,6 +16,7 @@ import lombok.ToString;
  */
 @Getter @Setter
 @ToString
+@Builder
 public class StudentProfile
 {
     private SubjectList subjectList;
