@@ -3,7 +3,9 @@ package cc.moecraft.school.veracross;
 import cc.moecraft.school.utils.ElementUtils;
 import cc.moecraft.school.veracross.pojo.VeracrossAssignments;
 import cc.moecraft.school.veracross.pojo.VeracrossCourse;
+import cc.moecraft.school.veracross.pojo.*;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import lombok.Getter;
 import lombok.Setter;
 import org.openqa.selenium.By;
@@ -12,6 +14,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -165,7 +168,7 @@ public class VeracrossReader
      * @param params Parameter value pairs
      * @return Response
      */
-    public <T> T get(String apiUrl, Class<T> type, Object... params)
+    public <T> T get(String apiUrl, Type type, Object... params)
     {
         webDriver.get(makeUrl(url + apiUrl, params));
         String json = findElementRE(webDriver, cssSelector("pre")).getAttribute(INNER_HTML);
