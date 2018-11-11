@@ -247,3 +247,41 @@ Subjects:
     Level: "AP"
     Credits: 1
 ```
+
+#### 3. Use Them:
+
+```java
+// Read grading profile
+HyConfig gradingConfig = new HyConfig(new File("./profiles/grading/ExampleHighSchoolWeighted.yml"));
+GradingProfile gradingProfile = GradingProfile.parseFromConfig(gradingConfig, "");
+
+// Read student profile
+HyConfig studentConfig = new HyConfig(new File("./profiles/student/Example.yml"));
+StudentProfile studentProfile = StudentProfile.parseFromConfig(studentConfig, "");
+
+// Create example grades (use my current grade.)
+Grades grades = new Grades()
+        .putGrade("English 2 A", "A")
+        .putGrade("Algebra 2 H", "A")
+        .putGrade("Chemistry 1 H", "A-")
+        .putGrade("Modern World History CP", "A+")
+        .putGrade("Early Church CP", "A-")
+        .putGrade("AP Computer Science A", "A");
+
+try
+{
+    // Calculate GPA
+    System.out.println("GPA: " + GPACalculator.calculate(gradingProfile, studentProfile, grades));
+}
+catch (NotFoundException e)
+{
+    // Something wrong.
+    System.err.println("Not Found: " + e.getMessage());
+}
+```
+
+<br>
+
+<a name="license"></a>
+License: [GNU / GPL](https://choosealicense.com/licenses/gpl-3.0/)
+--------
