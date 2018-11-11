@@ -24,9 +24,10 @@ public class CourseLevelList
      *
      * @param level Level.
      */
-    public void put(CourseLevel level)
+    public CourseLevelList put(CourseLevel level)
     {
         levels.add(level);
+        return this;
     }
 
     /**
