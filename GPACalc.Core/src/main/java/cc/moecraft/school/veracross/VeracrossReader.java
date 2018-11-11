@@ -45,6 +45,9 @@ public class VeracrossReader
     @Setter @Getter
     private WebDriver webDriver;
 
+    @Getter
+    private boolean destroyed = false;
+
     /**
      * Construct a Veracross Reader object.
      *
@@ -226,8 +229,14 @@ public class VeracrossReader
     public void destroy()
     {
         webDriver.quit();
+        destroyed = true;
     }
 
+    /**
+     * Automatically call destroy() when gc removes this object from memory.
+     *
+     * @throws Throwable Things
+     */
     @Override
     protected void finalize() throws Throwable
     {
