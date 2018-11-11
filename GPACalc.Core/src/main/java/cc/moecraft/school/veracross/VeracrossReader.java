@@ -219,4 +219,19 @@ public class VeracrossReader
     {
         return getEvents(getDate(begin), getDate(end));
     }
+
+    /**
+     * Destroy this object.
+     */
+    public void destroy()
+    {
+        webDriver.quit();
+    }
+
+    @Override
+    protected void finalize() throws Throwable
+    {
+        destroy();
+        super.finalize();
+    }
 }
