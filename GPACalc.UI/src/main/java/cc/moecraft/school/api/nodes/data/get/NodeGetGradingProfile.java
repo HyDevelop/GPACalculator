@@ -32,6 +32,6 @@ public class NodeGetGradingProfile implements ApiNode
         UserInfo profiles = Services.userInfo.findByGoogleSub(id.getSubject());
 
         if (profiles == null) return "Error: User not registered.";
-        return GSON.toJson(profiles.getGradingProfile());
+        return GSON.toJson(profiles.getGradingProfileObject());
     }
 }
