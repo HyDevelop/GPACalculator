@@ -18,13 +18,16 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import static cc.moecraft.school.utils.ElementUtils.findElement;
+import static cc.moecraft.school.utils.ElementUtils.findElementSafe;
 import static cc.moecraft.school.utils.ElementUtils.findElements;
+import static cc.moecraft.school.veracross.Attributes.HREF;
+import static cc.moecraft.school.veracross.Attributes.INNER_HTML;
 import static cc.moecraft.school.veracross.VeracrossUtils.findCourseId;
 import static cc.moecraft.school.veracross.VeracrossUtils.replaceCourseId;
 import static cc.moecraft.utils.MapBuilder.*;
-import static cc.moecraft.utils.StringUtils.replaceVariables;
 
 /**
  * 此类由 Hykilpikonna 在 2018/10/05 创建!
@@ -51,7 +54,7 @@ public class VeracrossReader
     /**
      * Construct a Veracross Reader object.
      *
-     * @param url Student page URL (eg. "https://portals-app.veracross.com/schoolname/student")
+     * @param url Base URL (eg. "https://portals-app.veracross.com/schoolname")
      * @param username Veracross Username
      * @param password Veracross Password
      */
@@ -140,15 +143,15 @@ public class VeracrossReader
                 // Find course name and teacher name.
                 // Inner HTML is more accurate than .text() because .text() doesn't work for invisible entries.
                 WebElement courseNameElement = findElement(course, By.className("class-name"));
-                String courseName = courseNameElement.getAttribute("innerHTML");
-                String courseUrl = courseNameElement.getAttribute("href");
-                String teacher = findElement(course, By.className("teacher-name")).getAttribute("innerHTML");
-                long courseId = findCourseId(courseUrl);
+                String courseName = courseNameElement.getAttribute(INNER_HTML);
+                String teacher = findElement(course, By.className("teacher-name")).getAttribute(INNER_HTML);
+                long courseId = findCourseId(courseNameElement.getAttribute(HREF));
+                long assignmentsId = findCourseId(findElement(course, By.className("view-assignments")).getAttribute(INNER_HTML));
 
                 // Add to result.
                 result.add(VeracrossCourse.builder()
-                        .courseId(courseId)
-                        .url(courseUrl)
+                        .id(courseId)
+                        .assignmentsId(assignmentsId)
                         .name(courseName)
                         .teacherName(teacher)
                         .build());
