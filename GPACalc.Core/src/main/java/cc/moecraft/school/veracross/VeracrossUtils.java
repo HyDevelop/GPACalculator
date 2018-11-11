@@ -23,6 +23,7 @@ public class VeracrossUtils
      */
     public static long findCourseId(String courseUrl)
     {
+        courseUrl += "/";
         Matcher matcher = COURSE_ID_PATTERN.matcher(courseUrl);
 
         if (matcher.find()) return Long.parseLong(matcher.group());
