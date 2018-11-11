@@ -197,4 +197,17 @@ public class VeracrossReader
         return get(API_MESSAGES, new TypeToken<List<VeracrossMessage>>(){}.getType(), "start", start);
     }
 
+    /**
+     * Get calendar events.
+     *
+     * @param begin Begin date.
+     * @param end Ending date.
+     * @return Calendar Events
+     */
+    public List<VeracrossCalendarEvent> getCalendarEvents(Date begin, Date end)
+    {
+        return get(API_CALENDAR_EVENTS, new TypeToken<List<VeracrossCalendarEvent>>(){}.getType()
+                ,"begin_date", toVeracrossDate(begin)
+                ,"end_date", toVeracrossDate(end));
+    }
 }
