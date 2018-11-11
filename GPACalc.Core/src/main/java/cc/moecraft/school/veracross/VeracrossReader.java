@@ -14,6 +14,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -21,9 +22,7 @@ import static cc.moecraft.school.utils.ElementUtils.*;
 import static cc.moecraft.school.utils.UrlUtils.makeUrl;
 import static cc.moecraft.school.veracross.Attributes.HREF;
 import static cc.moecraft.school.veracross.Attributes.INNER_HTML;
-import static cc.moecraft.school.veracross.VeracrossUtils.findCourseId;
-import static cc.moecraft.school.veracross.VeracrossUtils.replaceCourseId;
-import static cc.moecraft.school.veracross.VeracrossUtils.toVeracrossDate;
+import static cc.moecraft.school.veracross.VeracrossUtils.*;
 import static org.openqa.selenium.By.*;
 
 /**
@@ -209,5 +208,17 @@ public class VeracrossReader
         return get(API_CALENDAR_EVENTS, new TypeToken<List<VeracrossCalendarEvent>>(){}.getType()
                 ,"begin_date", toVeracrossDate(begin)
                 ,"end_date", toVeracrossDate(end));
+    }
+
+    /**
+     * Get calendar events.
+     *
+     * @param begin Begin offset.
+     * @param end Ending offset.
+     * @return Calendar Events
+     */
+    public List<VeracrossCalendarEvent> getCalendarEvents(int begin, int end)
+    {
+        return getCalendarEvents(getDate(begin), getDate(end));
     }
 }
