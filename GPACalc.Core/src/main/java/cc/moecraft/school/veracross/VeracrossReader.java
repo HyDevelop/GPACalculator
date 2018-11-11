@@ -21,6 +21,7 @@ import static cc.moecraft.school.veracross.Attributes.HREF;
 import static cc.moecraft.school.veracross.Attributes.INNER_HTML;
 import static cc.moecraft.school.veracross.VeracrossUtils.findCourseId;
 import static cc.moecraft.school.veracross.VeracrossUtils.replaceCourseId;
+import static org.openqa.selenium.By.*;
 
 /**
  * 此类由 Hykilpikonna 在 2018/10/05 创建!
@@ -105,11 +106,11 @@ public class VeracrossReader
         webDriver.get(url);
 
         // Put in username.
-        WebElement usernameElement = webDriver.findElement(By.id("username"));
+        WebElement usernameElement = webDriver.findElement(id("username"));
         usernameElement.sendKeys(username);
 
         // Put in password.
-        WebElement passwordElement = webDriver.findElement(By.id("password"));
+        WebElement passwordElement = webDriver.findElement(id("password"));
         passwordElement.sendKeys(password);
 
         // Submit form (Any element works)
@@ -126,7 +127,7 @@ public class VeracrossReader
         List<VeracrossCourse> result = new ArrayList<>();
 
         // Search for class list elements.
-        List<WebElement> courses = findElements(getWebDriver(), By.cssSelector(".class-list.clear > li"));
+        List<WebElement> courses = findElements(getWebDriver(), cssSelector(".class-list.clear > li"));
 
         // Loops through each course to find detailed information.
         for (WebElement course : courses)
@@ -135,11 +136,12 @@ public class VeracrossReader
             {
                 // Find course name and teacher name.
                 // Inner HTML is more accurate than .text() because .text() doesn't work for invisible entries.
-                WebElement courseNameElement = findElement(course, By.className("class-name"));
+                WebElement courseNameElement = findElement(course, className("class-name"));
                 String courseName = courseNameElement.getAttribute(INNER_HTML);
-                String teacher = findElement(course, By.className("teacher-name")).getAttribute(INNER_HTML);
+                String teacher = findElement(course, className("teacher-name")).getAttribute(INNER_HTML);
                 long courseId = findCourseId(courseNameElement.getAttribute(HREF));
-                long assignmentsId = findCourseId(findElement(course, By.className("view-assignments")).getAttribute(HREF));
+                long assignmentsId = findCourseId(findElement(course, className("view-assignments"))
+                        .getAttribute(HREF));
 
                 // Add to result.
                 result.add(VeracrossCourse.builder()
@@ -166,7 +168,7 @@ public class VeracrossReader
     public <T> T get(String apiUrl, Class<T> type, Object... params)
     {
         webDriver.get(makeUrl(url + apiUrl, params));
-        String json = findElementRE(webDriver, By.cssSelector("pre")).getAttribute(INNER_HTML);
+        String json = findElementRE(webDriver, cssSelector("pre")).getAttribute(INNER_HTML);
         return new Gson().fromJson(json, type);
     }
 
