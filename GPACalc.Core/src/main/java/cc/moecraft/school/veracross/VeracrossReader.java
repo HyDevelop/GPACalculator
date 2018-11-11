@@ -173,7 +173,11 @@ public class VeracrossReader
      */
     public <T> T get(String apiUrl, Class<T> type, Object... params)
     {
-        return new Gson().fromJson(HttpUtil.get(url + apiUrl, build(String.class, Object.class, params)), type);
+
+        String fullUrl = HttpUtil.urlWithForm(url + apiUrl, build(String.class, Object.class, params), null, false);
+        webDriver.get(fullUrl);
+        String json = Objects.requireNonNull(findElementSafe(webDriver, By.cssSelector("pre"))).getAttribute("innerHTML");
+        return new Gson().fromJson(json, type);
     }
 
     /**
