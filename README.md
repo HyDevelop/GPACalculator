@@ -50,14 +50,14 @@ Development:
 * Just copy the `src/main/java` folder of the module you want to import to your `src/main/java` folder.
 * Then copy the Maven dependencies from the `pom.xml` of the module you want to your `pom.xml`.
 
-#### For Eclipse or NetBeans Users:
+#### For Eclipse Users:
 
 * Well... Eclipse sucks!
 * IDK where the src folder for Eclipse is. 
 * Download [IntelliJ IDEA](https://www.jetbrains.com/idea/) for free [here](https://www.jetbrains.com/idea/download/).
 * And if you're a student like me, you can get a free IntelliJ Ultimate license with your school email [here](https://www.jetbrains.com/student/).
 
-#### For BlueJ, Notepad++ Users:
+#### For NetBeans, BlueJ, Notepad++ Users:
 
 * IDE is not just a text editor.
 * ... and don't say "I can use `javac`."
