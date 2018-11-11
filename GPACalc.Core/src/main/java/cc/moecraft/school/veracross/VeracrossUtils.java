@@ -58,4 +58,18 @@ public class VeracrossUtils
         calendar.setTime(date);
         return new SimpleDateFormat("mm%2Fdd%2Fyyyy").format(date);
     }
+
+    /**
+     * Get date with day offset.
+     * Eg. getDate(-5) would return a Date from 5 days ago.
+     *
+     * @param dayOffset Day offset
+     * @return Date
+     */
+    public static Date getDate(int dayOffset)
+    {
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.DAY_OF_YEAR, dayOffset);
+        return calendar.getTime();
+    }
 }
