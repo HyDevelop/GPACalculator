@@ -20,4 +20,5 @@ public class VeracrossCourse implements VeracrossPojo
     private String name;
     private String teacherName;
     private long id;
+    private long assignmentsId;
 }
