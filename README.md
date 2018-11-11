@@ -279,3 +279,9 @@ catch (NotFoundException e)
     System.err.println("Not Found: " + e.getMessage());
 }
 ```
+
+<br>
+
+<a name="license"></a>
+License: [GNU / GPL](https://choosealicense.com/licenses/gpl-3.0/)
+--------
