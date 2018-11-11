@@ -50,16 +50,25 @@ Development:
 * Just copy the `src/main/java` folder of the module you want to import to your `src/main/java` folder.
 * Then copy the Maven dependencies from the `pom.xml` of the module you want to your `pom.xml`.
 
-#### For Eclipse Users:
+#### For Eclipse or NetBeans Users:
 
 * Well... Eclipse sucks!
 * IDK where the src folder for Eclipse is. 
 * Download [IntelliJ IDEA](https://www.jetbrains.com/idea/) for free [here](https://www.jetbrains.com/idea/download/).
 * And if you're a student like me, you can get a free IntelliJ Ultimate license with your school email [here](https://www.jetbrains.com/student/).
 
-#### For NetBeans, BlueJ, Visual Studio, Notepad, and Mspaint Users:
+#### For BlueJ, Notepad++ Users:
 
-* Kill yourself.
+* IDE is not just a text editor.
+* ... and don't say "I can use $javac."
+
+#### For Visual Studio Users:
+
+* Have you tried turning it off and on again?
+
+#### Others:
+
+* Stop telling me "I use mspaint to code Java."
 
 ### Veracross:
 
