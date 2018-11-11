@@ -6,6 +6,7 @@ import cc.moecraft.school.veracross.pojo.VeracrossCourse;
 import cc.moecraft.school.veracross.pojo.VeracrossPojo;
 import cc.moecraft.utils.MapBuilder;
 import cc.moecraft.utils.StringUtils;
+import cn.hutool.core.util.URLUtil;
 import cn.hutool.http.HttpUtil;
 import com.google.gson.Gson;
 import lombok.Getter;
@@ -146,7 +147,7 @@ public class VeracrossReader
                 String courseName = courseNameElement.getAttribute(INNER_HTML);
                 String teacher = findElement(course, By.className("teacher-name")).getAttribute(INNER_HTML);
                 long courseId = findCourseId(courseNameElement.getAttribute(HREF));
-                long assignmentsId = findCourseId(findElement(course, By.className("view-assignments")).getAttribute(INNER_HTML));
+                long assignmentsId = findCourseId(findElement(course, By.className("view-assignments")).getAttribute(HREF));
 
                 // Add to result.
                 result.add(VeracrossCourse.builder()
