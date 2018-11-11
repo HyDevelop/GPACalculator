@@ -1,8 +1,6 @@
 package cc.moecraft.school.veracross;
 
 import cc.moecraft.school.utils.ElementUtils;
-import cc.moecraft.school.veracross.pojo.VeracrossAssignments;
-import cc.moecraft.school.veracross.pojo.VeracrossCourse;
 import cc.moecraft.school.veracross.pojo.*;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -16,6 +14,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import static cc.moecraft.school.utils.ElementUtils.*;
@@ -24,6 +23,7 @@ import static cc.moecraft.school.veracross.Attributes.HREF;
 import static cc.moecraft.school.veracross.Attributes.INNER_HTML;
 import static cc.moecraft.school.veracross.VeracrossUtils.findCourseId;
 import static cc.moecraft.school.veracross.VeracrossUtils.replaceCourseId;
+import static cc.moecraft.school.veracross.VeracrossUtils.toVeracrossDate;
 import static org.openqa.selenium.By.*;
 
 /**
@@ -185,4 +185,16 @@ public class VeracrossReader
     {
         return get(replaceCourseId(API_COURSE_ASSIGNMENTS, courseId), VeracrossAssignments.class);
     }
+
+    /**
+     * Get messages.
+     *
+     * @param start Starting index of the message list.
+     * @return Messages
+     */
+    public List<VeracrossMessage> getMessages(int start)
+    {
+        return get(API_MESSAGES, new TypeToken<List<VeracrossMessage>>(){}.getType(), "start", start);
+    }
+
 }
