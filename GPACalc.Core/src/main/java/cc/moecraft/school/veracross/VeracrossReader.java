@@ -105,6 +105,8 @@ public class VeracrossReader
      */
     public void login()
     {
+        verifyActive();
+
         // Send GET request to url.
         webDriver.get(url);
 
@@ -127,6 +129,8 @@ public class VeracrossReader
      */
     public List<VeracrossCourse> getCourses()
     {
+        verifyActive();
+
         List<VeracrossCourse> result = new ArrayList<>();
 
         // Search for class list elements.
@@ -170,6 +174,8 @@ public class VeracrossReader
      */
     public <T> T get(String apiUrl, Type type, Object... params)
     {
+        verifyActive();
+
         webDriver.get(makeUrl(url + apiUrl, params));
         String json = findElementRE(webDriver, cssSelector("pre")).getAttribute(INNER_HTML);
         return new Gson().fromJson(json, type);
@@ -230,6 +236,14 @@ public class VeracrossReader
     {
         webDriver.quit();
         destroyed = true;
+    }
+
+    /**
+     * Verify that this object is active.
+     */
+    private void verifyActive()
+    {
+        if (destroyed) throw new RuntimeException("Reader already destroyed, please initialize a new reader.");
     }
 
     /**
