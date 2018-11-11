@@ -73,5 +73,39 @@ Development:
 ### Veracross:
 
 ```java
+// Initialize object with base url, username and password.
+VeracrossReader reader = new VeracrossReader("https://portals-app.veracross.com/schoolname", "username", "password");
 
+// Initialize browser driver with the path to chrome driver.
+// The boolean means use headless mode or not.
+//   true = Headless, false = Not headless.
+//   I recommend false when debugging and true when deploying.
+//   Because if it's headless, you can't see the browser window.
+reader.initialize("./GPACalc.Core/drivers/chromedriver.exe", true);
+
+// Login to Veracross
+reader.login();
+
+// Get course list
+List<VeracrossCourse> courses = reader.getCourses();
+log(courses);
+
+// Get assignments of the course at index 1 of the list.
+VeracrossAssignments assignments = reader.getAssignments(courses.get(1).getAssignmentsId());
+log(assignments);
+
+// Get messages starting at index 0.
+List<VeracrossMessage> messages = reader.getMessages(0);
+log(messages);
+
+// Get calendar events from 5 days ago to 5 days later.
+List<VeracrossCalendarEvent> events = reader.getEvents(-5, 5);
+log(events);
+
+// Get calendar events from a specific date to a specific date.
+events = reader.getEvents(new Date(), new Date());
+log(events);
+
+// Kill browser task.
+reader.destroy();
 ```
