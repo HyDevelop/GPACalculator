@@ -1,7 +1,6 @@
 package cc.moecraft.school.veracross;
 
 import java.text.SimpleDateFormat;
-import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.regex.Matcher;
@@ -56,7 +55,7 @@ public class VeracrossUtils
     {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
-        return new SimpleDateFormat("mm%2Fdd%2Fyyyy").format(date);
+        return new SimpleDateFormat("MM/dd/yyyy").format(date);
     }
 
     /**
