@@ -3,11 +3,6 @@ package cc.moecraft.school.veracross;
 import cc.moecraft.school.utils.ElementUtils;
 import cc.moecraft.school.veracross.pojo.VeracrossAssignments;
 import cc.moecraft.school.veracross.pojo.VeracrossCourse;
-import cc.moecraft.school.veracross.pojo.VeracrossPojo;
-import cc.moecraft.utils.MapBuilder;
-import cc.moecraft.utils.StringUtils;
-import cn.hutool.core.util.URLUtil;
-import cn.hutool.http.HttpUtil;
 import com.google.gson.Gson;
 import lombok.Getter;
 import lombok.Setter;
@@ -19,8 +14,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.Objects;
 
 import static cc.moecraft.school.utils.ElementUtils.*;
 import static cc.moecraft.school.utils.UrlUtils.makeUrl;
@@ -28,9 +21,6 @@ import static cc.moecraft.school.veracross.Attributes.HREF;
 import static cc.moecraft.school.veracross.Attributes.INNER_HTML;
 import static cc.moecraft.school.veracross.VeracrossUtils.findCourseId;
 import static cc.moecraft.school.veracross.VeracrossUtils.replaceCourseId;
-import static cc.moecraft.utils.MapBuilder.*;
-import static cn.hutool.http.HttpUtil.urlWithForm;
-import static java.util.Objects.requireNonNull;
 
 /**
  * 此类由 Hykilpikonna 在 2018/10/05 创建!
