@@ -50,6 +50,28 @@ public class ElementUtils
     }
 
     /**
+     * Find an element, and throws a runtime exception when not found.
+     *
+     * This is used when the developer know for sure that there shouldn't be any error
+     *   unless it's an error that requires updating the source code to fix.
+     *
+     * @param with Something that supports .findElements().
+     * @param by What to search for.
+     * @return Element found.
+     */
+    public static WebElement findElementRE(SearchContext with, By by)
+    {
+        try
+        {
+            return findElement(with, by);
+        }
+        catch (ElementNotFoundException e)
+        {
+            throw new RuntimeException("An really unexpected find element error occurred: ", e);
+        }
+    }
+
+    /**
      * Find elements.
      *
      * @param with Something that supports .findElements().
