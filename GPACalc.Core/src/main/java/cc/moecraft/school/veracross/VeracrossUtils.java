@@ -1,5 +1,9 @@
 package cc.moecraft.school.veracross;
 
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -40,5 +44,18 @@ public class VeracrossUtils
     public static String replaceCourseId(String url, long id)
     {
         return url.replace("%CID%", String.valueOf(id));
+    }
+
+    /**
+     * Convert Date object to Veracross parameter date format.
+     *
+     * @param date Date object
+     * @return Date string.
+     */
+    public static String toVeracrossDate(Date date)
+    {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        return new SimpleDateFormat("mm%2Fdd%2Fyyyy").format(date);
     }
 }
