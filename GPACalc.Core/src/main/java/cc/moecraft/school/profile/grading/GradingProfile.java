@@ -14,6 +14,7 @@ import lombok.*;
 @Getter @Setter
 @ToString
 @Builder
+@AllArgsConstructor
 public class GradingProfile
 {
     private CourseLevelList courseLevelList;
