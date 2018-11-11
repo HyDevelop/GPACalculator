@@ -6,7 +6,6 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import lombok.Getter;
 import lombok.Setter;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -14,7 +13,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -203,7 +201,7 @@ public class VeracrossReader
      * @param end Ending date.
      * @return Calendar Events
      */
-    public List<VeracrossCalendarEvent> getCalendarEvents(Date begin, Date end)
+    public List<VeracrossCalendarEvent> getEvents(Date begin, Date end)
     {
         return get(API_CALENDAR_EVENTS, new TypeToken<List<VeracrossCalendarEvent>>(){}.getType()
                 ,"begin_date", toVeracrossDate(begin)
@@ -217,8 +215,8 @@ public class VeracrossReader
      * @param end Ending offset.
      * @return Calendar Events
      */
-    public List<VeracrossCalendarEvent> getCalendarEvents(int begin, int end)
+    public List<VeracrossCalendarEvent> getEvents(int begin, int end)
     {
-        return getCalendarEvents(getDate(begin), getDate(end));
+        return getEvents(getDate(begin), getDate(end));
     }
 }
