@@ -26,4 +26,16 @@ public class UrlUtils
     {
         return urlWithForm(url, params, null, false);
     }
+
+    /**
+     * Make URL
+     *
+     * @param url Base URL
+     * @param p Parameter key value pair
+     * @return Complete url.
+     */
+    public static String makeUrl(String url, Object ... p)
+    {
+        return makeUrl(url, build(String.class, Object.class, p));
+    }
 }
