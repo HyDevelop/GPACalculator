@@ -60,7 +60,7 @@ Development:
 #### For BlueJ, Notepad++ Users:
 
 * IDE is not just a text editor.
-* ... and don't say "I can use $javac."
+* ... and don't say "I can use `javac`."
 
 #### For Visual Studio Users:
 
@@ -68,7 +68,7 @@ Development:
 
 #### Others:
 
-* Stop telling me "I use mspaint to code Java."
+* Stop telling me "I use `mspaint` to code Java."
 
 ### Veracross:
 
