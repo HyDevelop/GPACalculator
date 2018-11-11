@@ -119,7 +119,8 @@ reader.destroy();
 #### 1. Write a Grading Profile:
 
 ```yml
-# This grading profile is for a weighted high school grading system.
+# A grading profile shows how a school weight their levels.
+# This example is for a weighted high school.
 
 # The level of courses.
 # Key word can be anything.
@@ -205,4 +206,44 @@ GradeRanges:
   C-: 71
   D:  70
   F:  0
+```
+
+#### 2. Write a Student Profile:
+
+```yml
+# A student profile shows what courses a student chose.
+# This example is the courses I chose.
+
+# Basic information, doesn't affect calculating.
+Basics:
+  Name: "This is not important"
+  Grade: 10
+  Semester: 1
+
+# Courses a student is taking.
+Subjects:
+  English:
+    Name: "English 2 A"
+    Level: "A"
+    Credits: 1
+  Algebra:
+    Name: "Algebra 2 H"
+    Level: "H"
+    Credits: 1
+  Chemistry:
+    Name: "Chemistry 1 H"
+    Level: "H"
+    Credits: 1
+  History:
+    Name: "Modern World History CP"
+    Level: "CP"
+    Credits: 1
+  Religion:
+    Name: "Early Church CP"
+    Level: "CP"
+    Credits: 0.5
+  ComputerScience:
+    Name: "AP Computer Science A"
+    Level: "AP"
+    Credits: 1
 ```
