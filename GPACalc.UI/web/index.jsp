@@ -14,6 +14,7 @@
                     <ul class="uk-tab hy-tab" uk-tab>
                         <li aria-expanded="true" class="uk-active"><a href="#">Grades</a></li>
                         <li aria-expanded="false" class=""><a href="#">Course Settings</a></li>
+                        <li aria-expanded="false" class=""><a href="#">Grade Ranges</a></li>
                         <li aria-expanded="false" class=""><a href="#">School Settings</a></li>
                     </ul>
 
@@ -28,7 +29,11 @@
                             <%@include file="/includes/editor/student-profile-editor-end.jsp"%>
                         </li>
                         <li>
-                            Text3
+                            <%@include file="/includes/editor/grade-ranges-head.jsp"%>
+                            <div id="grade-ranges-div"></div>
+                        </li>
+                        <li>
+
                         </li>
                     </ul>
                 </div>
