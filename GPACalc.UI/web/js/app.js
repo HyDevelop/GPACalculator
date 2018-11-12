@@ -162,6 +162,7 @@ function loadOldProfileFromServer()
 {
     renderGradesPage(cache.studentProfile, cache.gradingProfile);
     renderCourseSettingsPage(cache.studentProfile);
+    renderGradeRangesPage(cache.gradingProfile);
 }
 
 /**
