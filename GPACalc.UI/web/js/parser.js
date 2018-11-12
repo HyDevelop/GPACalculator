@@ -1,12 +1,17 @@
+/**
+ * Get Grades JSON
+ *
+ * @returns {string} Grades JSON String
+ */
 function getGradesAsJson()
 {
     var json = {};
     json.subjectGradeMap = {};
 
-    gradeEditorDiv.children().find("[name=gradeInput]").each(i =>
+    gradeEditorDiv.children().find("[name='gradeInput']").each((i, e) =>
     {
         // TODO: Check validity.
-        json.subjectGradeMap[$(this).attr("coursename")] = $(this).val();
+        json.subjectGradeMap[$(this).attr("coursename")] = $(e).val();
     });
 
     return JSON.stringify(json);
