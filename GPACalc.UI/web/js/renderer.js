@@ -65,6 +65,20 @@ function studentProfileAddEntry(id, name, level, credits)
 }
 
 /**
+ * Add an entry to grade ranges.
+ *
+ * @param id ID
+ * @param name Letter grade
+ * @param range Range Percentage
+ */
+function gradeRangesAddEntry(id, name, range)
+{
+    gradeRangesDiv.append(gradeRangesTemplate.replace(/%id%/g, id));
+    $("#gr-letter-grade-" + id).val(name);
+    $("#gr-percentage-" + id).val(range);
+}
+
+/**
  * Remove an entry.
  *
  * @param element The element of the close icon button.
