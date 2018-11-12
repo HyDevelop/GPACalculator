@@ -61,16 +61,11 @@ async function send(apiNode, content, callback, errorCallback)
  */
 function sendDebug(apiNode, content)
 {
-    send(apiNode, content,
-        function (response)
-        {
-            console.log(response);
-        },
-        function (error)
-        {
-            console.log("Error: " + error);
-            return false;
-        })
+    send(apiNode, content, response => console.log(response), error =>
+    {
+        console.log("Error: " + error);
+        return false;
+    })
 }
 
 /**
