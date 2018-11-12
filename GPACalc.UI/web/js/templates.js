@@ -1,6 +1,8 @@
 const includesBaseUrl = "http://" + document.domain + "/includes/";
 var studentProfileEditorTemplate;
 var gradeEditorTemplate;
+var gradeRangesTemplate;
+
 var messageSuccess;
 var messageError;
 
@@ -8,6 +10,7 @@ $(document).ready(function ()
 {
     loadTemplate("studentProfileEditorTemplate", "editor/student-profile-editor-template");
     loadTemplate("gradeEditorTemplate", "editor/grade-editor-template");
+    loadTemplate("gradeRangesTemplate", "editor/grade-ranges-template");
     loadTemplate("messageSuccess", "message/message-success");
     loadTemplate("messageError", "message/message-error");
 });
