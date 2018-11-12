@@ -15,7 +15,7 @@
     </div>
     <div class="col-sm">
         <div class="ui fluid input hy-input">
-            <input id="gr-percentage-%id%" type="text" placeholder="Minimum Percentage" oninput="checkNumeric(this)">
+            <input id="gr-percentage-%id%" type="text" placeholder="Minimum Percentage" oninput="checkNumeric(this.id)">
         </div>
     </div>
     <div class="hy-close-icon">
