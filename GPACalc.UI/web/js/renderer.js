@@ -65,6 +65,27 @@ function studentProfileAddEntry(id, name, level, credits)
 }
 
 /**
+ * Render the grade ranges page.
+ *
+ * @param json Grading profile json
+ */
+function renderGradeRangesPage(json)
+{
+    gradeRangesDiv.empty();
+
+    var ranges = json.gradeRangeList.gradeRanges;
+
+    for (var i in ranges)
+    {
+        var current = ranges[i];
+        var name = current.name;
+        var range = current.range;
+
+        gradeRangesAddEntry(i, name, range);
+    }
+}
+
+/**
  * Add an entry to grade ranges.
  *
  * @param id ID
