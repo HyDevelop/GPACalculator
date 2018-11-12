@@ -183,4 +183,13 @@ function calculateAverage(button)
         })
 }
 
+/**
+ * Upload student profile to server.
+ */
+function uploadStudentProfile()
+{
+    var json = getStudentProfileAsJson();
+    send("data.set.student-profile", JSON.stringify(json), success => msg.success("Your Settings Are Uploaded!", success));
+}
+
 // TODO: Upload student profile settings to server.
