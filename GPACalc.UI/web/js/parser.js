@@ -21,3 +21,13 @@ function countStudentProfileEditorEntries()
 {
     return studentProfileEditorDiv.children().length;
 }
+
+/**
+ * Count entries in grade ranges editor.
+ *
+ * @returns {*} Amount of Entries.
+ */
+function countGradeRangeEntries()
+{
+    return gradeRangesDiv.children().length;
+}
