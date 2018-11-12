@@ -18,6 +18,31 @@ function getGradesAsJson()
 }
 
 /**
+ * Get student profile as JSON
+ *
+ * @returns {*} Student profile JSON Object
+ */
+function getStudentProfileAsJson()
+{
+    var json = {};
+    var courseLevelList = json.subjectList = {};
+    var levels = courseLevelList.subjects = [];
+
+    var children = studentProfileEditorDiv.children();
+
+    children.find("[name='sp-name']").each((i, e) =>
+    {
+        levels[i] = {};
+        levels[i].keyName = "course-" + i;
+        levels[i].name = $(e).val();
+    });
+    children.find("[name=sp-level]").each((i, e) => levels[i].level = $(e).val());
+    children.find("[name=sp-credits]").each((i, e) => levels[i].credits = $(e).val());
+
+    return json;
+}
+
+/**
  * Count entries in student profile editor.
  *
  * @returns {*} Amount of Entries.
