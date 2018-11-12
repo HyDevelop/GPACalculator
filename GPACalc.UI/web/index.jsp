@@ -31,6 +31,7 @@
                         <li>
                             <%@include file="/includes/editor/grade-ranges-head.jsp"%>
                             <div id="grade-ranges-div"></div>
+                            <%@include file="/includes/editor/grade-ranges-end.jsp"%>
                         </li>
                         <li>
 
