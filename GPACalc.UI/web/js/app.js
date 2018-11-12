@@ -134,7 +134,7 @@ $(document).ready(function onLoad()
             cache.loadFromServer(function ()
             {
                 // Render editors
-                loadOldProfileFromServer();
+                renderProfilesInCache();
 
             });
         });
@@ -153,7 +153,7 @@ function showLoginModal()
 /**
  * Reload old settings from server.
  */
-function loadOldProfileFromServer()
+function renderProfilesInCache()
 {
     renderGradesPage(cache.studentProfile, cache.gradingProfile);
     renderCourseSettingsPage(cache.studentProfile);
@@ -189,7 +189,10 @@ function calculateAverage(button)
 function uploadStudentProfile()
 {
     var json = getStudentProfileAsJson();
-    send("data.set.student-profile", JSON.stringify(json), success => msg.success("Your Settings Are Uploaded!", success));
+    send("data.set.student-profile", JSON.stringify(json), success =>
+    {
+        msg.success("Your Settings Are Uploaded!", success);
+        cache.studentProfile = json;
+        renderGradesPage(cache.studentProfile, cache.gradingProfile);
+    });
 }
-
-// TODO: Upload student profile settings to server.
