@@ -1,5 +1,4 @@
-class Msg {}
-var msg = new Msg();
+var msg = {};
 
 msg.success = function (title, ... lines)
 {
