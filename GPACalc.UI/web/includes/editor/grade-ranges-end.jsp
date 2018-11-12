@@ -15,9 +15,9 @@
     </button>
     <button class="ui basic blue right floated right labeled icon button" onclick="uploadNewSettings()">
         <i class="upload icon"></i>
-        Upload New Settings
+        Save
     </button>
-    <button class="ui basic right floated labeled icon button" onclick="loadOldProfileFromServer()">
+    <button class="ui basic right floated labeled icon button" onclick="renderProfilesInCache()">
         <i class="download icon"></i>
         Reload Old Settings
     </button>
