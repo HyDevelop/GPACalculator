@@ -1,5 +1,4 @@
-class Cache {}
-var cache = new Cache();
+var cache = {};
 
 /**
  * Load profiles from server and cache them.
