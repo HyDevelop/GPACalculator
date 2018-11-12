@@ -11,7 +11,7 @@ function getGradesAsJson()
     gradeEditorDiv.children().find("[name='gradeInput']").each((i, e) =>
     {
         // TODO: Check validity.
-        json.subjectGradeMap[$(this).attr("coursename")] = $(e).val();
+        json.subjectGradeMap[$(e).attr("coursename")] = $(e).val();
     });
 
     return JSON.stringify(json);
