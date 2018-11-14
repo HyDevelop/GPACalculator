@@ -10,12 +10,12 @@
 <div class="row hy-row">
     <div class="col-sm">
         <div class="ui fluid input hy-input">
-            <input id="gr-letter-grade-%id%" type="text" placeholder="Letter Grade">
+            <input id="gr-letter-%id%" name="gr-letter" type="text" placeholder="Letter Grade">
         </div>
     </div>
     <div class="col-sm">
         <div class="ui fluid input hy-input">
-            <input id="gr-percentage-%id%" type="text" placeholder="Minimum Percentage" oninput="checkNumeric(this.id)">
+            <input id="gr-range-%id%" name="gr-range" type="text" placeholder="Percentage" oninput="checkNumeric(this)">
         </div>
     </div>
     <div class="hy-close-icon">

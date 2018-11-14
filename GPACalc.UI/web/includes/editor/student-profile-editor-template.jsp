@@ -10,17 +10,17 @@
 <div class="row hy-row">
     <div class="col-sm">
         <div class="ui fluid input hy-input">
-            <input id="name-%id%" name="sp-name" type="text" placeholder="Course Name">
+            <input id="sp-name-%id%" name="sp-name" type="text" placeholder="Course Name">
         </div>
     </div>
     <div class="col-sm-2">
         <div class="ui fluid input hy-input">
-            <input id="level-%id%" name="sp-level" type="text" placeholder="Level">
+            <input id="sp-level-%id%" name="sp-level" type="text" placeholder="Level">
         </div>
     </div>
     <div class="col-sm-1">
         <div class="ui fluid input hy-input">
-            <input id="credits-%id%" name="sp-credits" type="text" placeholder="Credits" oninput="checkNumeric(this.id)">
+            <input id="sp-credits-%id%" name="sp-credits" type="text" placeholder="Credits" oninput="checkNumeric(this)">
         </div>
     </div>
     <div class="hy-close-icon">
