@@ -151,7 +151,15 @@ function showLoginModal()
 }
 
 /**
- * Reload old settings from server.
+ * Reload user settings from server.
+ */
+function reloadSettings()
+{
+    cache.loadFromServer(() => renderProfilesInCache());
+}
+
+/**
+ * Render profiles in cache.
  */
 function renderProfilesInCache()
 {
