@@ -59,9 +59,9 @@ function renderCourseSettingsPage(json)
 function studentProfileAddEntry(id, name, level, credits)
 {
     studentProfileEditorDiv.append(studentProfileEditorTemplate.replace(/%id%/g, id));
-    $("#name-" + id).val(name);
-    $("#level-" + id).val(level);
-    $("#credits-" + id).val(credits);
+    $("#sp-name-" + id).val(name);
+    $("#sp-level-" + id).val(level);
+    $("#sp-credits-" + id).val(credits);
 }
 
 /**
@@ -95,8 +95,8 @@ function renderGradeRangesPage(json)
 function gradeRangesAddEntry(id, name, range)
 {
     gradeRangesDiv.append(gradeRangesTemplate.replace(/%id%/g, id));
-    $("#gr-letter-grade-" + id).val(name);
-    $("#gr-percentage-" + id).val(range);
+    $("#gr-letter-" + id).val(name);
+    $("#gr-range-" + id).val(range);
 }
 
 /**
