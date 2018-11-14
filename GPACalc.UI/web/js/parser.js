@@ -52,6 +52,27 @@ function countStudentProfileEditorEntries()
 }
 
 /**
+ * Get grade ranges as JSON
+ *
+ * @returns {*} Grade ranges JSON Object
+ */
+function getGradeRangeAsJson()
+{
+    var json = {};
+    var gradeRanges = json.gradeRanges = [];
+    var children = gradeRangesDiv.children();
+
+    children.find("[name=gr-letter]").each((i, e) =>
+    {
+        gradeRanges[i] = {};
+        gradeRanges[i].name = $(e).val();
+    });
+    children.find("[name=gr-range]").each((i, e) => gradeRanges[i].range = $(e).val());
+
+    return json;
+}
+
+/**
  * Count entries in grade ranges editor.
  *
  * @returns {*} Amount of Entries.
