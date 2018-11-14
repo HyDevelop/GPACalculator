@@ -17,7 +17,7 @@
         <i class="upload icon"></i>
         Save
     </button>
-    <button class="ui basic right floated labeled icon button" onclick="renderProfilesInCache()">
+    <button class="ui basic right floated labeled icon button" onclick="reloadSettings()">
         <i class="download icon"></i>
         Reload Old Settings
     </button>
