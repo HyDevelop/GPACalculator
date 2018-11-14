@@ -1,7 +1,7 @@
 
-function checkNumeric(id)
+function checkNumeric(element)
 {
-    var element = $("#" + id);
+    element = $(element);
     var value = element.val();
     if (isNaN(value))
     {
@@ -25,4 +25,9 @@ function checkAZ(id)
     {
         element.parent().removeClass("error");
     }
+}
+
+function checkGradeValidity(id)
+{
+
 }
