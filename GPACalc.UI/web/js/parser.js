@@ -8,7 +8,7 @@ function getGradesAsJson()
     var json = {};
     json.subjectGradeMap = {};
 
-    gradeEditorDiv.children().find("[name='gradeInput']").each((i, e) =>
+    gradeEditorDiv.children().find("[name=ge-input]").each((i, e) =>
     {
         // TODO: Check validity.
         json.subjectGradeMap[$(e).attr("coursename")] = $(e).val();
@@ -27,10 +27,9 @@ function getStudentProfileAsJson()
     var json = {};
     var courseLevelList = json.subjectList = {};
     var levels = courseLevelList.subjects = [];
-
     var children = studentProfileEditorDiv.children();
 
-    children.find("[name='sp-name']").each((i, e) =>
+    children.find("[name=sp-name]").each((i, e) =>
     {
         levels[i] = {};
         levels[i].keyName = "course-" + i;
