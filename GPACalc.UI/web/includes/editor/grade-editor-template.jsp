@@ -16,7 +16,7 @@
     <div class="row">
         <div class="col-sm">
             <div class="ui fluid input hy-input">
-                <input id="%id%" name="gradeInput" coursename="%course-name%" type="text" placeholder="Grade">
+                <input id="ge-%id%" name="ge-input" coursename="%course-name%" type="text" placeholder="Grade">
             </div>
         </div>
     </div>
