@@ -60,3 +60,11 @@ msg.updateRegistration = function ()
         // message.remove();
     });
 };
+
+/**
+ * Send a message saying that a feature is not implemented yet.
+ */
+msg.notImplemented = function ()
+{
+    msg.error("Not Implemented", "Sorry, but this feature is not implemented yet.");
+};
