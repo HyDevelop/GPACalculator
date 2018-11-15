@@ -14,10 +14,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
 <script src="${pageContext.request.contextPath}/js/utils.js"></script>
 <%@include file="/js/constants-js.jsp"%>
+<script src="${pageContext.request.contextPath}/js/api.js"></script>
 <script src="${pageContext.request.contextPath}/js/app.js"></script>
 <script src="${pageContext.request.contextPath}/js/buttons.js"></script>
 <script src="${pageContext.request.contextPath}/js/cache.js"></script>
 <script src="${pageContext.request.contextPath}/js/events.js"></script>
+<script src="${pageContext.request.contextPath}/js/google.js"></script>
 <script src="${pageContext.request.contextPath}/js/renderer.js"></script>
 <script src="${pageContext.request.contextPath}/js/templates.js"></script>
 <script src="${pageContext.request.contextPath}/js/message.js"></script>

@@ -23,7 +23,7 @@ btn.gr = {};
 btn.ge.submit = function (button)
 {
     $(button).addClass("loading").addClass("disabled");
-    send("data.calculate", getGradesAsJson(),
+    api.send("data.calculate", getGradesAsJson(),
         function (grade)
         {
             msg.success("Grades Calculated: ", Math.round(grade * 1000.0) / 1000.0);
@@ -52,7 +52,7 @@ btn.sp.add = function ()
 btn.sp.upload = function ()
 {
     var json = getStudentProfileAsJson();
-    send("data.set.student-profile", JSON.stringify(json), success =>
+    api.send("data.set.student-profile", JSON.stringify(json), success =>
     {
         msg.success("Your Settings Are Uploaded!", success);
         cache.studentProfile = json;
