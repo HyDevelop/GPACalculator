@@ -7,13 +7,13 @@ var cache = {};
  */
 cache.loadFromServer = function(callback)
 {
-    send("data.get.student-profile", "", function (studentProfile)
+    api.send("data.get.student-profile", "", function (studentProfile)
     {
         cache.studentProfile = JSON.parse(studentProfile);
         if (cache.gradingProfile != null) callback();
     });
 
-    send("data.get.grading-profile", "", function (gradingProfile)
+    api.send("data.get.grading-profile", "", function (gradingProfile)
     {
         cache.gradingProfile = JSON.parse(gradingProfile);
         if (cache.studentProfile != null) callback();
@@ -26,4 +26,5 @@ cache.loadFromServer = function(callback)
 cache.update = function()
 {
     // TODO: Update from local settings
+    cache.studentProfile = getStudentProfileAsJson();
 };
