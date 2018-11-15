@@ -44,14 +44,6 @@ function onLoginFailed()
 }
 
 /**
- * Reload user settings from server.
- */
-function reloadSettings()
-{
-    cache.loadFromServer(() => renderProfilesInCache());
-}
-
-/**
  * Render profiles in cache.
  */
 function renderProfilesInCache()
