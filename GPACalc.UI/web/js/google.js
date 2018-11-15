@@ -4,6 +4,11 @@
 var google = {};
 
 /**
+ * Google User, null if not signed in.
+ */
+google.user = null;
+
+/**
  * Sign out.
  */
 google.signOut = function()
