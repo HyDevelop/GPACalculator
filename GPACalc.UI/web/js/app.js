@@ -122,21 +122,24 @@ $(document).ready(function onLoad()
         .then(function (auth2)
         {
             // Detects if user is logged in
-            if (auth2.isSignedIn.get()) console.log("[OnLoad] Login verified.");
+            if (auth2.isSignedIn.get())
+            {
+                console.log("[OnLoad] Login verified.");
+
+                // Load Cache
+                cache.loadFromServer(function ()
+                {
+                    // Render editors
+                    renderProfilesInCache();
+
+                });
+            }
             else
             {
                 // Show login modal
                 showLoginModal();
                 console.log("[OnLoad] Login not found, displaying modal.");
             }
-
-            // Load Cache
-            cache.loadFromServer(function ()
-            {
-                // Render editors
-                renderProfilesInCache();
-
-            });
         });
     });
 });
