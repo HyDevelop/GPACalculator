@@ -98,13 +98,3 @@ function gradeRangesAddEntry(id, name, range)
     $("#gr-letter-" + id).val(name);
     $("#gr-range-" + id).val(range);
 }
-
-/**
- * Remove an entry.
- *
- * @param element The element of the close icon button.
- */
-function studentProfileRemoveEntry(element)
-{
-    $(element).parent().parent().remove();
-}

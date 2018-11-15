@@ -19,6 +19,6 @@
         </div>
     </div>
     <div class="hy-close-icon">
-        <i class="close icon" onclick="studentProfileRemoveEntry(this)"></i>
+        <i class="close icon" onclick="btn.gr.remove(this)"></i>
     </div>
 </div>
