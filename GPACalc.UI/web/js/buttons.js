@@ -65,5 +65,5 @@ btn.sp.upload = function ()
  */
 btn.sp.reload = function ()
 {
-    reloadSettings();
+    cache.loadFromServer(() => renderProfilesInCache());
 };
