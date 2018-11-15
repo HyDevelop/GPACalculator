@@ -16,7 +16,7 @@ var banner =
  * @param errorCallback Callback when there is an error.
  *          function(error message) that returns a boolean that decides whether to send error or not.
  */
-async function send(apiNode, content, callback, errorCallback)
+function send(apiNode, content, callback, errorCallback)
 {
     if (googleUser == null)
     {
