@@ -20,7 +20,7 @@ btn.gr = {};
  *
  * @param button Button
  */
-btn.grades.submit = function (button)
+btn.ge.submit = function (button)
 {
     $(button).addClass("loading").addClass("disabled");
     send("data.calculate", getGradesAsJson(),
@@ -36,4 +36,34 @@ btn.grades.submit = function (button)
             $(button).removeClass("loading").removeClass("disabled");
             return true;
         })
+};
+
+/**
+ * Add entry to student profile editor.
+ */
+btn.sp.add = function ()
+{
+    studentProfileAddEntry(countStudentProfileEditorEntries(), '', '', '');
+};
+
+/**
+ * Upload student profile to server.
+ */
+btn.sp.upload = function ()
+{
+    var json = getStudentProfileAsJson();
+    send("data.set.student-profile", JSON.stringify(json), success =>
+    {
+        msg.success("Your Settings Are Uploaded!", success);
+        cache.studentProfile = json;
+        renderGradesPage(cache.studentProfile, cache.gradingProfile);
+    });
+};
+
+/**
+ * Reload
+ */
+btn.sp.reload = function ()
+{
+    reloadSettings();
 };
