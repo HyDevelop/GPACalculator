@@ -18,5 +18,5 @@
         <li><a class="hy-navbar-link" href="">Tutorial</a></li>
         <li><a class="hy-navbar-link" href="https://github.com/HyDevelop/GPACalculator/">Github</a></li>
     </ul>
-    <button class="hy-navbar-btn auth-signOut" onclick="signOut()" style="display: none;">Sign Out</button>
+    <button class="hy-navbar-btn auth-signOut" onclick="google.signOut()" style="display: none;">Sign Out</button>
 </nav>
