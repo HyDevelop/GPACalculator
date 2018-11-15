@@ -1,0 +1,56 @@
+/**
+ * Communicator to the api.
+ */
+var api = {};
+
+/**
+ * Api URL constant.
+ */
+api.url = "http://" + document.domain + "/api";
+
+/**
+ * Send a request to api.
+ *
+ * @param apiNode Node of the api.
+ * @param content Content in String.
+ * @param callback Function to callback after.
+ *          function(return result)
+ * @param errorCallback Callback when there is an error.
+ *          function(error message) that returns a boolean that decides whether to send error or not.
+ */
+api.send = function send(apiNode, content, callback, errorCallback)
+{
+    if (google.user == null)
+    {
+        msg.error("Error: You must be logged in to do that.", "No google login is detected.");
+        return;
+    }
+
+    var request = new XMLHttpRequest();
+    request.open("POST", api.url, true);
+    request.setRequestHeader("node", apiNode);
+    request.setRequestHeader("token", google.user.getAuthResponse().id_token);
+    request.onreadystatechange = function ()
+    {
+        if (request.readyState === 4 && request.status === 200)
+        {
+            var text = request.responseText;
+
+            // Error
+            if (text.toLowerCase().startsWith("error"))
+            {
+                // Error callback, returns boolean that decides whether to send error message or not.
+                var sendErrorMessage = true;
+                if (errorCallback != null) sendErrorMessage = errorCallback(text);
+                if (sendErrorMessage) msg.error("Error: Data Request Failed.",
+                    "Requested API Node: " + apiNode,
+                    "Error Response: " + text);
+                return;
+            }
+
+            // Async callback
+            callback(text);
+        }
+    };
+    request.send(content);
+}

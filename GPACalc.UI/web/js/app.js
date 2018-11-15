@@ -1,57 +1,8 @@
-const apiUrl = "http://" + document.domain + "/api";
-var googleUser = null;
 var banner =
     " __ _  _     __                           \n" +
     "/__|_)|_|   /   _  |  _     |  _ _|_ _  __\n" +
     "\\_||  | |   \\__(_| | (_ |_| | (_| |_(_) | \n" +
     "               v1.0.0.0 By Hykilpikonna";
-
-/**
- * Send a request to api.
- *
- * @param apiNode Node of the api.
- * @param content Content in String.
- * @param callback Function to callback after.
- *          function(return result)
- * @param errorCallback Callback when there is an error.
- *          function(error message) that returns a boolean that decides whether to send error or not.
- */
-function send(apiNode, content, callback, errorCallback)
-{
-    if (googleUser == null)
-    {
-        msg.error("Error: You must be logged in to do that.", "No google login is detected.");
-        return;
-    }
-
-    var request = new XMLHttpRequest();
-    request.open("POST", apiUrl, true);
-    request.setRequestHeader("node", apiNode);
-    request.setRequestHeader("token", googleUser.getAuthResponse().id_token);
-    request.onreadystatechange = function ()
-    {
-        if (request.readyState === 4 && request.status === 200)
-        {
-            var text = request.responseText;
-
-            // Error
-            if (text.toLowerCase().startsWith("error"))
-            {
-                // Error callback, returns boolean that decides whether to send error message or not.
-                var sendErrorMessage = true;
-                if (errorCallback != null) sendErrorMessage = errorCallback(text);
-                if (sendErrorMessage) msg.error("Error: Data Request Failed.",
-                    "Requested API Node: " + apiNode,
-                    "Error Response: " + text);
-                return;
-            }
-
-            // Async callback
-            callback(text);
-        }
-    };
-    request.send(content);
-}
 
 /**
  * Send and debug the response to console.
@@ -61,7 +12,7 @@ function send(apiNode, content, callback, errorCallback)
  */
 function sendDebug(apiNode, content)
 {
-    send(apiNode, content, response => console.log(response), error =>
+    api.send(apiNode, content, response => console.log(response), error =>
     {
         console.log("Error: " + error);
         return false;
@@ -69,19 +20,16 @@ function sendDebug(apiNode, content)
 }
 
 /**
- * Called when signing in.
- *
- * @param user Google user.
+ * Called when login is verified.
  */
-function onSignIn(user)
+function onLoginVerified()
 {
-    googleUser = user;
-
     // Reload if signed in for the first time.
     if (UIkit.modal("#modal-login").isToggled()) reload();
 
+    /*
     // Useful data for your client-side scripts:
-    var profile = googleUser.getBasicProfile();
+    var profile = google.user.getBasicProfile();
     console.log("ID: " + profile.getId());
     console.log('Full Name: ' + profile.getName());
     console.log('Given Name: ' + profile.getGivenName());
@@ -90,67 +38,39 @@ function onSignIn(user)
     console.log("Email: " + profile.getEmail());
 
     // The ID token you need to pass to your backend:
-    var id_token = googleUser.getAuthResponse().id_token;
+    var id_token = google.user.getAuthResponse().id_token;
     console.log("ID Token: " + id_token);
+    */
 
-    // Show sign off
+    // Show sign off button
     $(".auth-signOut").show();
 
     // Print banner.
     console.log(banner);
-    console.log("Welcome, " + profile.getName());
+    console.log("Welcome, " + google.profile.getName());
 
     // Send login to backend.
-    send("auth.login", "", function (text)
+    api.send("auth.login", "", function (text)
     {
         if (text === "Registered") reload();
-    })
+    });
+
+    // Load Cache
+    cache.loadFromServer(function ()
+    {
+        // Render editors
+        renderProfilesInCache();
+    });
 }
 
 /**
- * Run on load
+ * Called when login failed.
  */
-$(document).ready(function onLoad()
+function onLoginFailed()
 {
-    gapi.load('auth2', function ()
-    {
-        gapi.auth2.init(
-        {
-            client_id: constants.client_id,
-            scope: "profile email"
-        })
-        .then(function (auth2)
-        {
-            // Detects if user is logged in
-            if (auth2.isSignedIn.get())
-            {
-                console.log("[OnLoad] Login verified.");
-
-                // Load Cache
-                cache.loadFromServer(function ()
-                {
-                    // Render editors
-                    renderProfilesInCache();
-
-                });
-            }
-            else
-            {
-                // Show login modal
-                showLoginModal();
-                console.log("[OnLoad] Login not found, displaying modal.");
-            }
-        });
-    });
-});
-
-/**
- * Show user the login modal.
- */
-function showLoginModal()
-{
-    var loginModal = UIkit.modal("#modal-login");
-    if (!loginModal.isToggled()) loginModal.toggle();
+    // Show login modal
+    showLoginModal();
+    console.log("[OnLoad] Login not found, displaying modal.");
 }
 
 /**
