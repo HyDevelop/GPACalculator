@@ -77,3 +77,19 @@ btn.sp.remove = btn.gr.remove = function (element)
 {
     $(element).parent().parent().remove();
 };
+
+/**
+ * Add entry to grade ranges editor.
+ */
+btn.gr.add = function ()
+{
+    gradeRangesAddEntry(countGradeRangeEntries(), '', '')
+};
+
+/**
+ * TODO: Upload grade ranges (grading profile) to server.
+ */
+btn.gr.upload = function ()
+{
+    msg.notImplemented();
+};
