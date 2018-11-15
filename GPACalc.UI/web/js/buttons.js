@@ -1,6 +1,19 @@
 var btn = {};
 
-btn.grades = {};
+/**
+ * Grades calculation page buttons
+ */
+btn.ge = {};
+
+/**
+ * Student profile settings page buttons
+ */
+btn.sp = {};
+
+/**
+ * Grades ranges settings page buttons
+ */
+btn.gr = {};
 
 /**
  * Calculate GPA
