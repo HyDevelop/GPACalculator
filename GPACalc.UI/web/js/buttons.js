@@ -63,7 +63,17 @@ btn.sp.upload = function ()
 /**
  * Reload
  */
-btn.sp.reload = function ()
+btn.sp.reload = btn.gr.reload = function ()
 {
     cache.loadFromServer(() => renderProfilesInCache());
+};
+
+/**
+ * Remove an entry.
+ *
+ * @param element The element of the close icon button.
+ */
+btn.sp.remove = btn.gr.remove = function (element)
+{
+    $(element).parent().parent().remove();
 };
