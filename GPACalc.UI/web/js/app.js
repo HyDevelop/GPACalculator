@@ -167,17 +167,3 @@ function renderProfilesInCache()
     renderCourseSettingsPage(cache.studentProfile);
     renderGradeRangesPage(cache.gradingProfile);
 }
-
-/**
- * Upload student profile to server.
- */
-function uploadStudentProfile()
-{
-    var json = getStudentProfileAsJson();
-    send("data.set.student-profile", JSON.stringify(json), success =>
-    {
-        msg.success("Your Settings Are Uploaded!", success);
-        cache.studentProfile = json;
-        renderGradesPage(cache.studentProfile, cache.gradingProfile);
-    });
-}
