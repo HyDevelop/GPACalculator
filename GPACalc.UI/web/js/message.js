@@ -1,15 +1,37 @@
+/**
+ * Message related.
+ */
 var msg = {};
 
+/**
+ * Send a success message.
+ *
+ * @param title Title
+ * @param lines Lines under title.
+ */
 msg.success = function (title, ... lines)
 {
     msg.addMsg(messageSuccess, title, lines);
 };
 
+/**
+ * Send an error message.
+ *
+ * @param title Title
+ * @param lines Lines under title.
+ */
 msg.error = function (title, ... lines)
 {
     msg.addMsg(messageError, title, lines);
 };
 
+/**
+ * Add a message.
+ *
+ * @param format Template of the message.
+ * @param title Title
+ * @param lines Lines under title.
+ */
 msg.addMsg = function (format, title, lines)
 {
     var linesText = "";
@@ -19,6 +41,9 @@ msg.addMsg = function (format, title, lines)
     msg.updateRegistration();
 };
 
+/**
+ * Update close icon registration.
+ */
 msg.updateRegistration = function ()
 {
     $('.message .close').on('click', function()
