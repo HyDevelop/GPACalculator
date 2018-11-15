@@ -18,7 +18,7 @@ api.url = "http://" + document.domain + "/api";
  * @param errorCallback Callback when there is an error.
  *          function(error message) that returns a boolean that decides whether to send error or not.
  */
-api.send = function send(apiNode, content, callback, errorCallback)
+api.send = function (apiNode, content, callback, errorCallback)
 {
     if (google.user == null)
     {
@@ -53,4 +53,19 @@ api.send = function send(apiNode, content, callback, errorCallback)
         }
     };
     request.send(content);
-}
+};
+
+/**
+ * Send and debug the response to console.
+ *
+ * @param apiNode Node
+ * @param content Content
+ */
+api.sendDebug = function (apiNode, content)
+{
+    api.send(apiNode, content, response => console.log(response), error =>
+    {
+        console.log("Error: " + error);
+        return false;
+    })
+};
