@@ -40,7 +40,7 @@ public class NodeCalculate implements ApiNode
     {
         try
         {
-            boolean recordToGraph = RequestUtils.getParam(request, "record-to-graph", true);
+            boolean recordInGraph = RequestUtils.getParam(request, "record-in-graph", true);
 
             UserInfo info = Services.userInfo.findByGoogleSub(token.getPayload().getSubject());
 
@@ -53,7 +53,7 @@ public class NodeCalculate implements ApiNode
             double gradeAverage = calculate(gradingProfile, studentProfile, grades);
 
             // Record to graph.
-            if (recordToGraph)
+            if (recordInGraph)
             {
                 TimeMap timeMap = new TimeMap();
                 timeMap.setUserId(info.getUserId());
