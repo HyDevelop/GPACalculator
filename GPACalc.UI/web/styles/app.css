@@ -97,6 +97,11 @@
     margin: -5px -31px -5px 0px;
 }
 
+.ui.selection.dropdown
+{
+    min-height: 0;
+}
+
 .hy-close-icon
 {
     margin-top: 12px;
