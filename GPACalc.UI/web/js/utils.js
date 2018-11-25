@@ -7,6 +7,19 @@ function reload()
 }
 
 /**
+ * Make an array of String in lower case.
+ *
+ * @param list Array of String
+ * @return {Array} Lowercase array.
+ */
+function arrayToLowerCase(list)
+{
+    var newList = [];
+    for (var i in list) newList[i] = list[i].toLowerCase();
+    return newList;
+}
+
+/**
  * Get JS Version
  *
  * @return {string} JS Version
