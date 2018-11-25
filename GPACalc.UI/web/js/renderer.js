@@ -3,6 +3,8 @@ const gradeEditorDiv = $("#grade-editor-div");
 const studentProfileEditorDiv = $("#student-profile-editor-div");
 const gradeRangesDiv = $("#grade-ranges-div");
 
+const geDropdownEntry = "<div class=\"item\" data-value=\"%value%\">%value%</div>";
+
 /**
  * Render the grades page.
  *
