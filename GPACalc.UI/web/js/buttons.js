@@ -24,6 +24,7 @@ btn.ge.submit = function (button)
 {
     $(button).addClass("loading").addClass("disabled");
     api.send("data.calculate", getGradesAsJson(),
+
         function (grade)
         {
             msg.success("Grades Calculated: ", Math.round(grade * 1000.0) / 1000.0);
@@ -35,7 +36,10 @@ btn.ge.submit = function (button)
             // Reset on fail
             $(button).removeClass("loading").removeClass("disabled");
             return true;
-        })
+        },
+
+        "record-in-graph", $("#ge-record-in-graph").val()
+    )
 };
 
 /**
