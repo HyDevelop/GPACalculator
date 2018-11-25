@@ -1,18 +1,22 @@
 package cc.moecraft.school.api.nodes.data;
 
-import cc.moecraft.school.GPACalculator;
 import cc.moecraft.school.Grades;
 import cc.moecraft.school.NotFoundException;
 import cc.moecraft.school.api.ApiNode;
+import cc.moecraft.school.database.model.TimeMap;
 import cc.moecraft.school.database.model.UserInfo;
 import cc.moecraft.school.database.service.Services;
 import cc.moecraft.school.profile.grading.GradingProfile;
 import cc.moecraft.school.profile.student.StudentProfile;
 import cc.moecraft.school.utils.JsonUtils;
+import cc.moecraft.school.utils.RequestUtils;
 import com.google.api.client.googleapis.auth.oauth2.GoogleIdToken;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Date;
 
+import static cc.moecraft.school.Constants.GSON;
+import static cc.moecraft.school.GPACalculator.calculate;
 import static cc.moecraft.school.utils.JsonUtils.parseJson;
 
 /**
@@ -36,6 +40,8 @@ public class NodeCalculate implements ApiNode
     {
         try
         {
+            boolean recordToGraph = RequestUtils.getParam(request, "record-to-graph", true);
+
             UserInfo info = Services.userInfo.findByGoogleSub(token.getPayload().getSubject());
 
             if (info == null) return "Error: Not registered.";
@@ -44,7 +50,20 @@ public class NodeCalculate implements ApiNode
             GradingProfile gradingProfile = info.getGradingProfileObject();
             StudentProfile studentProfile = info.getStudentProfileObject();
 
-            return String.valueOf(GPACalculator.calculate(gradingProfile, studentProfile, grades));
+            double gradeAverage = calculate(gradingProfile, studentProfile, grades);
+
+            // Record to graph.
+            if (recordToGraph)
+            {
+                TimeMap timeMap = new TimeMap();
+                timeMap.setUserId(info.getUserId());
+                timeMap.setGrades(GSON.toJson(grades));
+                timeMap.setGradeAverage(gradeAverage);
+                timeMap.setTime(new Date());
+                timeMap.setAdder("USER");
+            }
+
+            return String.valueOf(gradeAverage);
         }
         catch (JsonUtils.JsonParsingException e)
         {
