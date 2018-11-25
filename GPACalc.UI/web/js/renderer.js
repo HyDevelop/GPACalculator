@@ -23,7 +23,20 @@ function renderGradesPage(studentProfile, gradingProfile)
         var subject = subjects[i];
         var name = subject.name;
 
-        gradeEditorDiv.append(gradeEditorTemplate.replace(/%id%/g, i).replace(/%course-name%/g, name));
+        // Get letter grades.
+        var dropdownEntries = "";
+        cache.gradingProfile.courseLevelList.levels.forEach(value =>
+        {
+            if (value.name === subject.level || containsIgnoreCase(value.alias, subject.level))
+            {
+                value.gradeWeights.gradeWeights.forEach(weight =>
+                {
+                    dropdownEntries += geDropdownEntry.replace(/%value%/g, weight.name);
+                });
+            }
+        });
+
+        gradeEditorDiv.append(gradeEditorTemplate.replace(/%id%/g, i).replace(/%course-name%/g, name).replace(/%dropdown-entries%/g, dropdownEntries));
     }
 
     initializeDropdown();
