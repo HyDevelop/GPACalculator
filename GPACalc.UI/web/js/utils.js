@@ -7,6 +7,18 @@ function reload()
 }
 
 /**
+ * Verify if a list contains a value
+ *
+ * @param list The list
+ * @param value The value
+ * @return {boolean} true if contains, else false.
+ */
+function contains(list, value)
+{
+    return list.indexOf(value) >= 0;
+}
+
+/**
  * Make an array of String in lower case.
  *
  * @param list Array of String
