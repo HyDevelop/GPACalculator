@@ -21,9 +21,7 @@
                     <input id="ge-%id%" name="ge-input" coursename="%course-name%" type="hidden">
                     <div class="default text">Grade</div>
                     <div class="menu">
-                        <div class="item" data-value="A+">A+</div>
-                        <div class="item" data-value="B+">B+</div>
-                        <div class="item" data-value="C">C</div>
+                        %dropdown-entries%
                     </div>
                 </div>
             </div>
