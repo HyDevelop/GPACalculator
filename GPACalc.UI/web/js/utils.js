@@ -19,6 +19,18 @@ function contains(list, value)
 }
 
 /**
+ * Verify if a list contains a value, case insensitive.
+ *
+ * @param list The list
+ * @param value The string value
+ * @return {boolean} true if contains, else false.
+ */
+function containsIgnoreCase(list, value)
+{
+    return arrayToLowerCase(list).indexOf(value.toLowerCase()) >= 0;
+}
+
+/**
  * Make an array of String in lower case.
  *
  * @param list Array of String
