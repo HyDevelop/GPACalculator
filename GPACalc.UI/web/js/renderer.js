@@ -23,6 +23,8 @@ function renderGradesPage(studentProfile, gradingProfile)
 
         gradeEditorDiv.append(gradeEditorTemplate.replace(/%id%/g, i).replace(/%course-name%/g, name));
     }
+
+    initializeDropdown();
 }
 
 /**
@@ -97,4 +99,12 @@ function gradeRangesAddEntry(id, name, range)
     gradeRangesDiv.append(gradeRangesTemplate.replace(/%id%/g, id));
     $("#gr-letter-" + id).val(name);
     $("#gr-range-" + id).val(range);
+}
+
+/**
+ * Initialize dropdown.
+ */
+function initializeDropdown()
+{
+    $('.ui.dropdown').dropdown();
 }
