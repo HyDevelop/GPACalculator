@@ -17,8 +17,9 @@ api.url = "http://" + document.domain + "/api";
  *          function(return result)
  * @param errorCallback Callback when there is an error.
  *          function(error message) that returns a boolean that decides whether to send error or not.
+ * @param params Header parameter key value pairs
  */
-api.send = function (apiNode, content, callback, errorCallback)
+api.send = function (apiNode, content, callback, errorCallback, ... params)
 {
     if (google.user == null)
     {
@@ -52,6 +53,12 @@ api.send = function (apiNode, content, callback, errorCallback)
             callback(text);
         }
     };
+    
+    // Set param headers.
+    if (params == null) params = [];
+    for (var i = 0; i < params.length; i += 2)
+        request.setRequestHeader(params[i], params[i + 1]);
+
     request.send(content);
 };
 
