@@ -44,6 +44,22 @@ function arrayToLowerCase(list)
 }
 
 /**
+ * Replace variables
+ *
+ * @param original Original string.
+ * @param keyValuePairs Key, value, key, value, key, value.....
+ */
+function replace(original, ... keyValuePairs)
+{
+    for (var i = 0; i < keyValuePairs.length; i += 2)
+    {
+        original = original.replace(new RegExp("%" + keyValuePairs[i] + "%", "g"), keyValuePairs[i + 1]);
+    }
+
+    return original;
+}
+
+/**
  * Get JS Version
  *
  * @return {string} JS Version
