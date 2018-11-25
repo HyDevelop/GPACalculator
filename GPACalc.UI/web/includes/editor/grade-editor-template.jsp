@@ -16,7 +16,16 @@
     <div class="row">
         <div class="col-sm">
             <div class="ui fluid input hy-input">
-                <input id="ge-%id%" name="ge-input" coursename="%course-name%" type="text" placeholder="Grade">
+                <!--input id="ge-%id%" name="ge-input" coursename="%course-name%" type="text" placeholder="Grade"-->
+                <div class="ui fluid search selection dropdown">
+                    <input id="ge-%id%" name="ge-input" coursename="%course-name%" type="hidden">
+                    <div class="default text">Grade</div>
+                    <div class="menu">
+                        <div class="item" data-value="A+">A+</div>
+                        <div class="item" data-value="B+">B+</div>
+                        <div class="item" data-value="C">C</div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
