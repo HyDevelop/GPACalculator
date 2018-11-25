@@ -31,12 +31,16 @@ function renderGradesPage(studentProfile, gradingProfile)
             {
                 value.gradeWeights.gradeWeights.forEach(weight =>
                 {
-                    dropdownEntries += geDropdownEntry.replace(/%value%/g, weight.name);
+                    dropdownEntries += replace(geDropdownEntry, "value", weight.name);
                 });
             }
         });
 
-        gradeEditorDiv.append(gradeEditorTemplate.replace(/%id%/g, i).replace(/%course-name%/g, name).replace(/%dropdown-entries%/g, dropdownEntries));
+        gradeEditorDiv.append(replace(gradeEditorTemplate,
+            "id", i,
+            "course-name", name,
+            "dropdown-entries", dropdownEntries
+        ));
     }
 
     initializeDropdown();
@@ -75,7 +79,7 @@ function renderCourseSettingsPage(json)
  */
 function studentProfileAddEntry(id, name, level, credits)
 {
-    studentProfileEditorDiv.append(studentProfileEditorTemplate.replace(/%id%/g, id));
+    studentProfileEditorDiv.append(replace(studentProfileEditorTemplate, "id", id));
     $("#sp-name-" + id).val(name);
     $("#sp-level-" + id).val(level);
     $("#sp-credits-" + id).val(credits);
@@ -111,7 +115,7 @@ function renderGradeRangesPage(json)
  */
 function gradeRangesAddEntry(id, name, range)
 {
-    gradeRangesDiv.append(gradeRangesTemplate.replace(/%id%/g, id));
+    gradeRangesDiv.append(replace(gradeRangesTemplate, "id", id));
     $("#gr-letter-" + id).val(name);
     $("#gr-range-" + id).val(range);
 }
