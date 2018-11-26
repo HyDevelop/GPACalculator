@@ -10,6 +10,8 @@ import cc.moecraft.school.profile.grading.GradingProfile;
 import cc.moecraft.school.profile.student.StudentProfile;
 import cc.moecraft.school.utils.JsonUtils;
 import cc.moecraft.school.utils.RequestUtils;
+import cc.moecraft.utils.MathUtils;
+import cn.hutool.core.math.MathUtil;
 import com.google.api.client.googleapis.auth.oauth2.GoogleIdToken;
 
 import javax.servlet.http.HttpServletRequest;
@@ -18,6 +20,7 @@ import java.util.Date;
 import static cc.moecraft.school.Constants.GSON;
 import static cc.moecraft.school.GPACalculator.calculate;
 import static cc.moecraft.school.utils.JsonUtils.parseJson;
+import static cc.moecraft.utils.MathUtils.round;
 
 /**
  * 此类由 Hykilpikonna 在 2018/10/27 创建!
@@ -50,7 +53,7 @@ public class NodeCalculate implements ApiNode
             GradingProfile gradingProfile = info.getGradingProfileObject();
             StudentProfile studentProfile = info.getStudentProfileObject();
 
-            double gradeAverage = calculate(gradingProfile, studentProfile, grades);
+            double gradeAverage = round(calculate(gradingProfile, studentProfile, grades), 2);
 
             // Record to graph.
             if (recordInGraph)
