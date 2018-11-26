@@ -38,7 +38,7 @@ btn.ge.submit = function (button)
             return true;
         },
 
-        "record-in-graph", $("#ge-record-in-graph").val()
+        "record-in-graph", $("#ge-record-in-graph.checkbox").checkbox("is checked")
     )
 };
 

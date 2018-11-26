@@ -13,8 +13,8 @@
         <div class="hidden content"><i class="calculator icon"></i></div>
     </div>
     <div class="inline field">
-        <div class="ui checkbox">
-            <input id="ge-record-in-graph" type="checkbox">
+        <div id="ge-record-in-graph" class="ui toggle checkbox">
+            <input type="checkbox">
             <label style="line-height: 17px;">Record in graph.</label>
         </div>
     </div>

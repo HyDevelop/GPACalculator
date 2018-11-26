@@ -2,7 +2,7 @@ package cc.moecraft.school.utils;
 
 import javax.servlet.http.HttpServletRequest;
 
-import static java.lang.Boolean.*;
+import static cc.moecraft.school.utils.ParsingUtils.parseBoolean;
 
 /**
  * 此类由 Hykilpikonna 在 2018/11/25 创建!
