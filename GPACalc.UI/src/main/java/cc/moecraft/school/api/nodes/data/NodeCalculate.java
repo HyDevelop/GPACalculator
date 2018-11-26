@@ -61,6 +61,7 @@ public class NodeCalculate implements ApiNode
                 timeMap.setGradeAverage(gradeAverage);
                 timeMap.setTime(new Date());
                 timeMap.setAdder("USER");
+                timeMap.save();
             }
 
             return String.valueOf(gradeAverage);
