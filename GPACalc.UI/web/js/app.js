@@ -52,3 +52,5 @@ function renderProfilesInCache()
     renderCourseSettingsPage(cache.studentProfile);
     renderGradeRangesPage(cache.gradingProfile);
 }
+
+// TODO: Check validity of grades.
