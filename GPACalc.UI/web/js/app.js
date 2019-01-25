@@ -39,7 +39,7 @@ function onLoginVerified()
 function onLoginFailed()
 {
     // Show login modal
-    showLoginModal();
+    google.showLoginModal();
     console.log("[OnLoad] Login not found, displaying modal.");
 }
 
