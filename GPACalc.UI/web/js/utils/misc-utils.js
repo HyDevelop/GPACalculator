@@ -82,3 +82,19 @@ function getJsVersion()
 
     return jsv.version;
 }
+
+function closest(num, arr)
+{
+    var curr = arr[0];
+    var diff = Math.abs(num - curr);
+    for (var val = 0; val < arr.length; val++)
+    {
+        var newDiff = Math.abs(num - arr[val]);
+        if (newDiff < diff)
+        {
+            diff = newDiff;
+            curr = arr[val];
+        }
+    }
+    return curr;
+};
