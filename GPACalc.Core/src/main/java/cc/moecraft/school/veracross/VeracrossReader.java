@@ -1,7 +1,10 @@
 package cc.moecraft.school.veracross;
 
 import cc.moecraft.school.utils.ElementUtils;
-import cc.moecraft.school.veracross.pojo.*;
+import cc.moecraft.school.veracross.pojo.VeracrossAssignments;
+import cc.moecraft.school.veracross.pojo.VeracrossCalendarEvent;
+import cc.moecraft.school.veracross.pojo.VeracrossCourse;
+import cc.moecraft.school.veracross.pojo.VeracrossMessage;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import lombok.Getter;
