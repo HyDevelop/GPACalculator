@@ -12,7 +12,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.17/js/uikit.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.17/js/uikit-icons.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
-<script src="${pageContext.request.contextPath}/js/utils.js"></script>
+<script src="${pageContext.request.contextPath}/js/utils/misc-utils.js"></script>
+<script src="${pageContext.request.contextPath}/js/utils/resolution-utils.js"></script>
 <%@include file="/js/constants-js.jsp"%>
 <script src="${pageContext.request.contextPath}/js/api.js"></script>
 <script src="${pageContext.request.contextPath}/js/app.js"></script>
