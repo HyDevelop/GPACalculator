@@ -37,6 +37,8 @@ public class Constants
     public static final StudentProfile DEFAULT_STUDENT_PROFILE;
     public static final GradingProfile DEFAULT_GRADING_PROFILE;
 
+    public static boolean debug = true;
+
     static
     {
         try
