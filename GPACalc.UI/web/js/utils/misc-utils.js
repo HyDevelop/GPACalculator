@@ -97,4 +97,5 @@ function closest(num, arr)
         }
     }
     return curr;
-};
+}
+
