@@ -10,8 +10,6 @@ import cc.moecraft.school.profile.grading.GradingProfile;
 import cc.moecraft.school.profile.student.StudentProfile;
 import cc.moecraft.school.utils.JsonUtils;
 import cc.moecraft.school.utils.RequestUtils;
-import cc.moecraft.utils.MathUtils;
-import cn.hutool.core.math.MathUtil;
 import com.google.api.client.googleapis.auth.oauth2.GoogleIdToken;
 
 import javax.servlet.http.HttpServletRequest;
