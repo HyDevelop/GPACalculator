@@ -23,6 +23,7 @@ import java.util.Collections;
 import java.util.stream.Collectors;
 
 import static cc.moecraft.school.Constants.GOOGLE_CLIENT_ID;
+import static cc.moecraft.school.Constants.debug;
 
 /**
  * 此类由 Hykilpikonna 在 2018/10/06 创建!
@@ -88,11 +89,13 @@ public class ApiFilter implements Filter
             {
                 // Write error.
                 ResponseUtils.writeResponse(response, "Error: Token Invalid: " + e.getMessage());
+                if (debug) e.printStackTrace();
             }
             catch (Throwable e)
             {
                 // Write error.
                 ResponseUtils.writeResponse(response, "Error: Unpredicted Error: " + e.getMessage());
+                if (debug) e.printStackTrace();
             }
         }
         else chain.doFilter(servletRequest, response);
