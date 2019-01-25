@@ -16,6 +16,7 @@
 
         <p class="uk-text-right">
         </p>
+        <p>After login, just refresh the page ;)</p>
     </div>
 </div>
 <script>
