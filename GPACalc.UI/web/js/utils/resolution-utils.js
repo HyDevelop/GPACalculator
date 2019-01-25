@@ -22,5 +22,5 @@ res.updateLayout = function ()
 /**
  * Update layout on window resize.
  */
-$(window).resize(res.updateLayout());
+$(window).resize(res.updateLayout);
 res.updateLayout();
