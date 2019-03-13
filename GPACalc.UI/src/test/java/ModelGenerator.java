@@ -8,10 +8,8 @@ import java.io.File;
 import static cc.moecraft.school.Constants.*;
 
 /**
- * 此类由 Hykilpikonna 在 2018/10/07 创建!
- * Created by Hykilpikonna on 2018/10/07!
- * Github: https://github.com/hykilpikonna
- * QQ: admin@moecraft.cc -OR- 871674895
+ * The class {@code ModelGenerator} generates the ORM classes from the database
+ * server configured in runtime-config.yml
  *
  * @author Hykilpikonna
  */
