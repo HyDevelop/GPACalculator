@@ -12,5 +12,5 @@
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.17/css/uikit.min.css"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css"/>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/styles/app.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/styles/navbar.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/gpacalc/styles/app.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/gpacalc/styles/navbar.css">
