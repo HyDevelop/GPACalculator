@@ -7,6 +7,6 @@
  * @author Hykilpikonna 
 --%>
 <%@ page contentType="text/html;charset=UTF-8" %>
-<%@include file="head-google.jsp"%>
+<%@include file="../../../shared/head-google.jsp"%>
 <%@include file="head-styles.jsp"%>
 <%@include file="head-others.jsp"%>
