@@ -8,6 +8,17 @@ function Google()
     var a;
 
     /**
+     * Sign in
+     */
+    this.signIn = function()
+    {
+        a.signIn({
+            prompt: "select_account",
+            ux_mode: "redirect"
+        });
+    };
+
+    /**
      * Sign out.
      */
     this.signOut = function()
