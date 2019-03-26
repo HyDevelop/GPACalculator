@@ -11,3 +11,4 @@
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
 <%@include file="/shared/js/constants-js.jsp"%>
+<script src="${pageContext.request.contextPath}/vinfo/js/google-new.js"></script>
