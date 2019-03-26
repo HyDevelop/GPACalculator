@@ -17,6 +17,31 @@ function Google()
             console.log('[GoogleApi] Signed out.');
         });
     };
+
+    /**
+     * Detects login information.
+     */
+    this.init = function()
+    {
+        g.load('auth2', function ()
+        {
+            g.auth2.init({ client_id: constants.client_id }).then(function (auth2)
+            {
+                this.a = a = auth2;
+
+                // Detects if user is logged in
+                if (a.isSignedIn.get())
+                {
+                    console.log("[GoogleApi] Login verified.");
+                }
+                else
+                {
+                    console.log("[GoogleApi] No login info detected.");
+                }
+            })
+
+        });
+    }
 }
 
 const google = new Google();
