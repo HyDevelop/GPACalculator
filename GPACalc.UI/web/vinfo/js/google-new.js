@@ -38,7 +38,7 @@ function Google()
         {
             g.auth2.init({ client_id: constants.client_id }).then(function (auth2)
             {
-                this.a = a = auth2;
+                a = auth2;
 
                 // Detects if user is logged in
                 if (a.isSignedIn.get())
@@ -52,7 +52,15 @@ function Google()
             })
 
         });
-    }
+    };
+
+    /**
+     * Get user
+     */
+    this.getUser = function ()
+    {
+        return a.currentUser.get()
+    };
 }
 
 const google = new Google();
