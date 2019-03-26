@@ -8,4 +8,5 @@
  * @author Vanilla (https://github.com/VergeDX)
  * @since 2019-03-16 15:26
 --%>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
