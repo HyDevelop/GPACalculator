@@ -3,6 +3,9 @@
  */
 function Google()
 {
+    // gAPI and Auth2 Instance (Initialized on init())
+    var g = gapi;
+    var a;
 }
 
 const google = new Google();
