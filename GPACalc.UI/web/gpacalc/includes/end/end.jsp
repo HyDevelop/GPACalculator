@@ -15,8 +15,8 @@
 <script src="${pageContext.request.contextPath}/gpacalc/js/libs/mobile-detect.js"></script>
 <script src="${pageContext.request.contextPath}/gpacalc/js/utils/misc-utils.js"></script>
 <script src="${pageContext.request.contextPath}/gpacalc/js/utils/resolution-utils.js"></script>
-<%@include file="/gpacalc/js/constants-js.jsp"%>
-<script src="${pageContext.request.contextPath}/gpacalc/js/api.js"></script>
+<%@include file="/shared/js/constants-js.jsp"%>
+<script src="${pageContext.request.contextPath}/shared/api.js"></script>
 <script src="${pageContext.request.contextPath}/gpacalc/js/app.js"></script>
 <script src="${pageContext.request.contextPath}/gpacalc/js/buttons.js"></script>
 <script src="${pageContext.request.contextPath}/gpacalc/js/cache.js"></script>
