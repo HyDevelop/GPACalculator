@@ -1,12 +1,20 @@
 /**
  * Communicator to the api.
  */
-var api = {};
+function GPACalcApi()
+{
+    /**
+     * Url Constant
+     */
+    this.url = constants.api_url;
+}
+
+const api = new GPACalcApi();
 
 /**
  * Api URL constant.
  */
-api.url = "http://" + document.domain + "/api";
+api.url =
 
 /**
  * Send a request to api.
