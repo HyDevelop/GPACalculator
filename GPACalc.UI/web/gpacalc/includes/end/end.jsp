@@ -12,16 +12,19 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.17/js/uikit.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.17/js/uikit-icons.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+<%@include file="/shared/js/constants-js.jsp"%>
+
 <script src="${pageContext.request.contextPath}/gpacalc/js/libs/mobile-detect.js"></script>
 <script src="${pageContext.request.contextPath}/gpacalc/js/utils/misc-utils.js"></script>
 <script src="${pageContext.request.contextPath}/gpacalc/js/utils/resolution-utils.js"></script>
-<%@include file="/shared/js/constants-js.jsp"%>
-<script src="${pageContext.request.contextPath}/shared/api.js"></script>
+
+<script src="${pageContext.request.contextPath}/shared/js/api.js"></script>
+<script src="${pageContext.request.contextPath}/shared/js/google.js"></script>
+
 <script src="${pageContext.request.contextPath}/gpacalc/js/app.js"></script>
 <script src="${pageContext.request.contextPath}/gpacalc/js/buttons.js"></script>
 <script src="${pageContext.request.contextPath}/gpacalc/js/cache.js"></script>
 <script src="${pageContext.request.contextPath}/gpacalc/js/events.js"></script>
-<script src="${pageContext.request.contextPath}/gpacalc/js/google.js"></script>
 <script src="${pageContext.request.contextPath}/gpacalc/js/renderer.js"></script>
 <script src="${pageContext.request.contextPath}/gpacalc/js/templates.js"></script>
 <script src="${pageContext.request.contextPath}/gpacalc/js/message.js"></script>
