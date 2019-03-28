@@ -21,16 +21,16 @@ function GPACalcApi()
      */
     this.send = function (apiNode, content, callback, errorCallback, ... params)
     {
-        if (google.user == null)
+        if (google.getUser() == null)
         {
             msg.error("Error: You must be logged in to do that.", "No google login is detected.");
             return;
         }
 
         var request = new XMLHttpRequest();
-        request.open("POST", api.url, true);
+        request.open("POST", this.url, true);
         request.setRequestHeader("node", apiNode);
-        request.setRequestHeader("token", google.user.getAuthResponse().id_token);
+        request.setRequestHeader("token", google.getUser().getAuthResponse().id_token);
         request.onreadystatechange = function ()
         {
             if (request.readyState === 4 && request.status === 200)
