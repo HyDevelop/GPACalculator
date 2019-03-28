@@ -12,3 +12,4 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
 <%@include file="/shared/js/constants-js.jsp"%>
 <script src="${pageContext.request.contextPath}/shared/js/google.js"></script>
+<script src="${pageContext.request.contextPath}/shared/js/api.js"></script>
