@@ -6,15 +6,12 @@ function GPACalcApi()
     /**
      * Url Constant
      */
-    this.url = constants.api_url;
+    var url = this.url = constants.api_url;
+
+
 }
 
 const api = new GPACalcApi();
-
-/**
- * Api URL constant.
- */
-api.url =
 
 /**
  * Send a request to api.
