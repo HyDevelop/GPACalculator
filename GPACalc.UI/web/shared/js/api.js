@@ -19,7 +19,7 @@ function GPACalcApi()
      *          function(error message) that returns a boolean that decides whether to send error or not.
      * @param params Header parameter key value pairs
      */
-    this.send = function (apiNode, content, callback, errorCallback, ... params)
+    this.send = async function (apiNode, content, callback, errorCallback, ... params)
     {
         if (google.getUser() == null)
         {
