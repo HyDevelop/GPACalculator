@@ -6,7 +6,8 @@
         constructor()
         {
             this.client_id = "<%=Constants.GOOGLE_CLIENT_ID %>";
-            this.api_url = "${pageContext.request.contextPath}/api";
+            this.api_url = "<%=request.getScheme() + "://" + request.getServerName() + ":" +
+                               request.getServerPort() + request.getContextPath() + "/api"%>";
         }
     }
 
