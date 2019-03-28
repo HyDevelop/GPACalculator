@@ -10,7 +10,7 @@ function Google()
     /**
      * Sign in
      */
-    this.signIn = function()
+    this.signIn = function ()
     {
         a.signIn({
             prompt: "select_account",
@@ -21,7 +21,7 @@ function Google()
     /**
      * Sign out.
      */
-    this.signOut = function()
+    this.signOut = function ()
     {
         a.signOut().then(function ()
         {
@@ -32,7 +32,7 @@ function Google()
     /**
      * Detects login information.
      */
-    this.init = function()
+    this.init = function ()
     {
         g.load('auth2', function ()
         {
