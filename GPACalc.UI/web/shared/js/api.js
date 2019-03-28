@@ -23,8 +23,7 @@ function GPACalcApi()
     {
         if (google.getUser() == null)
         {
-            msg.error("Error: You must be logged in to do that.", "No google login is detected.");
-            return;
+            throw "Error 001: You must be logged in to do that.\nNo google login is detected.";
         }
 
         var request = new XMLHttpRequest();
