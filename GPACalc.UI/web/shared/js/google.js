@@ -44,10 +44,12 @@ function Google()
                 if (a.isSignedIn.get())
                 {
                     console.log("[GoogleApi] Login verified.");
+                    googleLoginSuccessCallback();
                 }
                 else
                 {
                     console.log("[GoogleApi] No login info detected.");
+                    googleLoginFailedCallback();
                 }
             })
 
