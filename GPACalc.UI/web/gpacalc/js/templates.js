@@ -1,4 +1,4 @@
-const includesBaseUrl = "http://" + document.domain + "/includes/";
+const includesBaseUrl = constants.base_url + "/gpacalc/includes/";
 var studentProfileEditorTemplate;
 var gradeEditorTemplate;
 var gradeRangesTemplate;
