@@ -26,10 +26,20 @@ function GPACalcApi()
             throw "Error 001: You must be logged in to do that.\nNo google login is detected.";
         }
 
+        // Create request
         var request = new XMLHttpRequest();
         request.open("POST", this.url, true);
         request.setRequestHeader("node", apiNode);
         request.setRequestHeader("token", google.getUser().getAuthResponse().id_token);
+
+        // Set param headers.
+        if (params == null) params = [];
+        for (var i = 0; i < params.length; i += 2)
+        {
+            request.setRequestHeader(params[i], params[i + 1]);
+        }
+
+        // Add listener
         request.onreadystatechange = function ()
         {
             if (request.readyState === 4 && request.status === 200)
@@ -53,11 +63,7 @@ function GPACalcApi()
             }
         };
 
-        // Set param headers.
-        if (params == null) params = [];
-        for (var i = 0; i < params.length; i += 2)
-            request.setRequestHeader(params[i], params[i + 1]);
-
+        // Send request
         request.send(content);
     };
 
