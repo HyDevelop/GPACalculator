@@ -7,7 +7,7 @@ var banner =
 /**
  * Called when login is verified.
  */
-function onLoginVerified()
+function googleLoginSuccessCallback()
 {
     // Reload if signed in for the first time.
     if (UIkit.modal("#modal-login").isToggled()) reload();
@@ -17,7 +17,7 @@ function onLoginVerified()
 
     // Print banner.
     console.log(banner);
-    console.log("Welcome, " + google.profile.getName());
+    console.log("Welcome, " + google.getProfile().getName());
 
     // Send login to backend.
     api.send("auth.login", "", function (text)
@@ -35,12 +35,11 @@ function onLoginVerified()
 
 /**
  * Called when login failed.
+ * Redirects to the login page.
  */
-function onLoginFailed()
+function googleLoginFailedCallback()
 {
-    // Show login modal
-    google.showLoginModal();
-    console.log("[OnLoad] Login not found, displaying modal.");
+    google.signIn();
 }
 
 /**
