@@ -9,9 +9,6 @@ var banner =
  */
 function googleLoginSuccessCallback()
 {
-    // Reload if signed in for the first time.
-    if (UIkit.modal("#modal-login").isToggled()) reload();
-
     // Show sign off button
     $(".auth-signOut").show();
 
