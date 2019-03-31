@@ -63,6 +63,14 @@ function Google()
     {
         return a.currentUser.get()
     };
+
+    /**
+     * Get user profile
+     */
+    this.getProfile = function ()
+    {
+        return this.getUser().getBasicProfile();
+    };
 }
 
 const google = new Google();
