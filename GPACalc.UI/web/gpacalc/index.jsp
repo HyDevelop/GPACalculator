@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
     <head>
-        <%@include file="includes/head/head.jsp"%>
+        <%@include file="libs/imports-head.jsp"%>
     </head>
     <body class="wallpaper">
         <%@include file="includes/navbar/navbar.jsp"%>
@@ -47,4 +47,4 @@
         </div>
     </body>
 </html>
-<%@include file="includes/end/end.jsp"%>
+<%@include file="libs/imports-end.jsp"%>
