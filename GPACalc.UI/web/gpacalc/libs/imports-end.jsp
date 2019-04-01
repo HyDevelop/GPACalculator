@@ -15,7 +15,7 @@
 <%@include file="/shared/js/constants-js.jsp"%>
 
 <script src="${pageContext.request.contextPath}/gpacalc/js/libs/mobile-detect.js"></script>
-<script src="${pageContext.request.contextPath}/gpacalc/js/utils/misc-utils.js"></script>
+<script src="${pageContext.request.contextPath}/shared/js/misc-utils.js"></script>
 <script src="${pageContext.request.contextPath}/gpacalc/js/utils/resolution-utils.js"></script>
 
 <script src="${pageContext.request.contextPath}/shared/js/api.js"></script>
