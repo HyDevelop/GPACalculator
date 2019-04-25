@@ -26,6 +26,7 @@ function Google()
         a.signOut().then(function ()
         {
             console.log('[GoogleApi] Signed out.');
+            reload();
         });
     };
 
