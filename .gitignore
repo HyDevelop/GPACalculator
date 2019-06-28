@@ -9,3 +9,4 @@ debug.log
 GPACalc.Discord/target/*
 GPACalc.UI/GPACalc.UI.iml
 classes/*
+*.iml
